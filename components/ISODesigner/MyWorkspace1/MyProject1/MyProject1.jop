@@ -1,54 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <JetView-ObjectPool Version="3.0" ProductVersion="5.6.1.5243">
 	<Objects>
-		<Object Class="CStringVariable" JVS-ID="22000" ObjectName="StringVariable_Debug" Pinned="FALSE">
-			<Property Name="Group">
-				<Value/>
-			</Property>
-			<Property Name="Comment">
-				<Value>
-					<![CDATA[AAA=]]>
-				</Value>
-			</Property>
-			<PropertySheet Name="StringVariable" ID="68756">
-				<Property Name="Value">
-					<Value>
-						<![CDATA[MAAxADIAMwA0ADUANgA3ADgAOQAwADEAMgAzADQANQA2ADcAOAA5ADAAMQAyADMANAA1ADYANwA4
-ADkAMAAxADIAMwA0ADUANgA3ADgAOQAwAAAA]]>
-					</Value>
-				</Property>
-				<Property Name="Length">
-					<Value>41</Value>
-				</Property>
-				<Property Name="ResourceID">
-					<Value>NULL: none</Value>
-				</Property>
-			</PropertySheet>
-		</Object>
-		<Object Class="CStringVariable" JVS-ID="22001" ObjectName="StringVariable_Debug2" Pinned="FALSE">
-			<Property Name="Group">
-				<Value/>
-			</Property>
-			<Property Name="Comment">
-				<Value>
-					<![CDATA[AAA=]]>
-				</Value>
-			</Property>
-			<PropertySheet Name="StringVariable" ID="68756">
-				<Property Name="Value">
-					<Value>
-						<![CDATA[MAAxADIAMwA0ADUANgA3ADgAOQAwADEAMgAzADQANQA2ADcAOAA5ADAAMAAxADIAMwA0ADUANgA3
-ADgAOQAwADEAMgAzADQANQA2ADcAOAA5ADAAAAA=]]>
-					</Value>
-				</Property>
-				<Property Name="Length">
-					<Value>42</Value>
-				</Property>
-				<Property Name="ResourceID">
-					<Value>NULL: none</Value>
-				</Property>
-			</PropertySheet>
-		</Object>
 		<Object Class="CStringVariable" JVS-ID="22002" ObjectName="StringVariable_Vitesse" Pinned="FALSE">
 			<Property Name="Group">
 				<Value/>
@@ -73,13 +25,85 @@ ADkAAAA=]]>
 				</Property>
 			</PropertySheet>
 		</Object>
+		<Object Class="CMacro" JVS-ID="1" ObjectName="Macro_1" Pinned="FALSE">
+			<Commands>
+				<Command id="173" subid="-1">
+					<Params>
+						<Param Name="Workingset" Type="7">0 - WorkingSet</Param>
+						<Param Name="New active Mask" Type="8">1001 - DataMask_1001</Param>
+					</Params>
+				</Command>
+			</Commands>
+			<Property Name="Comment">
+				<Value>
+					<![CDATA[AAA=]]>
+				</Value>
+			</Property>
+		</Object>
 		<Object Class="CFontStyle" JVS-ID="23000" ObjectName="FontAttributes_23000" Pinned="FALSE">
 			<PropertySheet Name="Font" ID="68816">
 				<Property Name="Name">
 					<Value>Lucida Console</Value>
 				</Property>
 				<Property Name="Size">
+					<Value>9</Value>
+				</Property>
+				<Property Name="Height">
+					<Value>12</Value>
+				</Property>
+				<Property Name="Color">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Weight">
+					<Value>400</Value>
+				</Property>
+				<Property Name="Italic">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Underline">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Strikeout">
+					<Value>0</Value>
+				</Property>
+				<Property Name="PointWidth">
 					<Value>6</Value>
+				</Property>
+				<Property Name="Width">
+					<Value>8</Value>
+				</Property>
+				<Property Name="Inverted">
+					<Value>0</Value>
+				</Property>
+				<Property Name="FlashInverted">
+					<Value>0</Value>
+				</Property>
+				<Property Name="FlashHidden">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Proportional">
+					<Value>0</Value>
+				</Property>
+				<Property Name="ISOFontType">
+					<Value>0</Value>
+				</Property>
+				<Property Name="ResourceID">
+					<Value/>
+				</Property>
+				<Property Name="Comment">
+					<Value>
+						<![CDATA[AAA=]]>
+					</Value>
+				</Property>
+			</PropertySheet>
+		</Object>
+		<Object Class="CFontStyle" JVS-ID="23001" ObjectName="FontAttributes_23001" Pinned="FALSE">
+			<PropertySheet Name="Font" ID="68816">
+				<Property Name="Name">
+					<Value>Lucida Console</Value>
+				</Property>
+				<Property Name="Size">
+					<Value>12</Value>
 				</Property>
 				<Property Name="Height">
 					<Value>16</Value>
@@ -91,7 +115,7 @@ ADkAAAA=]]>
 					<Value>400</Value>
 				</Property>
 				<Property Name="Italic">
-					<Value>1</Value>
+					<Value>0</Value>
 				</Property>
 				<Property Name="Underline">
 					<Value>0</Value>
@@ -100,7 +124,7 @@ ADkAAAA=]]>
 					<Value>0</Value>
 				</Property>
 				<Property Name="PointWidth">
-					<Value>4</Value>
+					<Value>9</Value>
 				</Property>
 				<Property Name="Width">
 					<Value>12</Value>
@@ -130,13 +154,184 @@ ADkAAAA=]]>
 				</Property>
 			</PropertySheet>
 		</Object>
-		<Object Class="CWorkingSet" Name="" ObjectName="WorkingSet_0" Pinned="FALSE" JVS-ID="0" JVS-RefCount="1">
+		<Object Class="CFontStyle" JVS-ID="23002" ObjectName="FontAttributes_23002" Pinned="FALSE">
+			<PropertySheet Name="Font" ID="68816">
+				<Property Name="Name">
+					<Value>Lucida Console</Value>
+				</Property>
+				<Property Name="Size">
+					<Value>12</Value>
+				</Property>
+				<Property Name="Height">
+					<Value>16</Value>
+				</Property>
+				<Property Name="Color">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Weight">
+					<Value>400</Value>
+				</Property>
+				<Property Name="Italic">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Underline">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Strikeout">
+					<Value>0</Value>
+				</Property>
+				<Property Name="PointWidth">
+					<Value>9</Value>
+				</Property>
+				<Property Name="Width">
+					<Value>12</Value>
+				</Property>
+				<Property Name="Inverted">
+					<Value>0</Value>
+				</Property>
+				<Property Name="FlashInverted">
+					<Value>0</Value>
+				</Property>
+				<Property Name="FlashHidden">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Proportional">
+					<Value>0</Value>
+				</Property>
+				<Property Name="ISOFontType">
+					<Value>0</Value>
+				</Property>
+				<Property Name="ResourceID">
+					<Value/>
+				</Property>
+				<Property Name="Comment">
+					<Value>
+						<![CDATA[AAA=]]>
+					</Value>
+				</Property>
+			</PropertySheet>
+		</Object>
+		<Object Class="CFontStyle" JVS-ID="23003" ObjectName="FontAttributes_23003" Pinned="FALSE">
+			<PropertySheet Name="Font" ID="68816">
+				<Property Name="Name">
+					<Value>Lucida Console</Value>
+				</Property>
+				<Property Name="Size">
+					<Value>12</Value>
+				</Property>
+				<Property Name="Height">
+					<Value>16</Value>
+				</Property>
+				<Property Name="Color">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Weight">
+					<Value>400</Value>
+				</Property>
+				<Property Name="Italic">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Underline">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Strikeout">
+					<Value>0</Value>
+				</Property>
+				<Property Name="PointWidth">
+					<Value>9</Value>
+				</Property>
+				<Property Name="Width">
+					<Value>12</Value>
+				</Property>
+				<Property Name="Inverted">
+					<Value>0</Value>
+				</Property>
+				<Property Name="FlashInverted">
+					<Value>0</Value>
+				</Property>
+				<Property Name="FlashHidden">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Proportional">
+					<Value>0</Value>
+				</Property>
+				<Property Name="ISOFontType">
+					<Value>0</Value>
+				</Property>
+				<Property Name="ResourceID">
+					<Value/>
+				</Property>
+				<Property Name="Comment">
+					<Value>
+						<![CDATA[AAA=]]>
+					</Value>
+				</Property>
+			</PropertySheet>
+		</Object>
+		<Object Class="CFontStyle" JVS-ID="23004" ObjectName="FontAttributes_23004" Pinned="FALSE">
+			<PropertySheet Name="Font" ID="68816">
+				<Property Name="Name">
+					<Value>Lucida Console</Value>
+				</Property>
+				<Property Name="Size">
+					<Value>12</Value>
+				</Property>
+				<Property Name="Height">
+					<Value>16</Value>
+				</Property>
+				<Property Name="Color">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Weight">
+					<Value>400</Value>
+				</Property>
+				<Property Name="Italic">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Underline">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Strikeout">
+					<Value>0</Value>
+				</Property>
+				<Property Name="PointWidth">
+					<Value>9</Value>
+				</Property>
+				<Property Name="Width">
+					<Value>12</Value>
+				</Property>
+				<Property Name="Inverted">
+					<Value>0</Value>
+				</Property>
+				<Property Name="FlashInverted">
+					<Value>0</Value>
+				</Property>
+				<Property Name="FlashHidden">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Proportional">
+					<Value>0</Value>
+				</Property>
+				<Property Name="ISOFontType">
+					<Value>0</Value>
+				</Property>
+				<Property Name="ResourceID">
+					<Value/>
+				</Property>
+				<Property Name="Comment">
+					<Value>
+						<![CDATA[AAA=]]>
+					</Value>
+				</Property>
+			</PropertySheet>
+		</Object>
+		<Object Class="CWorkingSet" Name="" ObjectName="WorkingSet" Pinned="FALSE" JVS-ID="0" JVS-RefCount="1">
 			<PropertySheet Name="Model">
 				<Property Name="MaskType">
 					<Value>3</Value>
 				</Property>
 				<Property Name="Path">
-					<Value>.\WorkingSet_0.jvi</Value>
+					<Value>.\WorkingSet.jvi</Value>
 				</Property>
 				<Property Name="Comment">
 					<Value>
@@ -152,6 +347,21 @@ ADkAAAA=]]>
 				</Property>
 				<Property Name="Path">
 					<Value>.\DataMask_Home.jvi</Value>
+				</Property>
+				<Property Name="Comment">
+					<Value>
+						<![CDATA[AAA=]]>
+					</Value>
+				</Property>
+			</PropertySheet>
+		</Object>
+		<Object Class="CDataMask" Name="" ObjectName="DataMask_1001" Pinned="FALSE" JVS-ID="1001" JVS-RefCount="1">
+			<PropertySheet Name="Model">
+				<Property Name="MaskType">
+					<Value>1</Value>
+				</Property>
+				<Property Name="Path">
+					<Value>.\DataMask_1001.jvi</Value>
 				</Property>
 				<Property Name="Comment">
 					<Value>
@@ -387,6 +597,40 @@ ADkAAAA=]]>
 					<Value>0</Value>
 				</Property>
 			</PropertySheet>
+			<Events>
+				<Event>
+					<Property Name="ID">
+						<Value>
+							<![CDATA[24]]>
+						</Value>
+					</Property>
+					<Property Name="Name">
+						<Value>
+							<![CDATA[OnKeyPress]]>
+						</Value>
+					</Property>
+					<Property Name="Param">
+						<Value>
+							<![CDATA[]]>
+						</Value>
+					</Property>
+					<Property Name="Macros">
+						<Value>
+							<![CDATA[1]]>
+						</Value>
+					</Property>
+					<Property Name="Conditions">
+						<Value>
+							<![CDATA[]]>
+						</Value>
+					</Property>
+					<Property Name="KeyCode">
+						<Value>
+							<![CDATA[0]]>
+						</Value>
+					</Property>
+				</Event>
+			</Events>
 			<Objects>
 				<Object JVS-ID="4194305"/>
 			</Objects>
@@ -427,15 +671,608 @@ ADkAAAA=]]>
 				<Object JVS-ID="4194306"/>
 			</Objects>
 		</Object>
-		<Object Class="COutputText" Name="Text" ObjectName="OutputString_11000" Pinned="FALSE" JVS-ID="11000">
-			<PropertySheet Name="Text">
+		<Object Class="CCheckBox" Name="Checkbox" ObjectName="InputBoolean_7000" Pinned="FALSE" JVS-ID="7000">
+			<PropertySheet Name="Checkbox">
+				<Property Name="3DStyle">
+					<Value>1</Value>
+				</Property>
+				<Property Name="BackColor">
+					<Value>16777215</Value>
+				</Property>
+				<Property Name="Fixed-Size">
+					<Value>0</Value>
+				</Property>
+				<Property Name="RoundEdgeRadius">
+					<Value>2156951686884457600486059795899314553595120594603068943150977490966106480968010960121281160963438616088671465428951207218037719552275926565415710043493775936114909405157945512144412035387336872683706846352145667485850691451224064.000000</Value>
+				</Property>
+				<Property Name="checked">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Offset">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Scale">
+					<Value/>
+				</Property>
+				<Property Name="FormatType">
+					<Value>0</Value>
+				</Property>
+				<Property Name="FormatString">
+					<Value>0</Value>
+				</Property>
+				<Property Name="NoOfDecimals">
+					<Value>2</Value>
+				</Property>
+				<Property Name="Value">
+					<Value>AAA=</Value>
+				</Property>
+				<Property Name="StringLength">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Enabled">
+					<Value>1</Value>
+				</Property>
+				<Property Name="LeadingZeros">
+					<Value>24609752</Value>
+				</Property>
+				<Property Name="ZeroAsBlank">
+					<Value>24609752</Value>
+				</Property>
+				<Property Name="Truncate">
+					<Value>24609752</Value>
+				</Property>
+				<Property Name="RealTimeDataInput">
+					<Value>24609752</Value>
+				</Property>
+				<Property Name="Width">
+					<Value>24</Value>
+				</Property>
+				<Property Name="Height">
+					<Value>24</Value>
+				</Property>
+				<Property Name="Visible">
+					<Value>1</Value>
+				</Property>
+				<Property Name="Locked">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Comment">
+					<Value>
+						<![CDATA[AAA=]]>
+					</Value>
+				</Property>
+				<Property Name="Disabled">
+					<Value>0</Value>
+				</Property>
+				<Property Name="ExternalReferenceAllowed">
+					<Value>0</Value>
+				</Property>
+			</PropertySheet>
+			<Objects>
+				<Object JVS-ID="23002"/>
+			</Objects>
+		</Object>
+		<Object Class="CInputNumber" Name="Edit" ObjectName="InputNumber_9000" Pinned="FALSE" JVS-ID="9000">
+			<PropertySheet Name="EditBox">
 				<Property Name="Text">
 					<Value>
-						<![CDATA[VAByAGEAbgBzAGwAYQB0AGUAdQByACAAUwBFAE0AQQBTAAAA]]>
+						<![CDATA[MQAyADMAAAA=]]>
 					</Value>
 				</Property>
 				<Property Name="ResourceID">
 					<Value/>
+				</Property>
+				<Property Name="BackColor">
+					<Value>16777215</Value>
+				</Property>
+				<Property Name="BackMode">
+					<Value>2</Value>
+				</Property>
+				<Property Name="BorderStyle">
+					<Value>2</Value>
+				</Property>
+				<Property Name="AlignH">
+					<Value>2</Value>
+				</Property>
+				<Property Name="AlignV">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Multiline">
+					<Value>1</Value>
+				</Property>
+				<Property Name="Wordbreak">
+					<Value>1</Value>
+				</Property>
+				<Property Name="WrapOnHyphen">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Numeric">
+					<Value>1</Value>
+				</Property>
+				<Property Name="RoundEdgeRadius">
+					<Value>0.000000</Value>
+				</Property>
+				<Property Name="InputDlgFlags">
+					<Value>0</Value>
+				</Property>
+				<Property Name="InputDlgTitle">
+					<Value>
+						<![CDATA[JVER]]>
+					</Value>
+				</Property>
+				<Property Name="InputDlgLabel">
+					<Value>
+						<![CDATA[Type new value:]]>
+					</Value>
+				</Property>
+				<Property Name="InputDlgResourceID">
+					<Value>
+						<![CDATA[]]>
+					</Value>
+				</Property>
+				<Property Name="Offset">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Scale">
+					<Value>1</Value>
+				</Property>
+				<Property Name="FormatType">
+					<Value>0</Value>
+				</Property>
+				<Property Name="FormatString">
+					<Value>0</Value>
+				</Property>
+				<Property Name="NoOfDecimals">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Value">
+					<Value>MQAyADMAAAA=</Value>
+				</Property>
+				<Property Name="StringLength">
+					<Value>4</Value>
+				</Property>
+				<Property Name="MinValue">
+					<Value>0</Value>
+				</Property>
+				<Property Name="MaxValue">
+					<Value>65535</Value>
+				</Property>
+				<Property Name="Enabled">
+					<Value>1</Value>
+				</Property>
+				<Property Name="LeadingZeros">
+					<Value>0</Value>
+				</Property>
+				<Property Name="ZeroAsBlank">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Truncate">
+					<Value>0</Value>
+				</Property>
+				<Property Name="RealTimeDataInput">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Width">
+					<Value>111</Value>
+				</Property>
+				<Property Name="Height">
+					<Value>20</Value>
+				</Property>
+				<Property Name="Visible">
+					<Value>1</Value>
+				</Property>
+				<Property Name="Locked">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Comment">
+					<Value>
+						<![CDATA[AAA=]]>
+					</Value>
+				</Property>
+				<Property Name="Disabled">
+					<Value>0</Value>
+				</Property>
+				<Property Name="ExternalReferenceAllowed">
+					<Value>0</Value>
+				</Property>
+			</PropertySheet>
+			<Objects>
+				<Object JVS-ID="23001"/>
+			</Objects>
+		</Object>
+		<Object Class="CInputNumber" Name="Edit" ObjectName="InputNumber_9001" Pinned="FALSE" JVS-ID="9001">
+			<PropertySheet Name="EditBox">
+				<Property Name="Text">
+					<Value>
+						<![CDATA[MQAyADMAAAA=]]>
+					</Value>
+				</Property>
+				<Property Name="ResourceID">
+					<Value/>
+				</Property>
+				<Property Name="BackColor">
+					<Value>16777215</Value>
+				</Property>
+				<Property Name="BackMode">
+					<Value>2</Value>
+				</Property>
+				<Property Name="BorderStyle">
+					<Value>2</Value>
+				</Property>
+				<Property Name="AlignH">
+					<Value>2</Value>
+				</Property>
+				<Property Name="AlignV">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Multiline">
+					<Value>1</Value>
+				</Property>
+				<Property Name="Wordbreak">
+					<Value>1</Value>
+				</Property>
+				<Property Name="WrapOnHyphen">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Numeric">
+					<Value>1</Value>
+				</Property>
+				<Property Name="RoundEdgeRadius">
+					<Value>0.000000</Value>
+				</Property>
+				<Property Name="InputDlgFlags">
+					<Value>0</Value>
+				</Property>
+				<Property Name="InputDlgTitle">
+					<Value>
+						<![CDATA[JVER]]>
+					</Value>
+				</Property>
+				<Property Name="InputDlgLabel">
+					<Value>
+						<![CDATA[Type new value:]]>
+					</Value>
+				</Property>
+				<Property Name="InputDlgResourceID">
+					<Value>
+						<![CDATA[]]>
+					</Value>
+				</Property>
+				<Property Name="Offset">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Scale">
+					<Value>1</Value>
+				</Property>
+				<Property Name="FormatType">
+					<Value>0</Value>
+				</Property>
+				<Property Name="FormatString">
+					<Value>0</Value>
+				</Property>
+				<Property Name="NoOfDecimals">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Value">
+					<Value>MQAyADMAAAA=</Value>
+				</Property>
+				<Property Name="StringLength">
+					<Value>4</Value>
+				</Property>
+				<Property Name="MinValue">
+					<Value>0</Value>
+				</Property>
+				<Property Name="MaxValue">
+					<Value>65535</Value>
+				</Property>
+				<Property Name="Enabled">
+					<Value>1</Value>
+				</Property>
+				<Property Name="LeadingZeros">
+					<Value>0</Value>
+				</Property>
+				<Property Name="ZeroAsBlank">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Truncate">
+					<Value>0</Value>
+				</Property>
+				<Property Name="RealTimeDataInput">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Width">
+					<Value>129</Value>
+				</Property>
+				<Property Name="Height">
+					<Value>24</Value>
+				</Property>
+				<Property Name="Visible">
+					<Value>1</Value>
+				</Property>
+				<Property Name="Locked">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Comment">
+					<Value>
+						<![CDATA[AAA=]]>
+					</Value>
+				</Property>
+				<Property Name="Disabled">
+					<Value>0</Value>
+				</Property>
+				<Property Name="ExternalReferenceAllowed">
+					<Value>0</Value>
+				</Property>
+			</PropertySheet>
+			<Objects>
+				<Object JVS-ID="23001"/>
+			</Objects>
+		</Object>
+		<Object Class="CInputNumber" Name="Edit" ObjectName="InputNumber_9002" Pinned="FALSE" JVS-ID="9002">
+			<PropertySheet Name="EditBox">
+				<Property Name="Text">
+					<Value>
+						<![CDATA[MQAyADMAAAA=]]>
+					</Value>
+				</Property>
+				<Property Name="ResourceID">
+					<Value/>
+				</Property>
+				<Property Name="BackColor">
+					<Value>16777215</Value>
+				</Property>
+				<Property Name="BackMode">
+					<Value>2</Value>
+				</Property>
+				<Property Name="BorderStyle">
+					<Value>2</Value>
+				</Property>
+				<Property Name="AlignH">
+					<Value>2</Value>
+				</Property>
+				<Property Name="AlignV">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Multiline">
+					<Value>1</Value>
+				</Property>
+				<Property Name="Wordbreak">
+					<Value>1</Value>
+				</Property>
+				<Property Name="WrapOnHyphen">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Numeric">
+					<Value>1</Value>
+				</Property>
+				<Property Name="RoundEdgeRadius">
+					<Value>0.000000</Value>
+				</Property>
+				<Property Name="InputDlgFlags">
+					<Value>0</Value>
+				</Property>
+				<Property Name="InputDlgTitle">
+					<Value>
+						<![CDATA[JVER]]>
+					</Value>
+				</Property>
+				<Property Name="InputDlgLabel">
+					<Value>
+						<![CDATA[Type new value:]]>
+					</Value>
+				</Property>
+				<Property Name="InputDlgResourceID">
+					<Value>
+						<![CDATA[]]>
+					</Value>
+				</Property>
+				<Property Name="Offset">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Scale">
+					<Value>1</Value>
+				</Property>
+				<Property Name="FormatType">
+					<Value>0</Value>
+				</Property>
+				<Property Name="FormatString">
+					<Value>0</Value>
+				</Property>
+				<Property Name="NoOfDecimals">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Value">
+					<Value>MQAyADMAAAA=</Value>
+				</Property>
+				<Property Name="StringLength">
+					<Value>4</Value>
+				</Property>
+				<Property Name="MinValue">
+					<Value>0</Value>
+				</Property>
+				<Property Name="MaxValue">
+					<Value>65535</Value>
+				</Property>
+				<Property Name="Enabled">
+					<Value>1</Value>
+				</Property>
+				<Property Name="LeadingZeros">
+					<Value>0</Value>
+				</Property>
+				<Property Name="ZeroAsBlank">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Truncate">
+					<Value>0</Value>
+				</Property>
+				<Property Name="RealTimeDataInput">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Width">
+					<Value>129</Value>
+				</Property>
+				<Property Name="Height">
+					<Value>24</Value>
+				</Property>
+				<Property Name="Visible">
+					<Value>1</Value>
+				</Property>
+				<Property Name="Locked">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Comment">
+					<Value>
+						<![CDATA[AAA=]]>
+					</Value>
+				</Property>
+				<Property Name="Disabled">
+					<Value>0</Value>
+				</Property>
+				<Property Name="ExternalReferenceAllowed">
+					<Value>0</Value>
+				</Property>
+			</PropertySheet>
+			<Objects>
+				<Object JVS-ID="23003"/>
+			</Objects>
+		</Object>
+		<Object Class="CInputNumber" Name="Edit" ObjectName="InputNumber_9003" Pinned="FALSE" JVS-ID="9003">
+			<PropertySheet Name="EditBox">
+				<Property Name="Text">
+					<Value>
+						<![CDATA[MQAyADMAAAA=]]>
+					</Value>
+				</Property>
+				<Property Name="ResourceID">
+					<Value/>
+				</Property>
+				<Property Name="BackColor">
+					<Value>16777215</Value>
+				</Property>
+				<Property Name="BackMode">
+					<Value>2</Value>
+				</Property>
+				<Property Name="BorderStyle">
+					<Value>2</Value>
+				</Property>
+				<Property Name="AlignH">
+					<Value>2</Value>
+				</Property>
+				<Property Name="AlignV">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Multiline">
+					<Value>1</Value>
+				</Property>
+				<Property Name="Wordbreak">
+					<Value>1</Value>
+				</Property>
+				<Property Name="WrapOnHyphen">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Numeric">
+					<Value>1</Value>
+				</Property>
+				<Property Name="RoundEdgeRadius">
+					<Value>0.000000</Value>
+				</Property>
+				<Property Name="InputDlgFlags">
+					<Value>0</Value>
+				</Property>
+				<Property Name="InputDlgTitle">
+					<Value>
+						<![CDATA[JVER]]>
+					</Value>
+				</Property>
+				<Property Name="InputDlgLabel">
+					<Value>
+						<![CDATA[Type new value:]]>
+					</Value>
+				</Property>
+				<Property Name="InputDlgResourceID">
+					<Value>
+						<![CDATA[]]>
+					</Value>
+				</Property>
+				<Property Name="Offset">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Scale">
+					<Value>1</Value>
+				</Property>
+				<Property Name="FormatType">
+					<Value>0</Value>
+				</Property>
+				<Property Name="FormatString">
+					<Value>0</Value>
+				</Property>
+				<Property Name="NoOfDecimals">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Value">
+					<Value>MQAyADMAAAA=</Value>
+				</Property>
+				<Property Name="StringLength">
+					<Value>4</Value>
+				</Property>
+				<Property Name="MinValue">
+					<Value>0</Value>
+				</Property>
+				<Property Name="MaxValue">
+					<Value>65535</Value>
+				</Property>
+				<Property Name="Enabled">
+					<Value>1</Value>
+				</Property>
+				<Property Name="LeadingZeros">
+					<Value>0</Value>
+				</Property>
+				<Property Name="ZeroAsBlank">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Truncate">
+					<Value>0</Value>
+				</Property>
+				<Property Name="RealTimeDataInput">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Width">
+					<Value>129</Value>
+				</Property>
+				<Property Name="Height">
+					<Value>24</Value>
+				</Property>
+				<Property Name="Visible">
+					<Value>1</Value>
+				</Property>
+				<Property Name="Locked">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Comment">
+					<Value>
+						<![CDATA[AAA=]]>
+					</Value>
+				</Property>
+				<Property Name="Disabled">
+					<Value>0</Value>
+				</Property>
+				<Property Name="ExternalReferenceAllowed">
+					<Value>0</Value>
+				</Property>
+			</PropertySheet>
+			<Objects>
+				<Object JVS-ID="23004"/>
+			</Objects>
+		</Object>
+		<Object Class="COutputText" Name="Text" ObjectName="OutputString_11000" Pinned="FALSE" JVS-ID="11000">
+			<PropertySheet Name="Text">
+				<Property Name="Text">
+					<Value>
+						<![CDATA[UwBwAGUAZQBkAAAA]]>
+					</Value>
+				</Property>
+				<Property Name="ResourceID">
+					<Value>Resource file::SPEED</Value>
 				</Property>
 				<Property Name="MultiLine">
 					<Value>0</Value>
@@ -447,10 +1284,10 @@ ADkAAAA=]]>
 					<Value>0</Value>
 				</Property>
 				<Property Name="AlignH">
-					<Value>1</Value>
+					<Value>0</Value>
 				</Property>
 				<Property Name="AlignV">
-					<Value>4</Value>
+					<Value>0</Value>
 				</Property>
 				<Property Name="Appearance">
 					<Value>0</Value>
@@ -478,7 +1315,7 @@ ADkAAAA=]]>
 				</Property>
 				<Property Name="Value">
 					<Value>
-						<![CDATA[VAByAGEAbgBzAGwAYQB0AGUAdQByACAAUwBFAE0AQQBTAAAA]]>
+						<![CDATA[AAA=]]>
 					</Value>
 				</Property>
 				<Property Name="StringLength">
@@ -503,10 +1340,10 @@ ADkAAAA=]]>
 					<Value>0</Value>
 				</Property>
 				<Property Name="Width">
-					<Value>254</Value>
+					<Value>101</Value>
 				</Property>
 				<Property Name="Height">
-					<Value>36</Value>
+					<Value>23</Value>
 				</Property>
 				<Property Name="Visible">
 					<Value>1</Value>
@@ -534,11 +1371,11 @@ ADkAAAA=]]>
 			<PropertySheet Name="Text">
 				<Property Name="Text">
 					<Value>
-						<![CDATA[QgB5ACAATABlAG0AYwBhAAAA]]>
+						<![CDATA[UwBlAHQAdABpAG4AZwAAAA==]]>
 					</Value>
 				</Property>
 				<Property Name="ResourceID">
-					<Value/>
+					<Value>Resource file::SET</Value>
 				</Property>
 				<Property Name="MultiLine">
 					<Value>0</Value>
@@ -550,10 +1387,10 @@ ADkAAAA=]]>
 					<Value>0</Value>
 				</Property>
 				<Property Name="AlignH">
-					<Value>1</Value>
+					<Value>0</Value>
 				</Property>
 				<Property Name="AlignV">
-					<Value>4</Value>
+					<Value>0</Value>
 				</Property>
 				<Property Name="Appearance">
 					<Value>0</Value>
@@ -581,7 +1418,7 @@ ADkAAAA=]]>
 				</Property>
 				<Property Name="Value">
 					<Value>
-						<![CDATA[QgB5ACAATABlAG0AYwBhAAAA]]>
+						<![CDATA[VABlAHgAdAAAAA==]]>
 					</Value>
 				</Property>
 				<Property Name="StringLength">
@@ -606,10 +1443,10 @@ ADkAAAA=]]>
 					<Value>0</Value>
 				</Property>
 				<Property Name="Width">
-					<Value>182</Value>
+					<Value>109</Value>
 				</Property>
 				<Property Name="Height">
-					<Value>26</Value>
+					<Value>20</Value>
 				</Property>
 				<Property Name="Visible">
 					<Value>1</Value>
@@ -637,12 +1474,11 @@ ADkAAAA=]]>
 			<PropertySheet Name="Text">
 				<Property Name="Text">
 					<Value>
-						<![CDATA[MAAxADIAMwA0ADUANgA3ADgAOQAwADEAMgAzADQANQA2ADcAOAA5ADAAMQAyADMANAA1ADYANwA4
-ADkAMAAxADIAMwA0ADUANgA3ADgAOQAwAAAA]]>
+						<![CDATA[QQBnAGcAcgBlAHMAcwBpAHYAZQBuAGUAcwBzAAAA]]>
 					</Value>
 				</Property>
 				<Property Name="ResourceID">
-					<Value/>
+					<Value>Resource file::AGGRESSIVENESS</Value>
 				</Property>
 				<Property Name="MultiLine">
 					<Value>0</Value>
@@ -710,10 +1546,10 @@ ADkAMAAxADIAMwA0ADUANgA3ADgAOQAwAAAA]]>
 					<Value>0</Value>
 				</Property>
 				<Property Name="Width">
-					<Value>435</Value>
+					<Value>172</Value>
 				</Property>
 				<Property Name="Height">
-					<Value>28</Value>
+					<Value>21</Value>
 				</Property>
 				<Property Name="Visible">
 					<Value>1</Value>
@@ -735,19 +1571,17 @@ ADkAMAAxADIAMwA0ADUANgA3ADgAOQAwAAAA]]>
 			</PropertySheet>
 			<Objects>
 				<Object JVS-ID="23000"/>
-				<Object JVS-ID="22000"/>
 			</Objects>
 		</Object>
 		<Object Class="COutputText" Name="Text" ObjectName="OutputString_11003" Pinned="FALSE" JVS-ID="11003">
 			<PropertySheet Name="Text">
 				<Property Name="Text">
 					<Value>
-						<![CDATA[MAAxADIAMwA0ADUANgA3ADgAOQAwADEAMgAzADQANQA2ADcAOAA5ADAAMAAxADIAMwA0ADUANgA3
-ADgAOQAwADEAMgAzADQANQA2ADcAOAA5ADAAAAA=]]>
+						<![CDATA[UwBpAG0AdQBsAGEAdABlAGQAIABzAHAAZQBlAGQAAAA=]]>
 					</Value>
 				</Property>
 				<Property Name="ResourceID">
-					<Value/>
+					<Value>Resource file::SIMSPEED</Value>
 				</Property>
 				<Property Name="MultiLine">
 					<Value>0</Value>
@@ -815,10 +1649,10 @@ ADgAOQAwADEAMgAzADQANQA2ADcAOAA5ADAAAAA=]]>
 					<Value>0</Value>
 				</Property>
 				<Property Name="Width">
-					<Value>440</Value>
+					<Value>185</Value>
 				</Property>
 				<Property Name="Height">
-					<Value>24</Value>
+					<Value>21</Value>
 				</Property>
 				<Property Name="Visible">
 					<Value>1</Value>
@@ -840,7 +1674,6 @@ ADgAOQAwADEAMgAzADQANQA2ADcAOAA5ADAAAAA=]]>
 			</PropertySheet>
 			<Objects>
 				<Object JVS-ID="23000"/>
-				<Object JVS-ID="22001"/>
 			</Objects>
 		</Object>
 		<Object Class="COutputText" Name="Text" ObjectName="OutputString_11004" Pinned="FALSE" JVS-ID="11004">
@@ -920,10 +1753,10 @@ ADkAAAA=]]>
 					<Value>0</Value>
 				</Property>
 				<Property Name="Width">
-					<Value>420</Value>
+					<Value>85</Value>
 				</Property>
 				<Property Name="Height">
-					<Value>34</Value>
+					<Value>20</Value>
 				</Property>
 				<Property Name="Visible">
 					<Value>1</Value>
@@ -948,11 +1781,320 @@ ADkAAAA=]]>
 				<Object JVS-ID="22002"/>
 			</Objects>
 		</Object>
-		<Object Class="CImage" Name="Image" ObjectName="logo_semas_20000" Pinned="FALSE" JVS-ID="20000">
+		<Object Class="COutputText" Name="Text" ObjectName="OutputString_11005" Pinned="FALSE" JVS-ID="11005">
+			<PropertySheet Name="Text">
+				<Property Name="Text">
+					<Value>
+						<![CDATA[UwBlAG4AcwBvAHIAIABMAGUAZgB0AAAA]]>
+					</Value>
+				</Property>
+				<Property Name="ResourceID">
+					<Value>Resource file::SENSORL</Value>
+				</Property>
+				<Property Name="MultiLine">
+					<Value>0</Value>
+				</Property>
+				<Property Name="WordBreak">
+					<Value>0</Value>
+				</Property>
+				<Property Name="WrapOnHyphen">
+					<Value>0</Value>
+				</Property>
+				<Property Name="AlignH">
+					<Value>0</Value>
+				</Property>
+				<Property Name="AlignV">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Appearance">
+					<Value>0</Value>
+				</Property>
+				<Property Name="ControlType">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Numeric">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Offset">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Scale">
+					<Value>1</Value>
+				</Property>
+				<Property Name="FormatType">
+					<Value>0</Value>
+				</Property>
+				<Property Name="FormatString">
+					<Value>0</Value>
+				</Property>
+				<Property Name="NoOfDecimals">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Value">
+					<Value>
+						<![CDATA[VABlAHgAdAAAAA==]]>
+					</Value>
+				</Property>
+				<Property Name="StringLength">
+					<Value>4</Value>
+				</Property>
+				<Property Name="Transparent">
+					<Value>0</Value>
+				</Property>
+				<Property Name="LeadingZeros">
+					<Value>0</Value>
+				</Property>
+				<Property Name="ZeroAsBlank">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Truncate">
+					<Value>0</Value>
+				</Property>
+				<Property Name="BkColor">
+					<Value>16777215</Value>
+				</Property>
+				<Property Name="RoundEdgeRadius">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Width">
+					<Value>135</Value>
+				</Property>
+				<Property Name="Height">
+					<Value>22</Value>
+				</Property>
+				<Property Name="Visible">
+					<Value>1</Value>
+				</Property>
+				<Property Name="Locked">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Comment">
+					<Value>
+						<![CDATA[AAA=]]>
+					</Value>
+				</Property>
+				<Property Name="Disabled">
+					<Value>0</Value>
+				</Property>
+				<Property Name="ExternalReferenceAllowed">
+					<Value>0</Value>
+				</Property>
+			</PropertySheet>
+			<Objects>
+				<Object JVS-ID="23000"/>
+			</Objects>
+		</Object>
+		<Object Class="COutputText" Name="Text" ObjectName="OutputString_11006" Pinned="FALSE" JVS-ID="11006">
+			<PropertySheet Name="Text">
+				<Property Name="Text">
+					<Value>
+						<![CDATA[UwBlAG4AcwBvAHIAIABDAGUAbgB0AGUAcgAAAA==]]>
+					</Value>
+				</Property>
+				<Property Name="ResourceID">
+					<Value>Resource file::SENSORC</Value>
+				</Property>
+				<Property Name="MultiLine">
+					<Value>0</Value>
+				</Property>
+				<Property Name="WordBreak">
+					<Value>0</Value>
+				</Property>
+				<Property Name="WrapOnHyphen">
+					<Value>0</Value>
+				</Property>
+				<Property Name="AlignH">
+					<Value>0</Value>
+				</Property>
+				<Property Name="AlignV">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Appearance">
+					<Value>0</Value>
+				</Property>
+				<Property Name="ControlType">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Numeric">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Offset">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Scale">
+					<Value>1</Value>
+				</Property>
+				<Property Name="FormatType">
+					<Value>0</Value>
+				</Property>
+				<Property Name="FormatString">
+					<Value>0</Value>
+				</Property>
+				<Property Name="NoOfDecimals">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Value">
+					<Value>
+						<![CDATA[VABlAHgAdAAAAA==]]>
+					</Value>
+				</Property>
+				<Property Name="StringLength">
+					<Value>4</Value>
+				</Property>
+				<Property Name="Transparent">
+					<Value>0</Value>
+				</Property>
+				<Property Name="LeadingZeros">
+					<Value>0</Value>
+				</Property>
+				<Property Name="ZeroAsBlank">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Truncate">
+					<Value>0</Value>
+				</Property>
+				<Property Name="BkColor">
+					<Value>16777215</Value>
+				</Property>
+				<Property Name="RoundEdgeRadius">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Width">
+					<Value>156</Value>
+				</Property>
+				<Property Name="Height">
+					<Value>18</Value>
+				</Property>
+				<Property Name="Visible">
+					<Value>1</Value>
+				</Property>
+				<Property Name="Locked">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Comment">
+					<Value>
+						<![CDATA[AAA=]]>
+					</Value>
+				</Property>
+				<Property Name="Disabled">
+					<Value>0</Value>
+				</Property>
+				<Property Name="ExternalReferenceAllowed">
+					<Value>0</Value>
+				</Property>
+			</PropertySheet>
+			<Objects>
+				<Object JVS-ID="23000"/>
+			</Objects>
+		</Object>
+		<Object Class="COutputText" Name="Text" ObjectName="OutputString_11007" Pinned="FALSE" JVS-ID="11007">
+			<PropertySheet Name="Text">
+				<Property Name="Text">
+					<Value>
+						<![CDATA[UwBlAG4AcwBvAHIAIABSAGkAZwBoAHQAAAA=]]>
+					</Value>
+				</Property>
+				<Property Name="ResourceID">
+					<Value>Resource file::SENSORD</Value>
+				</Property>
+				<Property Name="MultiLine">
+					<Value>0</Value>
+				</Property>
+				<Property Name="WordBreak">
+					<Value>0</Value>
+				</Property>
+				<Property Name="WrapOnHyphen">
+					<Value>0</Value>
+				</Property>
+				<Property Name="AlignH">
+					<Value>0</Value>
+				</Property>
+				<Property Name="AlignV">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Appearance">
+					<Value>0</Value>
+				</Property>
+				<Property Name="ControlType">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Numeric">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Offset">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Scale">
+					<Value>1</Value>
+				</Property>
+				<Property Name="FormatType">
+					<Value>0</Value>
+				</Property>
+				<Property Name="FormatString">
+					<Value>0</Value>
+				</Property>
+				<Property Name="NoOfDecimals">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Value">
+					<Value>
+						<![CDATA[VABlAHgAdAAAAA==]]>
+					</Value>
+				</Property>
+				<Property Name="StringLength">
+					<Value>4</Value>
+				</Property>
+				<Property Name="Transparent">
+					<Value>0</Value>
+				</Property>
+				<Property Name="LeadingZeros">
+					<Value>0</Value>
+				</Property>
+				<Property Name="ZeroAsBlank">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Truncate">
+					<Value>0</Value>
+				</Property>
+				<Property Name="BkColor">
+					<Value>16777215</Value>
+				</Property>
+				<Property Name="RoundEdgeRadius">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Width">
+					<Value>146</Value>
+				</Property>
+				<Property Name="Height">
+					<Value>17</Value>
+				</Property>
+				<Property Name="Visible">
+					<Value>1</Value>
+				</Property>
+				<Property Name="Locked">
+					<Value>0</Value>
+				</Property>
+				<Property Name="Comment">
+					<Value>
+						<![CDATA[AAA=]]>
+					</Value>
+				</Property>
+				<Property Name="Disabled">
+					<Value>0</Value>
+				</Property>
+				<Property Name="ExternalReferenceAllowed">
+					<Value>0</Value>
+				</Property>
+			</PropertySheet>
+			<Objects>
+				<Object JVS-ID="23000"/>
+			</Objects>
+		</Object>
+		<Object Class="CImage" Name="Image" ObjectName="semas_logo_20000" Pinned="FALSE" JVS-ID="20000">
 			<PropertySheet Name="Image">
 				<Property Name="Path">
 					<Value>
-						<![CDATA[..\..\..\..\gui\logo_semas.png]]>
+						<![CDATA[..\..\..\..\..\..\..\Desktop\semas-logo.png]]>
 					</Value>
 				</Property>
 				<Property Name="ResourceID">
@@ -965,13 +2107,13 @@ ADkAAAA=]]>
 					<Value>0</Value>
 				</Property>
 				<Property Name="TransColor">
-					<Value>12748446</Value>
+					<Value>16711935</Value>
 				</Property>
 				<Property Name="ControlType">
 					<Value>0</Value>
 				</Property>
 				<Property Name="BitPerPixel">
-					<Value>4</Value>
+					<Value>8</Value>
 				</Property>
 				<Property Name="IsFlashing">
 					<Value>0</Value>
@@ -983,19 +2125,19 @@ ADkAAAA=]]>
 					<Value>0</Value>
 				</Property>
 				<Property Name="RealImageWidth">
-					<Value>397</Value>
+					<Value>340</Value>
 				</Property>
 				<Property Name="RealImageHeight">
-					<Value>123</Value>
+					<Value>105</Value>
 				</Property>
 				<Property Name="RotationAngle">
-					<Value>0.000000</Value>
+					<Value>359.980218</Value>
 				</Property>
 				<Property Name="Width">
-					<Value>397</Value>
+					<Value>340</Value>
 				</Property>
 				<Property Name="Height">
-					<Value>122.920502</Value>
+					<Value>105.271967</Value>
 				</Property>
 				<Property Name="Visible">
 					<Value>1</Value>
@@ -1220,11 +2362,11 @@ ADkAAAA=]]>
 				</Property>
 			</PropertySheet>
 		</Object>
-		<Object Class="CImage" Name="Image" ObjectName="logo_semas_20004" Pinned="FALSE" JVS-ID="20004">
+		<Object Class="CImage" Name="Image" ObjectName="semas_logo_20004" Pinned="FALSE" JVS-ID="20004">
 			<PropertySheet Name="Image">
 				<Property Name="Path">
 					<Value>
-						<![CDATA[..\..\..\..\gui\logo_semas.png]]>
+						<![CDATA[..\..\..\..\..\..\..\Desktop\semas-logo.png]]>
 					</Value>
 				</Property>
 				<Property Name="ResourceID">
@@ -1237,13 +2379,13 @@ ADkAAAA=]]>
 					<Value>0</Value>
 				</Property>
 				<Property Name="TransColor">
-					<Value>12748446</Value>
+					<Value>16711935</Value>
 				</Property>
 				<Property Name="ControlType">
 					<Value>0</Value>
 				</Property>
 				<Property Name="BitPerPixel">
-					<Value>4</Value>
+					<Value>8</Value>
 				</Property>
 				<Property Name="IsFlashing">
 					<Value>0</Value>
@@ -1255,19 +2397,19 @@ ADkAAAA=]]>
 					<Value>0</Value>
 				</Property>
 				<Property Name="RealImageWidth">
-					<Value>78</Value>
+					<Value>68</Value>
 				</Property>
 				<Property Name="RealImageHeight">
-					<Value>24</Value>
+					<Value>21</Value>
 				</Property>
 				<Property Name="RotationAngle">
-					<Value>359.980218</Value>
+					<Value>-nan(ind)</Value>
 				</Property>
 				<Property Name="Width">
-					<Value>78.008403</Value>
+					<Value>68</Value>
 				</Property>
 				<Property Name="Height">
-					<Value>24.027324</Value>
+					<Value>21.054393</Value>
 				</Property>
 				<Property Name="Visible">
 					<Value>1</Value>

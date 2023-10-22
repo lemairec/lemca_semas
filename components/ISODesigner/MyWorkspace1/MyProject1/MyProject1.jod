@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <JetViewSoft-DefaultObjects Version="3.0" ProductVersion="5.6.1.5243" RelatedObjectPool=".\MyProject1.jop">
 	<Objects>
+		<Object Class="CCheckBox">
+			<Objects>
+				<Object Class="CFontStyle" JVS-ID="23002" ObjectName="FontAttributes_23002"/>
+			</Objects>
+		</Object>
+		<Object Class="CInputList">
+			<Objects/>
+		</Object>
+		<Object Class="CInputNumber">
+			<Objects>
+				<Object Class="CFontStyle" JVS-ID="23001" ObjectName="FontAttributes_23001"/>
+			</Objects>
+		</Object>
 		<Object Class="COutputText">
 			<Objects>
 				<Object Class="CStringVariable" JVS-ID="22002" ObjectName="StringVariable_Vitesse"/>

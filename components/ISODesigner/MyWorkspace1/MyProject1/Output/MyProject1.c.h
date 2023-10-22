@@ -1,49 +1,53 @@
 // ISO-Designer ISO 11783   Version 5.6.1.5243 Jetter AG
 // Do not change!
 
-#define WorkingSet_0_Offset                                     1
-#define DataMask_Home_Offset                                   21
-#define SoftKeyMask_Home_Offset                                65
-#define SoftKey_right_Offset                                   91
-#define SoftKey_left_Offset                                   104
-#define SoftKey_middle_Offset                                 117
-#define SoftKey_auto_Offset                                   130
-#define SoftKeySectionOnOff_Offset                            143
-#define SoftKeySectionLeft_Offset                             156
-#define SoftKeySectionRight_Offset                            169
-#define OutputString_11000_Offset                             182
-#define OutputString_11001_Offset                             216
-#define OutputString_11002_Offset                             241
-#define OutputString_11003_Offset                             258
-#define OutputString_11004_Offset                             275
-#define logo_semas_20000_Offset                               292
-#define section_on_off_Offset                               35681
-#define section_left_Offset                                 36546
-#define section_right_Offset                                37039
-#define logo_semas_20004_Offset                             37532
-#define Auto_on_20008_Offset                                38485
-#define Auto_off_20009_Offset                               39412
-#define CylinderIn_20019_Offset                             39799
-#define CylinderOut_20020_Offset                            40106
-#define StringVariable_Debug_Offset                         40413
-#define StringVariable_Debug2_Offset                        40459
-#define StringVariable_Vitesse_Offset                       40506
-#define FontAttributes_23000_Offset                         40541
-#define Generated_Pointer_To_Null_Offset                    40549
-#define AuxFunction2_right_Offset                           40554
-#define AuxFunction2_left_Offset                            40566
-#define AuxFunction2_middle_Offset                          40578
-#define AuxFunction2_auto_Offset                            40590
-#define AuxFunctionSectionOnOff_Offset                      40602
-#define AuxFunctionSectionRight_Offset                      40614
-#define AuxFunctionSectionLeft_Offset                       40626
+#define WorkingSet_Offset                                       1
+#define Macro_1_Offset                                         21
+#define DataMask_Home_Offset                                   34
+#define DataMask_1001_Offset                                   60
+#define SoftKeyMask_Home_Offset                                98
+#define SoftKey_right_Offset                                  124
+#define SoftKey_left_Offset                                   137
+#define SoftKey_middle_Offset                                 150
+#define SoftKey_auto_Offset                                   163
+#define SoftKeySectionOnOff_Offset                            176
+#define SoftKeySectionLeft_Offset                             189
+#define SoftKeySectionRight_Offset                            204
+#define InputBoolean_7000_Offset                              217
+#define InputNumber_9000_Offset                               230
+#define OutputString_11000_Offset                             268
+#define OutputString_11001_Offset                             290
+#define OutputString_11002_Offset                             314
+#define OutputString_11003_Offset                             345
+#define OutputString_11004_Offset                             377
+#define semas_logo_20000_Offset                               394
+#define section_on_off_Offset                               71155
+#define section_left_Offset                                 72020
+#define section_right_Offset                                72513
+#define semas_logo_20004_Offset                             73006
+#define Auto_on_20008_Offset                                74430
+#define Auto_off_20009_Offset                               75357
+#define CylinderIn_20019_Offset                             75744
+#define CylinderOut_20020_Offset                            76051
+#define StringVariable_Vitesse_Offset                       76358
+#define FontAttributes_23000_Offset                         76393
+#define FontAttributes_23001_Offset                         76401
+#define FontAttributes_23002_Offset                         76409
+#define Generated_Pointer_To_Null_Offset                    76417
+#define AuxFunction2_right_Offset                           76422
+#define AuxFunction2_left_Offset                            76434
+#define AuxFunction2_middle_Offset                          76446
+#define AuxFunction2_auto_Offset                            76458
+#define AuxFunctionSectionOnOff_Offset                      76470
+#define AuxFunctionSectionRight_Offset                      76482
+#define AuxFunctionSectionLeft_Offset                       76494
 
 #define ISO_OP_MEMORY_CLASS
 
-#define ISO_OP_MyProject1_Size  40638
+#define ISO_OP_MyProject1_Size  76506
 extern const unsigned char ISO_OP_MEMORY_CLASS isoOP_MyProject1[];
 
-#define ISO_OP_MyProject1_ObjectNumber     36
+#define ISO_OP_MyProject1_ObjectNumber     40
 extern const unsigned long ISO_OP_MEMORY_CLASS isoOP_MyProject1_Offset[];
 extern const unsigned long ISO_OP_MEMORY_CLASS isoOP_MyProject1_Offset_Id[];
 #define ISO_OP_MyProject1_Scale_Offset      1
