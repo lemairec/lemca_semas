@@ -6,9 +6,6 @@
 				<Object Class="CFontStyle" JVS-ID="23002" ObjectName="FontAttributes_23002"/>
 			</Objects>
 		</Object>
-		<Object Class="CInputList">
-			<Objects/>
-		</Object>
 		<Object Class="CInputNumber">
 			<Objects>
 				<Object Class="CFontStyle" JVS-ID="23001" ObjectName="FontAttributes_23001"/>

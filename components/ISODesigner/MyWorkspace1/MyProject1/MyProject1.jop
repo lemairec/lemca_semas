@@ -673,6 +673,14 @@ ADkAAAA=]]>
 		</Object>
 		<Object Class="CCheckBox" Name="Checkbox" ObjectName="InputBoolean_7000" Pinned="FALSE" JVS-ID="7000">
 			<PropertySheet Name="Checkbox">
+				<Property Name="Text">
+					<Value>
+						<![CDATA[AAA=]]>
+					</Value>
+				</Property>
+				<Property Name="ResourceID">
+					<Value/>
+				</Property>
 				<Property Name="3DStyle">
 					<Value>1</Value>
 				</Property>
@@ -683,7 +691,7 @@ ADkAAAA=]]>
 					<Value>0</Value>
 				</Property>
 				<Property Name="RoundEdgeRadius">
-					<Value>2156951686884457600486059795899314553595120594603068943150977490966106480968010960121281160963438616088671465428951207218037719552275926565415710043493775936114909405157945512144412035387336872683706846352145667485850691451224064.000000</Value>
+					<Value>2156951688142608045422936937732377380442496419191099275201856927870153537186936483680410390715052291141439834517052257448234054239924775446053593339595556389622868525984867644729046494774840304943925829059579833492065156788649984.000000</Value>
 				</Property>
 				<Property Name="checked">
 					<Value>0</Value>
@@ -713,16 +721,16 @@ ADkAAAA=]]>
 					<Value>1</Value>
 				</Property>
 				<Property Name="LeadingZeros">
-					<Value>24609752</Value>
+					<Value>1</Value>
 				</Property>
 				<Property Name="ZeroAsBlank">
-					<Value>24609752</Value>
+					<Value>1</Value>
 				</Property>
 				<Property Name="Truncate">
-					<Value>24609752</Value>
+					<Value>1</Value>
 				</Property>
 				<Property Name="RealTimeDataInput">
-					<Value>24609752</Value>
+					<Value>1</Value>
 				</Property>
 				<Property Name="Width">
 					<Value>24</Value>
@@ -2094,7 +2102,7 @@ ADkAAAA=]]>
 			<PropertySheet Name="Image">
 				<Property Name="Path">
 					<Value>
-						<![CDATA[..\..\..\..\..\..\..\Desktop\semas-logo.png]]>
+						<![CDATA[.\icon\semas-logo.png]]>
 					</Value>
 				</Property>
 				<Property Name="ResourceID">
@@ -2134,10 +2142,10 @@ ADkAAAA=]]>
 					<Value>359.980218</Value>
 				</Property>
 				<Property Name="Width">
-					<Value>340</Value>
+					<Value>340.036764</Value>
 				</Property>
 				<Property Name="Height">
-					<Value>105.271967</Value>
+					<Value>105.119106</Value>
 				</Property>
 				<Property Name="Visible">
 					<Value>1</Value>
@@ -2403,13 +2411,13 @@ ADkAAAA=]]>
 					<Value>21</Value>
 				</Property>
 				<Property Name="RotationAngle">
-					<Value>-nan(ind)</Value>
+					<Value>0.000000</Value>
 				</Property>
 				<Property Name="Width">
 					<Value>68</Value>
 				</Property>
 				<Property Name="Height">
-					<Value>21.054393</Value>
+					<Value>21</Value>
 				</Property>
 				<Property Name="Visible">
 					<Value>1</Value>
