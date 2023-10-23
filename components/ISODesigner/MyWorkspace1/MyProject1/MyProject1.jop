@@ -691,7 +691,7 @@ ADkAAAA=]]>
 					<Value>0</Value>
 				</Property>
 				<Property Name="RoundEdgeRadius">
-					<Value>2156951688142608045422936937732377380442496419191099275201856927870153537186936483680410390715052291141439834517052257448234054239924775446053593339595556389622868525984867644729046494774840304943925829059579833492065156788649984.000000</Value>
+					<Value>2156951686090906597080169337130897319685098045389335478451252178518092162186517201147437110369332269295338875480800546734739534322268175534657869151551645376121387564866025327864518362784829650706427576993193307592244435722698752.000000</Value>
 				</Property>
 				<Property Name="checked">
 					<Value>0</Value>
@@ -2127,25 +2127,25 @@ ADkAAAA=]]>
 					<Value>0</Value>
 				</Property>
 				<Property Name="Encoding">
-					<Value>0</Value>
+					<Value>1</Value>
 				</Property>
 				<Property Name="Extended">
 					<Value>0</Value>
 				</Property>
 				<Property Name="RealImageWidth">
-					<Value>340</Value>
+					<Value>78</Value>
 				</Property>
 				<Property Name="RealImageHeight">
-					<Value>105</Value>
+					<Value>24</Value>
 				</Property>
 				<Property Name="RotationAngle">
-					<Value>359.980218</Value>
+					<Value>-nan(ind)</Value>
 				</Property>
 				<Property Name="Width">
-					<Value>340.036764</Value>
+					<Value>77.714286</Value>
 				</Property>
 				<Property Name="Height">
-					<Value>105.119106</Value>
+					<Value>24</Value>
 				</Property>
 				<Property Name="Visible">
 					<Value>1</Value>
@@ -2374,7 +2374,7 @@ ADkAAAA=]]>
 			<PropertySheet Name="Image">
 				<Property Name="Path">
 					<Value>
-						<![CDATA[..\..\..\..\..\..\..\Desktop\semas-logo.png]]>
+						<![CDATA[.\icon\semas-logo.png]]>
 					</Value>
 				</Property>
 				<Property Name="ResourceID">
@@ -2399,25 +2399,25 @@ ADkAAAA=]]>
 					<Value>0</Value>
 				</Property>
 				<Property Name="Encoding">
-					<Value>0</Value>
+					<Value>1</Value>
 				</Property>
 				<Property Name="Extended">
 					<Value>0</Value>
 				</Property>
 				<Property Name="RealImageWidth">
-					<Value>68</Value>
+					<Value>334</Value>
 				</Property>
 				<Property Name="RealImageHeight">
-					<Value>21</Value>
+					<Value>103</Value>
 				</Property>
 				<Property Name="RotationAngle">
 					<Value>0.000000</Value>
 				</Property>
 				<Property Name="Width">
-					<Value>68</Value>
+					<Value>333.52381</Value>
 				</Property>
 				<Property Name="Height">
-					<Value>21</Value>
+					<Value>103</Value>
 				</Property>
 				<Property Name="Visible">
 					<Value>1</Value>

@@ -15,19 +15,10 @@ ActiveTab=0
 ViewScrollHoriz=0
 ViewScrollVert=0
 IsActiveChildFrame=True
-[5_6_1.ChildFrames.Document-1]
+[5_6_1.ChildFrames.Document-2]
 ptn_Child1=ViewFrame-0
-[5_6_1.ChildFrames.Document-1.ViewFrame-0]
-DocPathName=.\MyProject1\DataMask_1001.jvi
-WindowPlacement=MCAAAAAAAAAAAAAABAAAAAAAPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPDAAAAAAAJBAAAAAAGCEAAAAAOHCAAAAA
-ActiveTab=0
-ViewScrollHoriz=0
-ViewScrollVert=0
-IsActiveChildFrame=False
-[5_6_1.ChildFrames.Document-3]
-ptn_Child1=ViewFrame-0
-[5_6_1.ChildFrames.Document-3.ViewFrame-0]
-DocPathName=.\MyProject1\Resource file.jrc
+[5_6_1.ChildFrames.Document-2.ViewFrame-0]
+DocPathName=.\MyProject1\WorkingSet.jvi
 WindowPlacement=MCAAAAAAAAAAAAAABAAAAAAAPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPDAAAAAAAJBAAAAAAGCEAAAAAOHCAAAAA
 ActiveTab=0
 ViewScrollHoriz=0

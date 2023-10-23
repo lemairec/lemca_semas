@@ -20,11 +20,17 @@
 #define SoftKeySectionRight                5006
 #define InputBoolean_7000                  7000
 #define InputNumber_9000                   9000
+#define InputNumber_9001                   9001
+#define InputNumber_9002                   9002
+#define InputNumber_9003                   9003
 #define OutputString_11000                11000
 #define OutputString_11001                11001
 #define OutputString_11002                11002
 #define OutputString_11003                11003
 #define OutputString_11004                11004
+#define OutputString_11005                11005
+#define OutputString_11006                11006
+#define OutputString_11007                11007
 #define semas_logo_20000                  20000
 #define section_on_off                    20001
 #define section_left                      20002
@@ -38,6 +44,8 @@
 #define FontAttributes_23000              23000
 #define FontAttributes_23001              23001
 #define FontAttributes_23002              23002
+#define FontAttributes_23003              23003
+#define FontAttributes_23004              23004
 #define Generated_Pointer_To_Null         27000
 #define AuxFunction2_right                29000
 #define AuxFunction2_left                 29001
