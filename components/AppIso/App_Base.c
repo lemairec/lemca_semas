@@ -104,7 +104,7 @@ static void AppImp_Reset(iso_u8 funcInstance)
       2u,            /* Device class */
       0u,            /* Device class instance */
       132u,          /* Function */
-      0u,/* Manufacturer code; Master Schools at Ostbahnhof = 1134 */
+      1360u,/* Manufacturer code; Master Schools at Ostbahnhof = 1134 */
 	   u32SeriNo,     /* Identity number (Serial number) */
       0u,            /* Function instance */
       0u,            /* ECU instance */
