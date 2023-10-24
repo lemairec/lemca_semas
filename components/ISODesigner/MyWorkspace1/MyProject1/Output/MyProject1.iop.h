@@ -30,11 +30,11 @@
 #define OutputString_11005                11005
 #define OutputString_11006                11006
 #define OutputString_11007                11007
-#define semas_logo_20000                  20000
+#define mini_logo_20000                   20000
 #define section_on_off                    20001
 #define home_20002                        20002
 #define setting_20003                     20003
-#define semas_logo_20004                  20004
+#define Logo_SEMAS_FGS_Bleu_PNG_20004     20004
 #define up_20005                          20005
 #define down_20006                        20006
 #define StringVariable_Vitesse            22002

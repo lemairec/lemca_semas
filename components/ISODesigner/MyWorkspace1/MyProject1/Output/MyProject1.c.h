@@ -25,30 +25,30 @@
 #define OutputString_11005_Offset                             523
 #define OutputString_11006_Offset                             551
 #define OutputString_11007_Offset                             581
-#define semas_logo_20000_Offset                               610
-#define section_on_off_Offset                                1419
-#define home_20002_Offset                                    2284
-#define setting_20003_Offset                                 2931
-#define semas_logo_20004_Offset                              3650
-#define up_20005_Offset                                     15541
-#define down_20006_Offset                                   15742
-#define StringVariable_Vitesse_Offset                       15943
-#define FontAttributes_23000_Offset                         15978
-#define FontAttributes_23001_Offset                         15986
-#define FontAttributes_23002_Offset                         15994
-#define FontAttributes_23003_Offset                         16002
-#define FontAttributes_23004_Offset                         16010
-#define AuxFunction2_right_Offset                           16018
-#define AuxFunction2_left_Offset                            16024
-#define AuxFunction2_middle_Offset                          16030
-#define AuxFunction2_auto_Offset                            16036
-#define AuxFunctionSectionOnOff_Offset                      16042
-#define AuxFunctionSectionRight_Offset                      16054
-#define AuxFunctionSectionLeft_Offset                       16060
+#define mini_logo_20000_Offset                                610
+#define section_on_off_Offset                                2731
+#define home_20002_Offset                                    3596
+#define setting_20003_Offset                                 4243
+#define Logo_SEMAS_FGS_Bleu_PNG_20004_Offset                 4962
+#define up_20005_Offset                                     12417
+#define down_20006_Offset                                   12618
+#define StringVariable_Vitesse_Offset                       12819
+#define FontAttributes_23000_Offset                         12854
+#define FontAttributes_23001_Offset                         12862
+#define FontAttributes_23002_Offset                         12870
+#define FontAttributes_23003_Offset                         12878
+#define FontAttributes_23004_Offset                         12886
+#define AuxFunction2_right_Offset                           12894
+#define AuxFunction2_left_Offset                            12900
+#define AuxFunction2_middle_Offset                          12906
+#define AuxFunction2_auto_Offset                            12912
+#define AuxFunctionSectionOnOff_Offset                      12918
+#define AuxFunctionSectionRight_Offset                      12930
+#define AuxFunctionSectionLeft_Offset                       12936
 
 #define ISO_OP_MEMORY_CLASS
 
-#define ISO_OP_MyProject1_Size  16066
+#define ISO_OP_MyProject1_Size  12942
 extern const unsigned char ISO_OP_MEMORY_CLASS isoOP_MyProject1[];
 
 #define ISO_OP_MyProject1_ObjectNumber     44
