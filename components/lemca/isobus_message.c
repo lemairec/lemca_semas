@@ -82,7 +82,7 @@ void OnWheelBasesSpeed(twai_message_t* twai_msg_ps){ //FE48 65096
 void OnRearHitch(twai_message_t* twai_msg_ps){ //FE45 65093
     //int position = (twai_msg_ps->data[0]);
     //double position_perc = 0.4*position;
-    int inwork = (twai_msg_ps->data[1] & 0xC0) >> 6;
+    //int inwork = (twai_msg_ps->data[1] & 0xC0) >> 6;
     //int status = (twai_msg_ps->data[1] & 0x38) >> 3;
     //hw_DebugPrint("$CAN_DEBUG,REAR_HITCH,%2.2X,%2.2X,%2.2X,%2.2X,%2.2X,%2.2X,%2.2X,%2.2X,%4.4X,*\n",
         //twai_msg_ps->data[0], twai_msg_ps->data[1], twai_msg_ps->data[2], twai_msg_ps->data[3],
@@ -91,7 +91,7 @@ void OnRearHitch(twai_message_t* twai_msg_ps){ //FE45 65093
         //position);
     //hw_DebugPrint("CAN_DEBUG,REAR_HITCH_3 , %f perc,%i status,%i inwork\n",
         //position_perc, status, inwork);
-    setRearWork(inwork);
+    //setRearWork(inwork);
 }
 
 void onIsobusMessage(uint8_t canNode_u8, twai_message_t* twai_msg_ps, uint8_t isRX){

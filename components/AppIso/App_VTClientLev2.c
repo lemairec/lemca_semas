@@ -109,32 +109,9 @@ iso_s8 vtc_instance = 0;
 void VTC_handleSoftkeysAndButtons_RELEASED(const struct ButtonActivation_S *pButtonData) {
 	// what button was released
 	switch (pButtonData->objectIdOfButtonObject) {
-		case SoftKey_left:
-		case AuxFunction2_left:
-			send_message_aux(0);
-			break;
-		case SoftKey_right:
-		case AuxFunction2_right:
-			send_message_aux(1);
-			break;
-		case SoftKey_auto:
-		case AuxFunction2_auto:
-			send_message_aux(2);
-			break;
-		case SoftKey_middle:
-			send_message_aux(3);
-			break;
 		case SoftKeySectionOnOff:
 		case AuxFunctionSectionOnOff:
 			changeWorkState();
-			break;
-		case SoftKeySectionLeft:
-		case AuxFunctionSectionLeft:
-			startManualSectionLeft();
-			break;
-		case SoftKeySectionRight:
-		case AuxFunctionSectionRight:
-			startManualSectionRight();
 			break;
 		default:
 			break;
@@ -144,72 +121,18 @@ void VTC_handleSoftkeysAndButtons_RELEASED(const struct ButtonActivation_S *pBut
 	updateVTC();
 }
 
-char getCharSection(int i){
-	if(i <= m_nbr_elements){
-		if(getSection(i)){
-			return '1';
-		} else {
-			return '0';
-		}
-	}
-	return ' ';
-}
-
 void updateVTC(){
 	if(vtc_instance == 0){
 		return;
 	}
 
 	//hw_DebugPrint("updateVTC\n");
-	char data[40];
-	char c1 = getCharSection(1);
-	char c2 = getCharSection(2);
-	char c3 = getCharSection(3);
-	char c4 = getCharSection(4);
-	char c5 = getCharSection(5);
-	char c6 = getCharSection(6);
-	char c7 = getCharSection(7);
-	char c8 = getCharSection(8);
-	char c9 = getCharSection(9);
-	char c10 = getCharSection(10);
-	char c11 = getCharSection(11);
-	char c12 = getCharSection(12);
-	char c13 = getCharSection(13);
-	char c14 = getCharSection(14);
-	char c15 = getCharSection(15);
-	char c16 = getCharSection(16);
-
 	double speed = getSpeedKmH();
 	
-	sprintf(data,"%c %c %c %c %c %c %c %c %c %c %c %c %c %c %c %c", c1, c2, c3, c4, c5 , c6, c7, c8, c9, c10, c11, c12, c13, c14, c15, c16);
+	char data[40];
+	sprintf(data,"%c %.1f", 'A', speed);
 
-	IsoVtcCmd_String(vtc_instance, StringVariable_Debug, (iso_u8 *)data);
-
-	if(getWorkState()){
-		char data2[40];
-		sprintf(data2, "TC Play");
-
-		IsoVtcCmd_String(vtc_instance, StringVariable_Debug2, (iso_u8 *)data2);
-	
-	} else {
-		char data2[45];
-		sprintf(data2,"TC Pause - %i elts ( %i cm), lg %i cm", (char)m_nbr_elements, (char)(m_inter_rang_mm/10), (short)(m_machine_lg/10));
-
-		IsoVtcCmd_String(vtc_instance, StringVariable_Debug2, (iso_u8 *)data2);
-	}
-	
-	if(getRearWork()){
-		char data2[30];
-		sprintf(data2, "Bas (play) - %.1f km/h", speed);
-
-		IsoVtcCmd_String(vtc_instance, StringVariable_Vitesse, (iso_u8 *)data2);
-	
-	} else {
-		char data2[30];
-		sprintf(data2, "Haut (pause) - %.1f km/h", speed);
-
-		IsoVtcCmd_String(vtc_instance, StringVariable_Vitesse, (iso_u8 *)data2);
-	}
+	//IsoVtcCmd_String(vtc_instance, StringVariable_Debug, (iso_u8 *)data);
 }
 
 void VTC_handleNumericValues(const struct InputNumber_S * pInputNumberData) {

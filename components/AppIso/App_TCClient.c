@@ -1137,7 +1137,7 @@ static void CbTcExData(ISO_TCLINK_T* psTcLink)
 			case DE_NUM_DEVICE:
 				switch (psTcLink->wDDI) {
 					case DDI_ACTUAL_WORK_STATE:
-						psTcLink->lValueNew = getWorkState(); // Workstate ON!
+						psTcLink->lValueNew = 1; // Workstate ON!
 						break;
 
 					case DDI_TOTAL_AREA: //DDI 116
@@ -1183,7 +1183,7 @@ static void CbTcExData(ISO_TCLINK_T* psTcLink)
 						break;
 
 					case DDI_ACTUAL_CONDENSED_WORK_STATE_1_16:
-						psTcLink->lValueNew = getTCSection();
+						psTcLink->lValueNew = 1;
 						break;
 
 					case DDI_SETPOINT_VOLUME_PER_AREA_APPLICATION_RATE:
@@ -1340,10 +1340,6 @@ static void CbTcExData(ISO_TCLINK_T* psTcLink)
 
 		case OBJID_DPD_SECTION_CONTROL_STATE:
 			SectionControlState = psTcLink->lValueNew;
-			break;
-
-		case OBJID_DPD_SETPOINT_CONDENSED_WORK_STATE_1_16:
-			setTCSection(psTcLink->lValueNew);
 			break;
 
 		case OBJID_DPD_SETPOINT:

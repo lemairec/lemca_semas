@@ -76,43 +76,9 @@ void uart_loop(void){
 
 int old_time = 0;
 void uart_send_loop_message(int millis){
-    int i = millis/100;
-    if(i != old_time){
-        if(true){
-            if(isAlive()){
-                char data2[45];
-                sprintf(data2,"$LCISO,%f,%i,*\n", getSpeedKmH(), getRearWork());
-                uart_write_bytes(uart_mnea_num, (const char*)data2, strlen(data2));
-            } else {
-                char* test_str = "$LCISO,0.0,0,FAIL,*\n";
-                uart_write_bytes(uart_mnea_num, (const char*)test_str, strlen(test_str));   
-            }
-        }
-        if(i%10 == 0){
-            char* test_str = "$LCISO,V,VT,23.2.1,*\n";
-            uart_write_bytes(uart_mnea_num, (const char*)test_str, strlen(test_str));   
-        }
-        old_time = i;
-    }
 }
 
 void uart_send_message_aux(int touch){
-    if(touch == 0){
-        char* test_str = "$LCAUX,LEFT,*\n";
-        uart_write_bytes(uart_mnea_num, (const char*)test_str, strlen(test_str));
-    }
-    if(touch == 1){
-        char* test_str = "$LCAUX,RIGHT,*\n";
-        uart_write_bytes(uart_mnea_num, (const char*)test_str, strlen(test_str));
-    }
-    if(touch == 2){
-        char* test_str = "$LCAUX,AUTO,*\n";
-        uart_write_bytes(uart_mnea_num, (const char*)test_str, strlen(test_str));
-    }
-    if(touch == 3){
-        char* test_str = "$LCAUX,MIDDLE,*\n";
-        uart_write_bytes(uart_mnea_num, (const char*)test_str, strlen(test_str));
-    }
 }
 
 void uart_send_message(char * c){
