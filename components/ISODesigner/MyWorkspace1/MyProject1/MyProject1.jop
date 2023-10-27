@@ -61,7 +61,7 @@ ADkAAAA=]]>
 					<Value>Lucida Console</Value>
 				</Property>
 				<Property Name="Size">
-					<Value>9</Value>
+					<Value>4</Value>
 				</Property>
 				<Property Name="Height">
 					<Value>12</Value>
@@ -82,7 +82,7 @@ ADkAAAA=]]>
 					<Value>0</Value>
 				</Property>
 				<Property Name="PointWidth">
-					<Value>6</Value>
+					<Value>3</Value>
 				</Property>
 				<Property Name="Width">
 					<Value>8</Value>
@@ -118,7 +118,7 @@ ADkAAAA=]]>
 					<Value>Lucida Console</Value>
 				</Property>
 				<Property Name="Size">
-					<Value>12</Value>
+					<Value>6</Value>
 				</Property>
 				<Property Name="Height">
 					<Value>16</Value>
@@ -139,7 +139,7 @@ ADkAAAA=]]>
 					<Value>0</Value>
 				</Property>
 				<Property Name="PointWidth">
-					<Value>9</Value>
+					<Value>4</Value>
 				</Property>
 				<Property Name="Width">
 					<Value>12</Value>
@@ -175,7 +175,7 @@ ADkAAAA=]]>
 					<Value>Lucida Console</Value>
 				</Property>
 				<Property Name="Size">
-					<Value>12</Value>
+					<Value>6</Value>
 				</Property>
 				<Property Name="Height">
 					<Value>16</Value>
@@ -196,7 +196,7 @@ ADkAAAA=]]>
 					<Value>0</Value>
 				</Property>
 				<Property Name="PointWidth">
-					<Value>9</Value>
+					<Value>4</Value>
 				</Property>
 				<Property Name="Width">
 					<Value>12</Value>
@@ -232,7 +232,7 @@ ADkAAAA=]]>
 					<Value>Lucida Console</Value>
 				</Property>
 				<Property Name="Size">
-					<Value>12</Value>
+					<Value>6</Value>
 				</Property>
 				<Property Name="Height">
 					<Value>16</Value>
@@ -253,7 +253,7 @@ ADkAAAA=]]>
 					<Value>0</Value>
 				</Property>
 				<Property Name="PointWidth">
-					<Value>9</Value>
+					<Value>4</Value>
 				</Property>
 				<Property Name="Width">
 					<Value>12</Value>
@@ -289,7 +289,7 @@ ADkAAAA=]]>
 					<Value>Lucida Console</Value>
 				</Property>
 				<Property Name="Size">
-					<Value>12</Value>
+					<Value>6</Value>
 				</Property>
 				<Property Name="Height">
 					<Value>16</Value>
@@ -310,7 +310,7 @@ ADkAAAA=]]>
 					<Value>0</Value>
 				</Property>
 				<Property Name="PointWidth">
-					<Value>9</Value>
+					<Value>4</Value>
 				</Property>
 				<Property Name="Width">
 					<Value>12</Value>
@@ -668,7 +668,7 @@ ADkAAAA=]]>
 					<Value>0</Value>
 				</Property>
 				<Property Name="RoundEdgeRadius">
-					<Value>2156951682869590618105805224802999066402142138072207907436908609200042732007802923485600064564434885337827342042213334907555817114260800760310043359922543365890397367623712026173270133120443374449575225423251780797281032720089088.000000</Value>
+					<Value>0.000000</Value>
 				</Property>
 				<Property Name="checked">
 					<Value>0</Value>
@@ -2075,11 +2075,11 @@ ADkAAAA=]]>
 				<Object JVS-ID="23000"/>
 			</Objects>
 		</Object>
-		<Object Class="CImage" Name="Image" ObjectName="mini_logo_20000" Pinned="FALSE" JVS-ID="20000">
+		<Object Class="CImage" Name="Image" ObjectName="semas_logo_20000" Pinned="FALSE" JVS-ID="20000">
 			<PropertySheet Name="Image">
 				<Property Name="Path">
 					<Value>
-						<![CDATA[.\icon\mini logo.png]]>
+						<![CDATA[.\icon\semas-logo.png]]>
 					</Value>
 				</Property>
 				<Property Name="ResourceID">
@@ -2110,19 +2110,19 @@ ADkAAAA=]]>
 					<Value>0</Value>
 				</Property>
 				<Property Name="RealImageWidth">
-					<Value>80</Value>
+					<Value>77</Value>
 				</Property>
 				<Property Name="RealImageHeight">
-					<Value>69</Value>
+					<Value>24</Value>
 				</Property>
 				<Property Name="RotationAngle">
 					<Value>0.000000</Value>
 				</Property>
 				<Property Name="Width">
-					<Value>80</Value>
+					<Value>77</Value>
 				</Property>
 				<Property Name="Height">
-					<Value>68.853411</Value>
+					<Value>24</Value>
 				</Property>
 				<Property Name="Visible">
 					<Value>1</Value>
@@ -2347,11 +2347,11 @@ ADkAAAA=]]>
 				</Property>
 			</PropertySheet>
 		</Object>
-		<Object Class="CImage" Name="Image" ObjectName="Logo_SEMAS_FGS_Bleu_PNG_20004" Pinned="FALSE" JVS-ID="20004">
+		<Object Class="CImage" Name="Image" ObjectName="semas_logo_20004" Pinned="FALSE" JVS-ID="20004">
 			<PropertySheet Name="Image">
 				<Property Name="Path">
 					<Value>
-						<![CDATA[.\icon\Logo SEMAS-FGS Bleu PNG.png]]>
+						<![CDATA[.\icon\semas-logo.png]]>
 					</Value>
 				</Property>
 				<Property Name="ResourceID">
@@ -2382,19 +2382,19 @@ ADkAAAA=]]>
 					<Value>0</Value>
 				</Property>
 				<Property Name="RealImageWidth">
-					<Value>400</Value>
+					<Value>334</Value>
 				</Property>
 				<Property Name="RealImageHeight">
-					<Value>95</Value>
+					<Value>103</Value>
 				</Property>
 				<Property Name="RotationAngle">
-					<Value>359.980218</Value>
+					<Value>0.000000</Value>
 				</Property>
 				<Property Name="Width">
-					<Value>400</Value>
+					<Value>334</Value>
 				</Property>
 				<Property Name="Height">
-					<Value>95.491143</Value>
+					<Value>103</Value>
 				</Property>
 				<Property Name="Visible">
 					<Value>1</Value>
@@ -2551,222 +2551,6 @@ ADkAAAA=]]>
 				</Property>
 			</PropertySheet>
 		</Object>
-		<Object Class="CAuxFunction" Name="AuxFunction" ObjectName="AuxFunction2_right" Pinned="FALSE" JVS-ID="29000">
-			<PropertySheet Name="AuxFunction">
-				<Property Name="BackColor">
-					<Value>16777215</Value>
-				</Property>
-				<Property Name="FunctionType">
-					<Value>0</Value>
-				</Property>
-				<Property Name="FunctionType2">
-					<Value>2</Value>
-				</Property>
-				<Property Name="CriticalControl">
-					<Value>0</Value>
-				</Property>
-				<Property Name="AssignmentLock">
-					<Value>0</Value>
-				</Property>
-				<Property Name="SingleAssignment">
-					<Value>1</Value>
-				</Property>
-				<Property Name="ISO-Version">
-					<Value>ISO_2010</Value>
-				</Property>
-				<Property Name="EnableExport">
-					<Value>0</Value>
-				</Property>
-				<Property Name="FileName">
-					<Value/>
-				</Property>
-				<Property Name="Width">
-					<Value>80</Value>
-				</Property>
-				<Property Name="Height">
-					<Value>80</Value>
-				</Property>
-				<Property Name="Visible">
-					<Value>1</Value>
-				</Property>
-				<Property Name="Locked">
-					<Value>0</Value>
-				</Property>
-				<Property Name="Comment">
-					<Value>
-						<![CDATA[AAA=]]>
-					</Value>
-				</Property>
-				<Property Name="Disabled">
-					<Value>0</Value>
-				</Property>
-				<Property Name="ExternalReferenceAllowed">
-					<Value>0</Value>
-				</Property>
-			</PropertySheet>
-		</Object>
-		<Object Class="CAuxFunction" Name="AuxFunction" ObjectName="AuxFunction2_left" Pinned="FALSE" JVS-ID="29001">
-			<PropertySheet Name="AuxFunction">
-				<Property Name="BackColor">
-					<Value>16777215</Value>
-				</Property>
-				<Property Name="FunctionType">
-					<Value>0</Value>
-				</Property>
-				<Property Name="FunctionType2">
-					<Value>2</Value>
-				</Property>
-				<Property Name="CriticalControl">
-					<Value>0</Value>
-				</Property>
-				<Property Name="AssignmentLock">
-					<Value>0</Value>
-				</Property>
-				<Property Name="SingleAssignment">
-					<Value>1</Value>
-				</Property>
-				<Property Name="ISO-Version">
-					<Value>ISO_2010</Value>
-				</Property>
-				<Property Name="EnableExport">
-					<Value>0</Value>
-				</Property>
-				<Property Name="FileName">
-					<Value/>
-				</Property>
-				<Property Name="Width">
-					<Value>80</Value>
-				</Property>
-				<Property Name="Height">
-					<Value>80</Value>
-				</Property>
-				<Property Name="Visible">
-					<Value>1</Value>
-				</Property>
-				<Property Name="Locked">
-					<Value>0</Value>
-				</Property>
-				<Property Name="Comment">
-					<Value>
-						<![CDATA[AAA=]]>
-					</Value>
-				</Property>
-				<Property Name="Disabled">
-					<Value>0</Value>
-				</Property>
-				<Property Name="ExternalReferenceAllowed">
-					<Value>0</Value>
-				</Property>
-			</PropertySheet>
-		</Object>
-		<Object Class="CAuxFunction" Name="AuxFunction" ObjectName="AuxFunction2_middle" Pinned="FALSE" JVS-ID="29002">
-			<PropertySheet Name="AuxFunction">
-				<Property Name="BackColor">
-					<Value>16777215</Value>
-				</Property>
-				<Property Name="FunctionType">
-					<Value>0</Value>
-				</Property>
-				<Property Name="FunctionType2">
-					<Value>2</Value>
-				</Property>
-				<Property Name="CriticalControl">
-					<Value>0</Value>
-				</Property>
-				<Property Name="AssignmentLock">
-					<Value>0</Value>
-				</Property>
-				<Property Name="SingleAssignment">
-					<Value>1</Value>
-				</Property>
-				<Property Name="ISO-Version">
-					<Value>ISO_2009</Value>
-				</Property>
-				<Property Name="EnableExport">
-					<Value>0</Value>
-				</Property>
-				<Property Name="FileName">
-					<Value/>
-				</Property>
-				<Property Name="Width">
-					<Value>80</Value>
-				</Property>
-				<Property Name="Height">
-					<Value>80</Value>
-				</Property>
-				<Property Name="Visible">
-					<Value>1</Value>
-				</Property>
-				<Property Name="Locked">
-					<Value>0</Value>
-				</Property>
-				<Property Name="Comment">
-					<Value>
-						<![CDATA[AAA=]]>
-					</Value>
-				</Property>
-				<Property Name="Disabled">
-					<Value>0</Value>
-				</Property>
-				<Property Name="ExternalReferenceAllowed">
-					<Value>0</Value>
-				</Property>
-			</PropertySheet>
-		</Object>
-		<Object Class="CAuxFunction" Name="AuxFunction" ObjectName="AuxFunction2_auto" Pinned="FALSE" JVS-ID="29003">
-			<PropertySheet Name="AuxFunction">
-				<Property Name="BackColor">
-					<Value>16777215</Value>
-				</Property>
-				<Property Name="FunctionType">
-					<Value>0</Value>
-				</Property>
-				<Property Name="FunctionType2">
-					<Value>2</Value>
-				</Property>
-				<Property Name="CriticalControl">
-					<Value>0</Value>
-				</Property>
-				<Property Name="AssignmentLock">
-					<Value>0</Value>
-				</Property>
-				<Property Name="SingleAssignment">
-					<Value>1</Value>
-				</Property>
-				<Property Name="ISO-Version">
-					<Value>ISO_2009</Value>
-				</Property>
-				<Property Name="EnableExport">
-					<Value>0</Value>
-				</Property>
-				<Property Name="FileName">
-					<Value/>
-				</Property>
-				<Property Name="Width">
-					<Value>80</Value>
-				</Property>
-				<Property Name="Height">
-					<Value>80</Value>
-				</Property>
-				<Property Name="Visible">
-					<Value>1</Value>
-				</Property>
-				<Property Name="Locked">
-					<Value>0</Value>
-				</Property>
-				<Property Name="Comment">
-					<Value>
-						<![CDATA[AAA=]]>
-					</Value>
-				</Property>
-				<Property Name="Disabled">
-					<Value>0</Value>
-				</Property>
-				<Property Name="ExternalReferenceAllowed">
-					<Value>0</Value>
-				</Property>
-			</PropertySheet>
-		</Object>
 		<Object Class="CAuxFunction" Name="AuxFunction" ObjectName="AuxFunctionSectionOnOff" Pinned="FALSE" JVS-ID="29004">
 			<PropertySheet Name="AuxFunction">
 				<Property Name="BackColor">
@@ -2823,114 +2607,6 @@ ADkAAAA=]]>
 			<Objects>
 				<Object JVS-ID="4194317"/>
 			</Objects>
-		</Object>
-		<Object Class="CAuxFunction" Name="AuxFunction" ObjectName="AuxFunctionSectionRight" Pinned="FALSE" JVS-ID="29005">
-			<PropertySheet Name="AuxFunction">
-				<Property Name="BackColor">
-					<Value>16777215</Value>
-				</Property>
-				<Property Name="FunctionType">
-					<Value>0</Value>
-				</Property>
-				<Property Name="FunctionType2">
-					<Value>2</Value>
-				</Property>
-				<Property Name="CriticalControl">
-					<Value>0</Value>
-				</Property>
-				<Property Name="AssignmentLock">
-					<Value>0</Value>
-				</Property>
-				<Property Name="SingleAssignment">
-					<Value>1</Value>
-				</Property>
-				<Property Name="ISO-Version">
-					<Value>ISO_2010</Value>
-				</Property>
-				<Property Name="EnableExport">
-					<Value>0</Value>
-				</Property>
-				<Property Name="FileName">
-					<Value/>
-				</Property>
-				<Property Name="Width">
-					<Value>80</Value>
-				</Property>
-				<Property Name="Height">
-					<Value>80</Value>
-				</Property>
-				<Property Name="Visible">
-					<Value>1</Value>
-				</Property>
-				<Property Name="Locked">
-					<Value>0</Value>
-				</Property>
-				<Property Name="Comment">
-					<Value>
-						<![CDATA[AAA=]]>
-					</Value>
-				</Property>
-				<Property Name="Disabled">
-					<Value>0</Value>
-				</Property>
-				<Property Name="ExternalReferenceAllowed">
-					<Value>0</Value>
-				</Property>
-			</PropertySheet>
-		</Object>
-		<Object Class="CAuxFunction" Name="AuxFunction" ObjectName="AuxFunctionSectionLeft" Pinned="FALSE" JVS-ID="29006">
-			<PropertySheet Name="AuxFunction">
-				<Property Name="BackColor">
-					<Value>16777215</Value>
-				</Property>
-				<Property Name="FunctionType">
-					<Value>0</Value>
-				</Property>
-				<Property Name="FunctionType2">
-					<Value>2</Value>
-				</Property>
-				<Property Name="CriticalControl">
-					<Value>0</Value>
-				</Property>
-				<Property Name="AssignmentLock">
-					<Value>0</Value>
-				</Property>
-				<Property Name="SingleAssignment">
-					<Value>1</Value>
-				</Property>
-				<Property Name="ISO-Version">
-					<Value>ISO_2010</Value>
-				</Property>
-				<Property Name="EnableExport">
-					<Value>0</Value>
-				</Property>
-				<Property Name="FileName">
-					<Value/>
-				</Property>
-				<Property Name="Width">
-					<Value>80</Value>
-				</Property>
-				<Property Name="Height">
-					<Value>80</Value>
-				</Property>
-				<Property Name="Visible">
-					<Value>1</Value>
-				</Property>
-				<Property Name="Locked">
-					<Value>0</Value>
-				</Property>
-				<Property Name="Comment">
-					<Value>
-						<![CDATA[AAA=]]>
-					</Value>
-				</Property>
-				<Property Name="Disabled">
-					<Value>0</Value>
-				</Property>
-				<Property Name="ExternalReferenceAllowed">
-					<Value>0</Value>
-				</Property>
-			</PropertySheet>
 		</Object>
 		<Object Class="CProxy" Name="Image_1" ObjectName="" Pinned="FALSE" JVS-ID="4194304">
 			<PropertySheet Name="Proxy">

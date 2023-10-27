@@ -30,11 +30,11 @@
 #define OutputString_11005                11005
 #define OutputString_11006                11006
 #define OutputString_11007                11007
-#define mini_logo_20000                   20000
+#define semas_logo_20000                  20000
 #define section_on_off                    20001
 #define home_20002                        20002
 #define setting_20003                     20003
-#define Logo_SEMAS_FGS_Bleu_PNG_20004     20004
+#define semas_logo_20004                  20004
 #define up_20005                          20005
 #define down_20006                        20006
 #define StringVariable_Vitesse            22002
@@ -43,10 +43,4 @@
 #define FontAttributes_23002              23002
 #define FontAttributes_23003              23003
 #define FontAttributes_23004              23004
-#define AuxFunction2_right                29000
-#define AuxFunction2_left                 29001
-#define AuxFunction2_middle               29002
-#define AuxFunction2_auto                 29003
 #define AuxFunctionSectionOnOff           29004
-#define AuxFunctionSectionRight           29005
-#define AuxFunctionSectionLeft            29006
