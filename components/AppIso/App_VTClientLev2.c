@@ -127,16 +127,18 @@ void updateVTC(){
 	sprintf(data,"%c %.1f", 'A', speed);
 
 	//IsoVtcCmd_String(vtc_instance, StringVariable_Debug, (iso_u8 *)data);
+	IsoVtcCmd_NumericValue(vtc_instance, aggress_hyd_21000, getAgressHyd());
 }
 
 void VTC_handleNumericValues(const struct InputNumber_S * pInputNumberData) {
 	// what number was entered
+	hw_DebugPrint("VTC_handleNumericValues %d %d\n", pInputNumberData->objectIdOfInputNumber, pInputNumberData->newValue);
 	switch (pInputNumberData->objectIdOfInputNumber) {
-
-
-
-	default:
-		break;
+		case aggress_hyd_21000:
+			setAgressHyd(pInputNumberData->newValue);
+			break;
+		default:
+			break;
 	}
 }
 

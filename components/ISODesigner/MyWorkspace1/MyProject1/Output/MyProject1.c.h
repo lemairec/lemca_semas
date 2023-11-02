@@ -32,20 +32,21 @@
 #define semas_logo_20004_Offset                              3650
 #define up_20005_Offset                                     15541
 #define down_20006_Offset                                   15742
-#define StringVariable_Vitesse_Offset                       15943
-#define FontAttributes_23000_Offset                         15978
-#define FontAttributes_23001_Offset                         15986
-#define FontAttributes_23002_Offset                         15994
-#define FontAttributes_23003_Offset                         16002
-#define FontAttributes_23004_Offset                         16010
-#define AuxFunctionSectionOnOff_Offset                      16018
+#define aggress_hyd_21000_Offset                            15943
+#define StringVariable_Vitesse_Offset                       15950
+#define FontAttributes_23000_Offset                         15985
+#define FontAttributes_23001_Offset                         15993
+#define FontAttributes_23002_Offset                         16001
+#define FontAttributes_23003_Offset                         16009
+#define FontAttributes_23004_Offset                         16017
+#define AuxFunctionSectionOnOff_Offset                      16025
 
 #define ISO_OP_MEMORY_CLASS
 
-#define ISO_OP_MyProject1_Size  16030
+#define ISO_OP_MyProject1_Size  16037
 extern const unsigned char ISO_OP_MEMORY_CLASS isoOP_MyProject1[];
 
-#define ISO_OP_MyProject1_ObjectNumber     38
+#define ISO_OP_MyProject1_ObjectNumber     39
 extern const unsigned long ISO_OP_MEMORY_CLASS isoOP_MyProject1_Offset[];
 extern const unsigned long ISO_OP_MEMORY_CLASS isoOP_MyProject1_Offset_Id[];
 #define ISO_OP_MyProject1_Scale_Offset      1

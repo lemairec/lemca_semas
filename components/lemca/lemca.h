@@ -6,7 +6,10 @@ extern "C" {
 #endif
 
 
-extern void initOrLoad();
+extern void lemca_init();
+
+void setAgressHyd(int agress_hydr);
+int getAgressHyd();
 
 extern void changeWorkState();
 extern void setSpeedKmH(double kmh);

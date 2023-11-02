@@ -37,6 +37,7 @@
 #define semas_logo_20004                  20004
 #define up_20005                          20005
 #define down_20006                        20006
+#define aggress_hyd_21000                 21000
 #define StringVariable_Vitesse            22002
 #define FontAttributes_23000              23000
 #define FontAttributes_23001              23001

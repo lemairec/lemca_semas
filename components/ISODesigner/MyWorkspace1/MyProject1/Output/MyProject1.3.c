@@ -35,11 +35,12 @@ const unsigned long ISO_OP_MEMORY_CLASS isoOP_MyProject1_Offset_Id[] = {
 	  3650,  // semas_logo_20004_Offset
 	 15541,  // up_20005_Offset
 	 15742,  // down_20006_Offset
-	 15943,  // StringVariable_Vitesse_Offset
-	 15978,  // FontAttributes_23000_Offset
-	 15986,  // FontAttributes_23001_Offset
-	 15994,  // FontAttributes_23002_Offset
-	 16002,  // FontAttributes_23003_Offset
-	 16010,  // FontAttributes_23004_Offset
-	 16018,  // AuxFunctionSectionOnOff_Offset
+	 15943,  // aggress_hyd_21000_Offset
+	 15950,  // StringVariable_Vitesse_Offset
+	 15985,  // FontAttributes_23000_Offset
+	 15993,  // FontAttributes_23001_Offset
+	 16001,  // FontAttributes_23002_Offset
+	 16009,  // FontAttributes_23003_Offset
+	 16017,  // FontAttributes_23004_Offset
+	 16025,  // AuxFunctionSectionOnOff_Offset
 };  // isoOP_MyProject1_Offset_Id
