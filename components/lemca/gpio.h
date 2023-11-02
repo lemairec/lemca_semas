@@ -7,7 +7,7 @@
 extern "C" {
 #endif
 
-
+extern void setup_gpio();
 
 extern void update_gpio(int millis); //update 100ms
 

@@ -5,7 +5,8 @@
 extern "C" {
 #endif
 
-extern void setup_gpio();
+
+extern void initOrLoad();
 
 extern void changeWorkState();
 extern void setSpeedKmH(double kmh);
