@@ -270,7 +270,7 @@ AppPool::AppPool(const std::vector<uint8_t>& data)
       PoolData &pool = m_pool[idx];
       if (pool.numObj > 0)
       {
-         pool.archive = AppArchive::compress(pool.data);
+         pool.archive = AppArchive_compress(pool.data);
       }
    }
 #endif /* defined(CCI_USE_ARCHIVE) */
@@ -453,12 +453,12 @@ bool AppPool::open(uint32_t mode)
    m_pos = 0U;
 
 #if defined(CCI_USE_ARCHIVE)
-   m_pool[POOL::ROOT  ].channel = AppArchive::open(m_pool[POOL::ROOT  ].archive);
-   m_pool[POOL::AUX   ].channel = AppArchive::open(m_pool[POOL::AUX   ].archive);
+   m_pool[POOL::ROOT  ].channel = AppArchive_open(m_pool[POOL::ROOT  ].archive);
+   m_pool[POOL::AUX   ].channel = AppArchive_open(m_pool[POOL::AUX   ].archive);
 // m_pool[POOL::IMG2  ].channel = AppArchive::open(m_pool[POOL::IMG2  ].archive);
 // m_pool[POOL::IMG16 ].channel = AppArchive::open(m_pool[POOL::IMG16 ].archive);
-   m_pool[POOL::IMG256].channel = AppArchive::open(m_pool[POOL::IMG256].archive);
-   m_pool[POOL::REMAIN].channel = AppArchive::open(m_pool[POOL::REMAIN].archive);
+   m_pool[POOL::IMG256].channel = AppArchive_open(m_pool[POOL::IMG256].archive);
+   m_pool[POOL::REMAIN].channel = AppArchive_open(m_pool[POOL::REMAIN].archive);
 #endif /* defined(CCI_USE_ARCHIVE) */
 
    return m_data.size() > 0;
@@ -497,7 +497,7 @@ uint32_t AppPool::read(uint8_t* dst, uint32_t u32BlockSizeReq)
          continue;
       }
 
-      ret = AppArchive::read(poolData.channel, dst, u32BlockSizeReq);
+      ret = AppArchive_read(poolData.channel, dst, u32BlockSizeReq);
       if (ret <= u32BlockSizeReq)
       {
          m_pos += ret;
@@ -551,7 +551,7 @@ void AppPool::seekToBegin()
    for (uint8_t idx = POOL::ALL; idx < POOL::SIZE; idx++)
    {
       PoolData &poolData = m_pool[idx];
-      AppArchive::seekToBegin(poolData.channel);
+      AppArchive_seekToBegin(poolData.channel);
    }
 #endif /* defined(CCI_USE_ARCHIVE) */
    

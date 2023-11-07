@@ -1,7 +1,9 @@
 #include <stdint.h>
 #include <vector>
+#include <cstring>
 #include <map>
 #include "IsoCommonDef.h"
+#define CCI_USE_ARCHIVE
 #if defined(CCI_USE_ARCHIVE)
 #include "AppArchive.h"
 
@@ -44,8 +46,7 @@ static std::vector<uint8_t> compressPool(const std::vector<uint8_t>& poolData);
 /* modified copy from heatshrink static encoder test. */
 static std::vector<uint8_t> expandPool(HeatshrinkDecoderInfo& hsd, const uint8_t *comp, size_t compressed_size, size_t decomp_sz);
 
-namespace AppArchive
-{
+
    static std::map<uint8_t, HeatshrinkDecoderInfo*> s_hsd;
 
    static uint8_t getNextChannel()
@@ -71,7 +72,7 @@ namespace AppArchive
       return hsdIdx;
    }
 
-   std::vector<uint8_t> compress(const std::vector<uint8_t>& poolData)
+   std::vector<uint8_t> AppArchive_compress(const std::vector<uint8_t>& poolData)
    {
       return compressPool(poolData);
    }
@@ -81,7 +82,7 @@ namespace AppArchive
       return std::vector<uint8_t>();
    }
 
-   uint8_t open(std::vector<uint8_t>& archive)
+   uint8_t AppArchive_open(std::vector<uint8_t>& archive)
    {
       if (archive.empty())        /* There is nothing to do on an empty archive. */
       {
@@ -169,8 +170,6 @@ namespace AppArchive
    {
 
    }
-
-} /* namespace AppArchive */
 
 std::vector<uint8_t> compressPool(const std::vector<uint8_t>& poolData)
 {
@@ -326,7 +325,7 @@ std::vector<uint8_t> expandPool(HeatshrinkDecoderInfo& hsd, const uint8_t *comp,
 #if defined(CCI_ARCHIVE_EARLY_ABORT) /* Set abort condition. Only one decompression run. */
          decomp_sz = polled;
          decomp.resize(polled);
-#endif defined(CCI_ARCHIVE_EARLY_ABORT)
+#endif
       }
    }
 

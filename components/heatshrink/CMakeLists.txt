@@ -1,25 +1,21 @@
-# Edit following two lines to set component requirements (see docs)
-
-
-
 set(COMPONENT_SRCS 
-  "CanDriverEsp32.cpp"
+  "heatshrink_decoder.c"
+  "heatshrink_encoder.c"
 )
 
 set(COMPONENT_ADD_INCLUDEDIRS 
   "."
+  ".."
 )
 
 set(COMPONENT_REQUIRES 
-	
 )
 
 set(COMPONENT_PRIV_REQUIRES 
-	AppCommon 
 	lib_cci 
+	Settings 
 	IsoConfig
-	lemca
-	heatshrink
 )
 
 register_component()
+
