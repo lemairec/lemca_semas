@@ -4,7 +4,7 @@
 
 set(COMPONENT_SRCS 
   "AppPool.cpp"
-
+  "AppArchive.cpp"
 )
 
 set(COMPONENT_ADD_INCLUDEDIRS 

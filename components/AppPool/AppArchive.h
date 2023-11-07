@@ -5,6 +5,8 @@
 #error 
 #endif /* __cplusplus */
 
+#define CCI_USE_ARCHIVE
+
 #include <stdint.h>
 #include <vector>
 

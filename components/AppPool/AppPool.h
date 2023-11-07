@@ -4,6 +4,8 @@
 #ifndef DEF_APPPOOL_H
 #define DEF_APPPOOL_H
 
+#define CCI_USE_ARCHIVE
+
 #include <stdint.h>
 #include <IsoVtcApi.h>
 #ifdef __cplusplus
