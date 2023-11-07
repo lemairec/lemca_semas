@@ -91,13 +91,20 @@ private:
       SIZE
    };
 
+   uint32_t splitPool();
+
    struct PoolData
    {
       std::vector<uint8_t> data;		
+#if defined(CCI_USE_ARCHIVE)
+      std::vector<uint8_t> archive;	/* Assumed to be stored const in ROM for further processing. */
+      int8_t channel = 0;				/* HSDR_FINISH_DONE */
+#endif /* defined(CCI_USE_ARCHIVE) */
       uint16_t numObj = 0;
    } m_pool[POOL::SIZE];
 
 // TDOD   const uint32_t m_mode;
+   std::vector<uint8_t> m_data; /* data to be presented. if !empty() then the pool is considered open*/
    uint16_t m_numObj;
    uint32_t m_pos = 0U;
 };

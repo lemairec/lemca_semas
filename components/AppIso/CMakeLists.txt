@@ -3,13 +3,13 @@
 
 
 set(COMPONENT_SRCS 
-	"config.c"
-	"App_Base.c"
-	"App_Main.c"
-	"App_VTClient.c"
-	"App_TCClient.c"
-	"App_VTClientLev2.c"
-	"AppMemAccess.cpp"
+  "App_Base.c"
+  "App_Main.c"
+  "App_VTClient.c"
+  "App_TCClient.c"
+  "App_VTClientLev2.c"
+  "AppMemAccess.cpp"
+  "config.c"
 )
 
 set(COMPONENT_ADD_INCLUDEDIRS 

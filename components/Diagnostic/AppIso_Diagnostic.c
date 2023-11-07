@@ -24,7 +24,7 @@ static const iso_char ecuHardwareVersionId[] = "000266#A3 v.0.9";       /* 11783
                                                                                    A3 v.0.9 is optional additional information */
 
 static const iso_char swId1[] = "App v0.1 L2021";                    /* 11783-12 -- A.4 software identification */
-static const iso_char swId2[] = "IsobusDriver v11.00.00";
+static const iso_char swId2[] = "IsobusDriver v12.00.00";
 
 static const iso_char productIdentCode[] = "part number#C008";   /* 11783-7  -- A.22 Product Identification Code
                                                                                    1st ecuPartNumber

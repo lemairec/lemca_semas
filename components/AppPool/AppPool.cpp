@@ -9,12 +9,9 @@
 #include <IsoVtcApi.h>
 #include "AppPool.h"
 #include "AppCommon/AppUtil.h"
-#include "AppCommon/AppHW.h"
 #if defined(CCI_USE_ARCHIVE)
 #include "AppArchive.h"
 #endif /* defined(CCI_USE_ARCHIVE) */
-
-
 
 /* ************************************************************************ */
 #if defined(_MSC_VER )
@@ -103,6 +100,8 @@ static AppPool* getPoolByChannel(uint8_t channel)
    std::map<uint8_t, AppPool*>::iterator it = s_appPool.find(channel);
    return (it == s_appPool.end()) ? nullptr : it->second;
 }
+
+static void reduceAuxPool(iso_u8 pu8PoolDataIn[], iso_u32* pu32PoolSizeInOut);
 
 extern "C" iso_bool poolIsOpen(uint8_t channel)
 {
@@ -261,6 +260,7 @@ AppPool::AppPool(const std::vector<uint8_t>& data)
    }
    
    pool.data = data;
+   splitPool();	/* all other objects */
 
 #if defined(CCI_USE_ARCHIVE)
    for (uint8_t idx = POOL::ALL; idx < POOL::SIZE; idx++)
@@ -272,47 +272,215 @@ AppPool::AppPool(const std::vector<uint8_t>& data)
       }
    }
 #endif /* defined(CCI_USE_ARCHIVE) */
-}
 
+   if (m_pool[POOL::ALL].numObj != (m_pool[POOL::ROOT].numObj + 
+                            m_pool[POOL::AUX].numObj +
+                            m_pool[POOL::IMG256].numObj +
+                            m_pool[POOL::REMAIN].numObj))
+   {
+      for (uint8_t idx = POOL::ALL; idx < POOL::SIZE; idx++)
+      {
+         m_pool[idx] = PoolData();
+      }
+   }
+}
 
 AppPool::~AppPool()
 {
 }
 
+uint32_t AppPool::splitPool()	/* all other objects */
+{
+   uint32_t maxObjSize = 0U; /* max object size not counting images */
+   uint32_t poolSize = static_cast<uint32_t>(m_pool[POOL::ALL].data.size());
+   const uint8_t* poolDataIn = m_pool[POOL::ALL].data.data();
+
+   for (uint8_t idx = POOL::ROOT; idx < POOL::SIZE; idx++)
+   {
+      m_pool[idx].data.clear();
+   }
+
+   if (poolSize > 0U)
+   {
+      uint32_t poolIdx[POOL::SIZE];
+      for (uint8_t idx = POOL::ALL; idx < POOL::SIZE; idx++)
+      {
+         poolIdx[idx] = 0U;
+      }
+
+      for (uint8_t idx = POOL::ROOT; idx < POOL::SIZE; idx++)
+      {
+         m_pool[idx].data.resize(poolSize, 0U);
+      }
+
+      while (poolIdx[POOL::ALL] < poolSize)
+      {
+         const iso_u8* poolData = &poolDataIn[poolIdx[POOL::ALL]];
+         iso_u32 objectSize = IsoVtcPoolObjSize(poolData);
+         if (objectSize > 0)
+         {
+            OBJTYP_e eObjTyp = (OBJTYP_e)poolData[2];
+            switch (eObjTyp)
+            {
+            case WorkingSet:  /* Top level object describes an implement (working set). */
+               memmove(&m_pool[POOL::ROOT].data[poolIdx[POOL::ROOT]], poolData, objectSize);
+               poolIdx[POOL::ROOT] += objectSize;
+               if (maxObjSize < objectSize) maxObjSize = objectSize;
+               break;
+
+               /* Picture graphic object */
+            case PictureGraphic: /* Used to output a picture graphic (bitmap). */
+            {
+               ISOGRAPH_TYPE_e type = (ISOGRAPH_TYPE_e)poolData[9];
+               if (type <= colour_256)
+               {
+                  memmove(&m_pool[POOL::IMG256].data[poolIdx[POOL::IMG256]], poolData, objectSize);
+                  poolIdx[POOL::IMG256] += objectSize;
+
+                  if (type <= colour_16)
+                  {
+                     memmove(&m_pool[POOL::IMG16].data[poolIdx[POOL::IMG16]], poolData, objectSize);
+                     poolIdx[POOL::IMG16] += objectSize;
+                  }
+                  else
+                  {
+                     iso_u32 u32ObjSize = 0UL; // objectSize;
+/*                     if (IsoVtc_PoolObjPictureConvert(poolData,
+                        (uint32_t)m_pool[POOL::IMG16].data.size(),
+                        (uint32_t)poolIdx[POOL::IMG16],
+                        &m_pool[POOL::IMG16].data[poolIdx[POOL::IMG16]],
+                        &u32ObjSize, colour_16) == E_NO_ERR) */
+                     if (IsoVtcPoolConvertPictureObject(poolData,
+                        &m_pool[POOL::IMG16].data[poolIdx[POOL::IMG16]],
+                        ((uint32_t)m_pool[POOL::IMG16].data.size() - (uint32_t)poolIdx[POOL::IMG16]),
+                        colour_16, &u32ObjSize) == E_NO_ERR)
+                     {
+                        poolIdx[POOL::IMG16] += u32ObjSize;
+                     }
+                  }
+
+                  if (type == monochrome)
+                  {
+                     memmove(&m_pool[POOL::IMG2].data[poolIdx[POOL::IMG2]], poolData, objectSize);
+                     poolIdx[POOL::IMG2] += objectSize;
+                  }
+                  else
+                  {
+                     iso_u32 u32ObjSize = 0UL; // objectSize;
+                     /* if (IsoVtc_PoolObjPictureConvert(poolData,
+                        (uint32_t)m_pool[POOL::IMG2].data.size(),
+                        (uint32_t)poolIdx[POOL::IMG2],
+                        &m_pool[POOL::IMG2].data[poolIdx[POOL::IMG2]],
+                        &u32ObjSize, monochrome) == E_NO_ERR) */
+                     if (IsoVtcPoolConvertPictureObject(poolData,
+                        &m_pool[POOL::IMG2].data[poolIdx[POOL::IMG2]],
+                        ((uint32_t)m_pool[POOL::IMG2].data.size() - (uint32_t)poolIdx[POOL::IMG2]),
+                        monochrome, &u32ObjSize) == E_NO_ERR)
+                     {
+                        poolIdx[POOL::IMG2] += u32ObjSize;
+                     }
+                  }
+               }
+               break;
+            }
+
+               /* Auxiliary control */
+            case AuxiliaryFunction2: /* Defines the designator and function type 2. OK*/
+               memmove(&m_pool[POOL::AUX].data[poolIdx[POOL::AUX]], poolData, objectSize);
+               poolIdx[POOL::AUX] += objectSize;
+               if (maxObjSize < objectSize) maxObjSize = objectSize;
+               break;
+
+            default:
+               memmove(&m_pool[POOL::REMAIN].data[poolIdx[POOL::REMAIN]], poolData, objectSize);
+               poolIdx[POOL::REMAIN] += objectSize;
+               if (maxObjSize < objectSize) maxObjSize = objectSize;
+               break;
+            }
+
+            poolIdx[POOL::ALL] += objectSize;
+         }
+         else
+         { /* invalid pool */
+            poolIdx[POOL::ALL] = poolSize;	/* abort loop */
+            m_pool[POOL::ROOT].data.clear();
+            m_pool[POOL::AUX].data.clear();
+            m_pool[POOL::IMG256].data.clear();
+            m_pool[POOL::REMAIN].data.clear();
+            break;
+         }
+      }
+
+      /* produce output */
+      for (uint8_t idx = POOL::ROOT; idx < POOL::SIZE; idx++)
+      {
+         std::vector<uint8_t>& data = m_pool[idx].data;
+         int32_t newPoolSize = (int32_t)poolIdx[idx];
+         data.resize(newPoolSize);
+         m_pool[idx].numObj = IsoVtcGetNumofPoolObjs(data.data(), newPoolSize);
+      }
+   }
+
+   return maxObjSize;
+}
+
 bool AppPool::open(uint32_t mode)
 {
-   printf(" open \n");
+   //m_poolOnlyDriverDetails = (mode & POOL_ONLY_DRIVER_DETAILS) != 0U;
+   //m_graphicType = static_cast<ISOGRAPH_TYPE_e>(mode & 0x03);
+   // language
+//	uint32_t exception = 0;
 
-    m_pos = 0U;
+   m_data = m_pool[POOL::ROOT].data;
+   m_data.insert(m_data.end(), m_pool[POOL::AUX].data.begin(), m_pool[POOL::AUX].data.end());
+
+   if ((mode & POOL_ONLY_DRIVER_DETAILS) == 0U)
+   {
+      m_data.insert(m_data.end(), m_pool[POOL::IMG256].data.begin(), m_pool[POOL::IMG256].data.end());
+      m_data.insert(m_data.end(), m_pool[POOL::REMAIN].data.begin(), m_pool[POOL::REMAIN].data.end());
+   }
+
+   if ((mode & POOL_ONLY_GAUX_OBJECTS) != 0U)
+   {
+      uint32_t poolSize = (uint32_t)(m_data.size());
+      reduceAuxPool(m_data.data(), &poolSize);  // implementation is a copy from GAux.c
+      m_data.resize(poolSize);
+   }
+
+   m_numObj = IsoVtcGetNumofPoolObjs(m_data.data(), (iso_s32)m_data.size());
+   m_pos = 0U;
 
 #if defined(CCI_USE_ARCHIVE)
-   m_pool[POOL::ALL  ].channel = AppArchive::open(m_pool[POOL::ALL  ].archive);
+   m_pool[POOL::ROOT  ].channel = AppArchive::open(m_pool[POOL::ROOT  ].archive);
+   m_pool[POOL::AUX   ].channel = AppArchive::open(m_pool[POOL::AUX   ].archive);
+// m_pool[POOL::IMG2  ].channel = AppArchive::open(m_pool[POOL::IMG2  ].archive);
+// m_pool[POOL::IMG16 ].channel = AppArchive::open(m_pool[POOL::IMG16 ].archive);
+   m_pool[POOL::IMG256].channel = AppArchive::open(m_pool[POOL::IMG256].archive);
+   m_pool[POOL::REMAIN].channel = AppArchive::open(m_pool[POOL::REMAIN].archive);
 #endif /* defined(CCI_USE_ARCHIVE) */
 
-
-   return m_pool[POOL::ALL].data.size() > 0;
-
+   return m_data.size() > 0;
 }
 
 uint32_t AppPool::read(uint8_t* dst, uint32_t u32BlockSizeReq)
 {
 #if !defined(CCI_USE_ARCHIVE)
-   if ((m_pool[POOL::ALL].data.empty()) || (dst==nullptr))
+   if ((m_data.empty()) || (dst==nullptr))
    {
       return UINT32_MAX;
    }
 
-   if (m_pos >= m_pool[POOL::ALL].data.size())
+   if (m_pos >= m_data.size())
    {
       return UINT32_MAX;
    }
 
-   if ((m_pos + u32BlockSizeReq) > m_pool[POOL::ALL].data.size())
+   if ((m_pos + u32BlockSizeReq) > m_data.size())
    {
-      u32BlockSizeReq = static_cast<uint32_t>(m_pool[POOL::ALL].data.size() - m_pos);
+      u32BlockSizeReq = static_cast<uint32_t>(m_data.size() - m_pos);
    }
 
-   memcpy(dst, &m_pool[POOL::ALL].data[m_pos], u32BlockSizeReq);
+   memcpy(dst, &m_data[m_pos], u32BlockSizeReq);
    m_pos += u32BlockSizeReq;
    return u32BlockSizeReq;
 
@@ -352,27 +520,27 @@ const std::vector<uint8_t>& AppPool::getOriginalPool() const
 
 const std::vector<uint8_t>& AppPool::getOpenPool() const
 {
-   return m_pool[POOL::ALL].data;
+   return m_data;
 }
 
 void AppPool::close()
 {
-   m_pool[POOL::ALL].data.clear();
+   m_data.clear();
 }
 
 bool AppPool::isOpen()const
 {
-   return m_pool[POOL::ALL].data.size() > 0;
+   return m_data.size() > 0;
 }
 
 uint32_t AppPool::getPos()const
 {
-   return (m_pool[POOL::ALL].data.size() > 0) ? m_pos : UINT32_MAX;
+   return (m_data.size() > 0) ? m_pos : UINT32_MAX;
 }
 
 uint32_t AppPool::getSize()const
 {
-   return (m_pool[POOL::ALL].data.size() > 0) ? static_cast<uint32_t>(m_pool[POOL::ALL].data.size()) : 0U;
+   return (m_data.size() > 0) ? static_cast<uint32_t>(m_pool[POOL::ALL].data.size()) : 0U;
 }
 
 void AppPool::seekToBegin()
@@ -384,7 +552,7 @@ void AppPool::seekToBegin()
       AppArchive::seekToBegin(poolData.channel);
    }
 #endif /* defined(CCI_USE_ARCHIVE) */
-
+   
    m_pos = 0;
 }
 
@@ -397,3 +565,86 @@ uint32_t AppPool::getMaxObjectSize()const
 {
    return (uint32_t)m_pool[POOL::ALL].data.size();
 }
+
+static void reduceAuxPool(iso_u8 pu8PoolDataInOut[], iso_u32* pu32PoolSizeInOut)
+{
+   if ((pu8PoolDataInOut != NULL) && (pu32PoolSizeInOut != NULL))
+   {
+      iso_u32 u32PoolSrcIdx = 0;
+      iso_u32 u32PoolCopyIdx = 0;
+      iso_u32 u32PoolSize = *pu32PoolSizeInOut;
+      while (u32PoolSrcIdx < u32PoolSize)
+      {
+         iso_bool copyObject = ISO_FALSE;
+         iso_u8* poolData = &pu8PoolDataInOut[u32PoolSrcIdx];
+         iso_u32 objectSize = IsoVtcPoolObjSize(poolData);
+         iso_u32 newObjectSize = objectSize;
+         //          iso_u16 objectID = getU16(poolData);
+         OBJTYP_e eObjTyp = (OBJTYP_e)poolData[2];
+         switch (eObjTyp)
+         {
+         case WorkingSet:  /* Top level object describes an implement (working set). */
+            copyObject = ISO_TRUE;
+            break;
+
+            /* Picture graphic object */
+         case PictureGraphic: /* Used to output a picture graphic (bitmap). */
+         {
+            iso_u16 width = bufferGetU16(&poolData[5]);
+            iso_u16 hight = bufferGetU16(&poolData[7]);
+            if ((width <= 64U) && (hight <= 64U))
+            {
+               copyObject = ISO_TRUE;
+            }
+            else if ((width <= 128U) && (hight <= 128U))
+            {	// e.g. crop all pictures smaller then 128 pix.
+               if (IsoPoolCropCenterOfPictureObject(poolData, 64, 64, &newObjectSize) == E_NO_ERR)
+               {
+                  copyObject = ISO_TRUE;
+               }
+            }
+            else { /* skip picture object */ }
+            break;
+         }
+
+         /* Auxiliary control */
+         case AuxiliaryFunction2: /* Defines the designator and function type 2. OK*/
+         {
+            iso_u8 auxFunctionType = poolData[4] & 0x0FU;
+            if (auxFunctionType == 2)   // non latching boolean
+            {
+               copyObject = ISO_TRUE; // in use for a break point.
+            }
+
+            break;
+         }
+#if 1    /* object pointer object - CCI A3 feature BugID 11522 */
+         case ObjectPointer:
+            copyObject = ISO_TRUE;
+            break;
+#endif 
+         default:
+            break;
+         }
+
+         if ((copyObject != ISO_FALSE) && (newObjectSize > 0))
+         {
+            memmove(&pu8PoolDataInOut[u32PoolCopyIdx], poolData, newObjectSize);
+            u32PoolCopyIdx += newObjectSize;
+         }
+
+         u32PoolSrcIdx += objectSize;
+      }
+
+      *pu32PoolSizeInOut = u32PoolCopyIdx;
+   }
+   else
+   {
+      if (pu32PoolSizeInOut != NULL)
+      {
+         *pu32PoolSizeInOut = 0;
+      }
+   }
+}
+
+/* ************************************************************************ */
