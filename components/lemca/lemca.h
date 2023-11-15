@@ -17,6 +17,11 @@ extern double getSpeedKmH();
 
 extern void lemca_loop();
 
+extern void onButtonUp();
+extern void onButtonDown();
+extern void onButtonLeft();
+extern void onButtonRight();
+
 
 #ifdef __cplusplus
 }

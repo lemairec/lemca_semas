@@ -9,7 +9,8 @@ extern "C" {
 
 extern void setup_gpio();
 
-extern void update_gpio(int millis); //update 100ms
+void readAll2(int * capteur_angle, int * capteur_h, int * machine_l, int * machine_r);
+void setElectrovanne(int left, int right, int up, int down);
 
 #ifdef __cplusplus
 }

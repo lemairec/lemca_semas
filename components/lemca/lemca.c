@@ -16,6 +16,8 @@
 #include "Settings/settings.h"
 #include "AppCommon/AppHW.h"
 
+const double max_value = 3200.0;
+
 int m_agress_hydr = 0;
 void lemca_init(){
     hw_DebugPrint("*** lemca_init\n");
@@ -69,7 +71,35 @@ void changeWorkState(){
 }
 
 void update20Hz(int millis){
+    int capteur_angle = 0;
+    int capteur_h = 0;
+    int machine_l = 0;
+    int machine_r = 0;
+    readAll2(&capteur_angle, &capteur_h, &machine_l, &machine_r);
 
+    hw_DebugPrint("*** update20Hz %d %d %d %d\n",capteur_angle, capteur_h, machine_l, machine_r);
+
+    double h = (double)capteur_h/max_value - 0.5;
+    double a = (double)capteur_angle/max_value - 0.5;
+
+    hw_DebugPrint("*** update20Hz %.1f %.1f %d %d\n",a, h, 0, 0);
+
+    int i = a*500;
+
+    if(i < 0){
+        i = -i;
+        if(i > 255){
+            i = 255;
+        }
+        setElectrovanne(0, i,0,0);
+    } else {
+        if(i > 255){
+            i = 255;
+        }
+        setElectrovanne(i, 0,0,0);
+    }
+
+    
 }
 
 int old_millis = 0;
@@ -86,3 +116,16 @@ void lemca_loop(){
     old_millis = i;
 }
 
+
+void onButtonUp(){
+    hw_DebugPrint("*** onButtonUp\n");
+};
+void onButtonDown(){
+    hw_DebugPrint("*** onButtonDown\n");
+};
+void onButtonLeft(){
+    hw_DebugPrint("*** onButtonLeft\n");
+};
+void onButtonRight(){
+    hw_DebugPrint("*** onButtonRight\n");
+};
