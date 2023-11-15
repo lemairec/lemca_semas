@@ -16,6 +16,36 @@
 				</Property>
 			</PropertySheet>
 		</Object>
+		<Object Class="CNumberVariable" JVS-ID="21001" ObjectName="sensor_left" Pinned="FALSE">
+			<Property Name="Group">
+				<Value/>
+			</Property>
+			<Property Name="Comment">
+				<Value>
+					<![CDATA[AAA=]]>
+				</Value>
+			</Property>
+			<PropertySheet Name="NumberVariable" ID="68736">
+				<Property Name="Value">
+					<Value>123</Value>
+				</Property>
+			</PropertySheet>
+		</Object>
+		<Object Class="CNumberVariable" JVS-ID="21002" ObjectName="sensor_right" Pinned="FALSE">
+			<Property Name="Group">
+				<Value/>
+			</Property>
+			<Property Name="Comment">
+				<Value>
+					<![CDATA[AAA=]]>
+				</Value>
+			</Property>
+			<PropertySheet Name="NumberVariable" ID="68736">
+				<Property Name="Value">
+					<Value>123</Value>
+				</Property>
+			</PropertySheet>
+		</Object>
 		<Object Class="CStringVariable" JVS-ID="22002" ObjectName="StringVariable_Vitesse" Pinned="FALSE">
 			<Property Name="Group">
 				<Value/>
@@ -1007,6 +1037,7 @@ ADkAAAA=]]>
 			</PropertySheet>
 			<Objects>
 				<Object JVS-ID="23001"/>
+				<Object JVS-ID="21001"/>
 			</Objects>
 		</Object>
 		<Object Class="CInputNumber" Name="Edit" ObjectName="InputNumber_9002" Pinned="FALSE" JVS-ID="9002">
@@ -1263,6 +1294,7 @@ ADkAAAA=]]>
 			</PropertySheet>
 			<Objects>
 				<Object JVS-ID="23004"/>
+				<Object JVS-ID="21002"/>
 			</Objects>
 		</Object>
 		<Object Class="COutputText" Name="Text" ObjectName="OutputString_11000" Pinned="FALSE" JVS-ID="11000">

@@ -36,11 +36,13 @@ const unsigned long ISO_OP_MEMORY_CLASS isoOP_MyProject1_Offset_Id[] = {
 	 15541,  // up_20005_Offset
 	 15742,  // down_20006_Offset
 	 15943,  // aggress_hyd_21000_Offset
-	 15950,  // StringVariable_Vitesse_Offset
-	 15985,  // FontAttributes_23000_Offset
-	 15993,  // FontAttributes_23001_Offset
-	 16001,  // FontAttributes_23002_Offset
-	 16009,  // FontAttributes_23003_Offset
-	 16017,  // FontAttributes_23004_Offset
-	 16025,  // AuxFunctionSectionOnOff_Offset
+	 15950,  // sensor_left_Offset
+	 15957,  // sensor_right_Offset
+	 15964,  // StringVariable_Vitesse_Offset
+	 15999,  // FontAttributes_23000_Offset
+	 16007,  // FontAttributes_23001_Offset
+	 16015,  // FontAttributes_23002_Offset
+	 16023,  // FontAttributes_23003_Offset
+	 16031,  // FontAttributes_23004_Offset
+	 16039,  // AuxFunctionSectionOnOff_Offset
 };  // isoOP_MyProject1_Offset_Id

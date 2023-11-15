@@ -30,8 +30,8 @@ int m_electrovanne = 0;
 int m_last_machine_l = 0;
 int m_last_machine_r = 0;
 
-double m_last_machine_l_v = 0;
-double m_last_machine_r_v = 0;
+double m_last_machine_l_100 = 0;
+double m_last_machine_r_100 = 0;
     
 void lemca_init(){
     hw_DebugPrint("*** lemca_init\n");
@@ -59,6 +59,14 @@ void setAgressHyd(int agress_hydr){
 
 int getAgressHyd(){
     return m_agress_hydr;
+}
+
+int getLastRight(){
+    return m_last_machine_r_100;
+}
+
+int getLastLeft(){
+    return m_last_machine_l_100;
 }
 
 
@@ -145,11 +153,11 @@ void update20Hz(int millis){
     int capteur_angle = 0;
     int capteur_h = 0;
     readAll2(&capteur_angle, &capteur_h, &m_last_machine_l, &m_last_machine_r);
-    m_last_machine_l_v = (double)m_last_machine_l/max_value*100;
-    m_last_machine_r_v = (double)m_last_machine_r/max_value*100;
+    m_last_machine_l_100 = (double)m_last_machine_l*100.0/max_value;
+    m_last_machine_r_100 = (double)m_last_machine_r*100.0/max_value;
 
-    //hw_DebugPrint("*** update20Hz %d %d %d %d\n",capteur_angle, capteur_h, machine_l, machine_r);
-
+    //hw_DebugPrint("*** update20Hz %d %d %d %d\n",capteur_angle, capteur_h, m_last_machine_l, m_last_machine_r);
+    
     double h = (double)capteur_h/max_value - 0.5;
     double a = (double)capteur_angle/max_value - 0.5;
 

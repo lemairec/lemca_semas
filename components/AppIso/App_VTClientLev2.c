@@ -134,6 +134,8 @@ void updateVTC(){
 
 	//IsoVtcCmd_String(vtc_instance, StringVariable_Debug, (iso_u8 *)data);
 	IsoVtcCmd_NumericValue(vtc_instance, aggress_hyd_21000, getAgressHyd());
+	IsoVtcCmd_NumericValue(vtc_instance, sensor_left, getLastLeft());
+	IsoVtcCmd_NumericValue(vtc_instance, sensor_right, getLastRight());
 }
 
 void VTC_handleNumericValues(const struct InputNumber_S * pInputNumberData) {

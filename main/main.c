@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include "AppHW.h"
 #include "sdkconfig.h"
+#include "lemca.h"
 
 #include "IsoCommonDef.h"
 #include "IsoCommonApi.h"

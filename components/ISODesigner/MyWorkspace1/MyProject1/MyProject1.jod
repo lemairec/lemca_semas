@@ -8,7 +8,7 @@
 		</Object>
 		<Object Class="CInputNumber">
 			<Objects>
-				<Object Class="CNumberVariable" JVS-ID="21000" ObjectName="aggress_hyd_21000"/>
+				<Object Class="CNumberVariable" JVS-ID="21002" ObjectName="sensor_right"/>
 				<Object Class="CFontStyle" JVS-ID="23001" ObjectName="FontAttributes_23001"/>
 			</Objects>
 		</Object>

@@ -33,20 +33,22 @@
 #define up_20005_Offset                                     15541
 #define down_20006_Offset                                   15742
 #define aggress_hyd_21000_Offset                            15943
-#define StringVariable_Vitesse_Offset                       15950
-#define FontAttributes_23000_Offset                         15985
-#define FontAttributes_23001_Offset                         15993
-#define FontAttributes_23002_Offset                         16001
-#define FontAttributes_23003_Offset                         16009
-#define FontAttributes_23004_Offset                         16017
-#define AuxFunctionSectionOnOff_Offset                      16025
+#define sensor_left_Offset                                  15950
+#define sensor_right_Offset                                 15957
+#define StringVariable_Vitesse_Offset                       15964
+#define FontAttributes_23000_Offset                         15999
+#define FontAttributes_23001_Offset                         16007
+#define FontAttributes_23002_Offset                         16015
+#define FontAttributes_23003_Offset                         16023
+#define FontAttributes_23004_Offset                         16031
+#define AuxFunctionSectionOnOff_Offset                      16039
 
 #define ISO_OP_MEMORY_CLASS
 
-#define ISO_OP_MyProject1_Size  16037
+#define ISO_OP_MyProject1_Size  16051
 extern const unsigned char ISO_OP_MEMORY_CLASS isoOP_MyProject1[];
 
-#define ISO_OP_MyProject1_ObjectNumber     39
+#define ISO_OP_MyProject1_ObjectNumber     41
 extern const unsigned long ISO_OP_MEMORY_CLASS isoOP_MyProject1_Offset[];
 extern const unsigned long ISO_OP_MEMORY_CLASS isoOP_MyProject1_Offset_Id[];
 #define ISO_OP_MyProject1_Scale_Offset      1

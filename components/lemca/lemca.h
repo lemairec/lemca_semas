@@ -22,6 +22,8 @@ extern void onButtonDown();
 extern void onButtonLeft();
 extern void onButtonRight();
 
+extern int getLastRight();
+extern int getLastLeft();
 
 #ifdef __cplusplus
 }
