@@ -65,9 +65,46 @@ double getSpeedKmH(){
     return m_km_h;
 }
 
-
+bool m_workstate_on = false;
 void changeWorkState(){
 
+}
+
+void updateTranslator(int left_right, int up_down){
+    int left_right2 = left_right;
+    int up_down2 = up_down;
+
+    int left = 0;
+    int right = 0;
+    int up = 0;
+    int down = 0;
+
+    if(left_right2 < 0){
+        left_right2 = -left_right2;
+        if(left_right2 > 8191){
+            left_right2 = 8191;
+        }
+        left = left_right2;
+    } else {
+        if(left_right2 > 8191){
+            left_right2 = 8191;
+        }
+        right = left_right2;
+    }
+
+    if(up_down2 < 0){
+        up_down2 = -up_down2;
+        if(up_down2 > 8191){
+            up_down2 = 8191;
+        }
+        up = up_down2;
+    } else {
+        if(up_down2 > 8191){
+            up_down2 = 8191;
+        }
+        down = up_down2;
+    }
+    setElectrovanne(left, right, up, down);
 }
 
 void update20Hz(int millis){
@@ -84,20 +121,9 @@ void update20Hz(int millis){
 
     hw_DebugPrint("*** update20Hz %.1f %.1f %d %d\n",a, h, 0, 0);
 
-    int i = a*500;
+    int left_right = a*500;
 
-    if(i < 0){
-        i = -i;
-        if(i > 255){
-            i = 255;
-        }
-        setElectrovanne(0, i,0,0);
-    } else {
-        if(i > 255){
-            i = 255;
-        }
-        setElectrovanne(i, 0,0,0);
-    }
+    
 
     
 }
