@@ -45,7 +45,7 @@ void app_main(void)
     hw_DebugPrint("SPI RAM: %u bytes free\n", heap_caps_get_free_size(MALLOC_CAP_SPIRAM));
 	hw_DebugPrint("app_main \n");
 
-
+	lemca_init();
 
 	isobus_main(0, NULL);
 
