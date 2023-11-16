@@ -15,8 +15,12 @@
 #define SoftKey_home                       5000
 #define SoftKey_setting                    5001
 #define SoftKey_up                         5002
-#define SoftKey_5003                       5003
+#define SoftKey_down                       5003
 #define SoftKeySectionOnOff                5004
+#define SoftKey_upright                    5005
+#define SoftKey_upleft                     5006
+#define SoftKey_up2                        5007
+#define SoftKey_down2                      5008
 #define InputBoolean_7000                  7000
 #define InputNumber_9000                   9000
 #define InputNumber_9001                   9001
@@ -30,6 +34,8 @@
 #define OutputString_11005                11005
 #define OutputString_11006                11006
 #define OutputString_11007                11007
+#define OutputString_11008                11008
+#define OutputNumber_12000                12000
 #define semas_logo_20000                  20000
 #define section_on_off                    20001
 #define home_20002                        20002
@@ -37,6 +43,10 @@
 #define semas_logo_20004                  20004
 #define up_20005                          20005
 #define down_20006                        20006
+#define up3_20007                         20007
+#define up2_20008                         20008
+#define Up4_20009                         20009
+#define Down1_20010                       20010
 #define aggress_hyd_21000                 21000
 #define sensor_left                       21001
 #define sensor_right                      21002
@@ -46,4 +56,6 @@
 #define FontAttributes_23002              23002
 #define FontAttributes_23003              23003
 #define FontAttributes_23004              23004
+#define FontAttributes_23005              23005
+#define Generated_Pointer_To_Null         27000
 #define AuxFunctionSectionOnOff           29004
