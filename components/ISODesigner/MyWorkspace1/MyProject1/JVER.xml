@@ -47,4 +47,5 @@
 		<KeyCodes/>
 		<HideSoftKeyMasksInRuntime>0</HideSoftKeyMasksInRuntime>
 	</DisplaySettings>
+	<Simulation Enabled="1" ConfigFile=""/>
 </JVER-Project>

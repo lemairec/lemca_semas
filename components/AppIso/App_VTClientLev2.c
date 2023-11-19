@@ -107,11 +107,23 @@ void VTC_handleSoftkeysAndButtons_RELEASED(const struct ButtonActivation_S *pBut
 		case AuxFunctionSectionOnOff:
 			changeWorkState();
 			break;
-		case SoftKey_5003:
+		case SoftKey_down:
 			onButtonDown();
 			break;
 		case SoftKey_up:
 			onButtonUp();
+			break;
+		case SoftKey_upleft:
+			onButtonUpLeft();
+			break;
+		case SoftKey_upright:
+			onButtonUpRight();
+			break;
+		case SoftKey_down2:
+			onButtonDownWork();
+			break;
+		case SoftKey_up2:
+			onButtonUpWork();
 			break;
 		default:
 			break;
