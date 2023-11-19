@@ -50,6 +50,7 @@
 #define aggress_hyd_21000                 21000
 #define sensor_left                       21001
 #define sensor_right                      21002
+#define work_h                            21003
 #define StringVariable_Vitesse            22002
 #define FontAttributes_23000              23000
 #define FontAttributes_23001              23001

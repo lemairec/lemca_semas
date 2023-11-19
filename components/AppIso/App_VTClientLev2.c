@@ -142,7 +142,7 @@ void updateVTC(){
 	//hw_DebugPrint("updateVTC\n");
 	double speed = getSpeedKmH();
 	char data[30];
-	sprintf(data,"vitesse : %.1f km/h", speed);
+	sprintf(data,"%.1f km/h", speed);
 
 	enum State state = getState();
 	char data2[30];
@@ -163,7 +163,7 @@ void updateVTC(){
 	IsoVtcCmd_NumericValue(vtc_instance, sensor_left, getLastLeft());
 	IsoVtcCmd_NumericValue(vtc_instance, sensor_right, getLastRight());
 	IsoVtcCmd_NumericValue(vtc_instance, work_h, getWorkHeight());
-	ESP_LOGI("lemca", "updateVTC");
+	//ESP_LOGI("lemca", "updateVTC");
 }
 
 void VTC_handleNumericValues(const struct InputNumber_S * pInputNumberData) {

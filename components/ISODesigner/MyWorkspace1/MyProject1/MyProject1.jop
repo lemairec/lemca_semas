@@ -46,6 +46,21 @@
 				</Property>
 			</PropertySheet>
 		</Object>
+		<Object Class="CNumberVariable" JVS-ID="21003" ObjectName="work_h" Pinned="FALSE">
+			<Property Name="Group">
+				<Value/>
+			</Property>
+			<Property Name="Comment">
+				<Value>
+					<![CDATA[AAA=]]>
+				</Value>
+			</Property>
+			<PropertySheet Name="NumberVariable" ID="68736">
+				<Property Name="Value">
+					<Value>0</Value>
+				</Property>
+			</PropertySheet>
+		</Object>
 		<Object Class="CStringVariable" JVS-ID="22002" ObjectName="StringVariable_Vitesse" Pinned="FALSE">
 			<Property Name="Group">
 				<Value/>
@@ -106,7 +121,7 @@ ADkAAAA=]]>
 					<Value>Lucida Console</Value>
 				</Property>
 				<Property Name="Size">
-					<Value>12</Value>
+					<Value>6</Value>
 				</Property>
 				<Property Name="Height">
 					<Value>16</Value>
@@ -127,7 +142,7 @@ ADkAAAA=]]>
 					<Value>0</Value>
 				</Property>
 				<Property Name="PointWidth">
-					<Value>9</Value>
+					<Value>4</Value>
 				</Property>
 				<Property Name="Width">
 					<Value>12</Value>
@@ -163,7 +178,7 @@ ADkAAAA=]]>
 					<Value>Lucida Console</Value>
 				</Property>
 				<Property Name="Size">
-					<Value>12</Value>
+					<Value>6</Value>
 				</Property>
 				<Property Name="Height">
 					<Value>16</Value>
@@ -184,7 +199,7 @@ ADkAAAA=]]>
 					<Value>0</Value>
 				</Property>
 				<Property Name="PointWidth">
-					<Value>9</Value>
+					<Value>4</Value>
 				</Property>
 				<Property Name="Width">
 					<Value>12</Value>
@@ -220,7 +235,7 @@ ADkAAAA=]]>
 					<Value>Lucida Console</Value>
 				</Property>
 				<Property Name="Size">
-					<Value>12</Value>
+					<Value>6</Value>
 				</Property>
 				<Property Name="Height">
 					<Value>16</Value>
@@ -241,7 +256,7 @@ ADkAAAA=]]>
 					<Value>0</Value>
 				</Property>
 				<Property Name="PointWidth">
-					<Value>9</Value>
+					<Value>4</Value>
 				</Property>
 				<Property Name="Width">
 					<Value>12</Value>
@@ -277,7 +292,7 @@ ADkAAAA=]]>
 					<Value>Lucida Console</Value>
 				</Property>
 				<Property Name="Size">
-					<Value>12</Value>
+					<Value>6</Value>
 				</Property>
 				<Property Name="Height">
 					<Value>16</Value>
@@ -298,7 +313,7 @@ ADkAAAA=]]>
 					<Value>0</Value>
 				</Property>
 				<Property Name="PointWidth">
-					<Value>9</Value>
+					<Value>4</Value>
 				</Property>
 				<Property Name="Width">
 					<Value>12</Value>
@@ -334,7 +349,7 @@ ADkAAAA=]]>
 					<Value>Lucida Console</Value>
 				</Property>
 				<Property Name="Size">
-					<Value>12</Value>
+					<Value>6</Value>
 				</Property>
 				<Property Name="Height">
 					<Value>16</Value>
@@ -355,7 +370,7 @@ ADkAAAA=]]>
 					<Value>0</Value>
 				</Property>
 				<Property Name="PointWidth">
-					<Value>9</Value>
+					<Value>4</Value>
 				</Property>
 				<Property Name="Width">
 					<Value>12</Value>
@@ -391,7 +406,7 @@ ADkAAAA=]]>
 					<Value>Lucida Console</Value>
 				</Property>
 				<Property Name="Size">
-					<Value>12</Value>
+					<Value>6</Value>
 				</Property>
 				<Property Name="Height">
 					<Value>16</Value>
@@ -412,7 +427,7 @@ ADkAAAA=]]>
 					<Value>0</Value>
 				</Property>
 				<Property Name="PointWidth">
-					<Value>9</Value>
+					<Value>4</Value>
 				</Property>
 				<Property Name="Width">
 					<Value>12</Value>
@@ -914,7 +929,7 @@ ADkAAAA=]]>
 					<Value>0</Value>
 				</Property>
 				<Property Name="RoundEdgeRadius">
-					<Value>113786812728882924115081956944464144851800803506269191301188227484900160470291835421281944650625524802769756607040260142142497666906976625092421110492030523373344487339633363681647848143605720336001975867052467155241707317724446720.000000</Value>
+					<Value>0.000000</Value>
 				</Property>
 				<Property Name="checked">
 					<Value>0</Value>
@@ -1605,7 +1620,7 @@ ADkAAAA=]]>
 			<PropertySheet Name="Text">
 				<Property Name="Text">
 					<Value>
-						<![CDATA[UwBlAHQAdABpAG4AZwAAAA==]]>
+						<![CDATA[VABlAHgAdAAAAA==]]>
 					</Value>
 				</Property>
 				<Property Name="ResourceID">
@@ -1708,7 +1723,7 @@ ADkAAAA=]]>
 			<PropertySheet Name="Text">
 				<Property Name="Text">
 					<Value>
-						<![CDATA[QQBnAGcAcgBlAHMAcwBpAHYAZQBuAGUAcwBzAAAA]]>
+						<![CDATA[VABlAHgAdAAAAA==]]>
 					</Value>
 				</Property>
 				<Property Name="ResourceID">
@@ -1811,7 +1826,7 @@ ADkAAAA=]]>
 			<PropertySheet Name="Text">
 				<Property Name="Text">
 					<Value>
-						<![CDATA[UwBpAG0AdQBsAGEAdABlAGQAIABzAHAAZQBlAGQAAAA=]]>
+						<![CDATA[VABlAHgAdAAAAA==]]>
 					</Value>
 				</Property>
 				<Property Name="ResourceID">
@@ -2019,7 +2034,7 @@ ADkAAAA=]]>
 			<PropertySheet Name="Text">
 				<Property Name="Text">
 					<Value>
-						<![CDATA[UwBlAG4AcwBvAHIAIABMAGUAZgB0AAAA]]>
+						<![CDATA[VABlAHgAdAAAAA==]]>
 					</Value>
 				</Property>
 				<Property Name="ResourceID">
@@ -2122,7 +2137,7 @@ ADkAAAA=]]>
 			<PropertySheet Name="Text">
 				<Property Name="Text">
 					<Value>
-						<![CDATA[UwBlAG4AcwBvAHIAIABDAGUAbgB0AGUAcgAAAA==]]>
+						<![CDATA[VABlAHgAdAAAAA==]]>
 					</Value>
 				</Property>
 				<Property Name="ResourceID">
@@ -2225,7 +2240,7 @@ ADkAAAA=]]>
 			<PropertySheet Name="Text">
 				<Property Name="Text">
 					<Value>
-						<![CDATA[UwBlAG4AcwBvAHIAIABSAGkAZwBoAHQAAAA=]]>
+						<![CDATA[VABlAHgAdAAAAA==]]>
 					</Value>
 				</Property>
 				<Property Name="ResourceID">
@@ -2528,6 +2543,7 @@ ADkAAAA=]]>
 			</PropertySheet>
 			<Objects>
 				<Object JVS-ID="23005"/>
+				<Object JVS-ID="21003"/>
 			</Objects>
 		</Object>
 		<Object Class="CImage" Name="Image" ObjectName="semas_logo_20000" Pinned="FALSE" JVS-ID="20000">
@@ -3434,6 +3450,9 @@ ADkAAAA=]]>
 				<Property Name="Name">
 					<Value>Image_1</Value>
 				</Property>
+				<Property Name="TabIndex">
+					<Value>-1</Value>
+				</Property>
 				<Property Name="Transform">
 					<Value>(1.0000000000000000)(0.0000000000000000)(5.0000000000000000)(0.0000000000000000)(1.0000000000000000)(5.0000000000000000)</Value>
 				</Property>
@@ -3452,6 +3471,9 @@ ADkAAAA=]]>
 				</Property>
 				<Property Name="Name">
 					<Value>Image_1</Value>
+				</Property>
+				<Property Name="TabIndex">
+					<Value>-1</Value>
 				</Property>
 				<Property Name="Transform">
 					<Value>(1.0000000000000000)(0.0000000000000000)(5.0000000000000000)(0.0000000000000000)(1.0000000000000000)(5.0000000000000000)</Value>
@@ -3472,6 +3494,9 @@ ADkAAAA=]]>
 				<Property Name="Name">
 					<Value>Image_1</Value>
 				</Property>
+				<Property Name="TabIndex">
+					<Value>-1</Value>
+				</Property>
 				<Property Name="Transform">
 					<Value>(1.0000000000000000)(0.0000000000000000)(5.0000000000000000)(0.0000000000000000)(1.0000000000000000)(5.0000000000000000)</Value>
 				</Property>
@@ -3490,6 +3515,9 @@ ADkAAAA=]]>
 				</Property>
 				<Property Name="Name">
 					<Value>Image_1</Value>
+				</Property>
+				<Property Name="TabIndex">
+					<Value>-1</Value>
 				</Property>
 				<Property Name="Transform">
 					<Value>(1.0000000000000000)(0.0000000000000000)(5.0000000000000000)(0.0000000000000000)(1.0000000000000000)(5.0000000000000000)</Value>

@@ -11,11 +11,9 @@
 				<Object Class="CFontStyle" JVS-ID="23001" ObjectName="FontAttributes_23001"/>
 			</Objects>
 		</Object>
-		<Object Class="CInputText">
-			<Objects/>
-		</Object>
 		<Object Class="COutputNumber">
 			<Objects>
+				<Object Class="CNumberVariable" JVS-ID="21003" ObjectName="work_h"/>
 				<Object Class="CFontStyle" JVS-ID="23005" ObjectName="FontAttributes_23005"/>
 			</Objects>
 		</Object>
