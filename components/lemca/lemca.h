@@ -5,8 +5,16 @@
 extern "C" {
 #endif
 
+enum State{
+    State_off = 0,
+    State_time = 1,
+    State_up = 2,
+    State_work = 3
+};
 
 extern void lemca_init();
+
+enum State getState();
 
 void setAgressHyd(int agress_hydr);
 int getAgressHyd();

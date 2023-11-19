@@ -16,12 +16,7 @@
 #include "Settings/settings.h"
 #include "AppCommon/AppHW.h"
 
-enum State{
-    State_off = 0,
-    State_time = 1,
-    State_up = 2,
-    State_work = 3
-};
+
 
 const double max_value = 3200.0;
 
@@ -82,6 +77,10 @@ void save_config(){
     setS32("LEMCA", "WORK_H", m_work_h);
 
     hw_DebugPrint("*** AGRESS_HYD %d\n",m_agress_hydr);
+}
+
+enum State getState(){
+    return m_state;
 }
 
 
@@ -175,7 +174,7 @@ void updateTranslator(int left_right, int up_down){
 }
 
 void updateUp(){
-    
+
 }
 
 void updateWorkstate(){
@@ -238,7 +237,7 @@ void lemca_loop(){
     int64_t i = millis/50;
     if(i != old_millis){
         update20Hz(m_last_millis);
-        if(i%10 == 0){
+        if(i%5 == 0){
             updateVTC();
         }
         //jd_loop(millis); 

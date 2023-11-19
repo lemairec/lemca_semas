@@ -133,6 +133,7 @@ void VTC_handleSoftkeysAndButtons_RELEASED(const struct ButtonActivation_S *pBut
 	updateVTC();
 }
 
+enum State last_state = State_off;
 void updateVTC(){
 	if(vtc_instance == 0){
 		return;
@@ -140,14 +141,29 @@ void updateVTC(){
 
 	//hw_DebugPrint("updateVTC\n");
 	double speed = getSpeedKmH();
-	
-	char data[40];
-	sprintf(data,"%c %.1f", 'A', speed);
+	char data[30];
+	sprintf(data,"vitesse : %.1f km/h", speed);
 
-	//IsoVtcCmd_String(vtc_instance, StringVariable_Debug, (iso_u8 *)data);
+	enum State state = getState();
+	char data2[30];
+	if(state == State_off){
+		sprintf(data2,"off");
+	} else if(state == State_time){
+		sprintf(data2,"time");
+	} else if(state == State_up){
+		sprintf(data2,"up");
+	} else if(state == State_work){
+		sprintf(data2,"work");
+	}
+	last_state = state;
+	//IsoVtcCmd_String(vtc_instance, StringVariable_State, (iso_u8 *)data2);
+
+    //IsoVtcCmd_String(vtc_instance, StringVariable_Vitesse, (iso_u8 *)data);
 	IsoVtcCmd_NumericValue(vtc_instance, aggress_hyd_21000, getAgressHyd());
 	IsoVtcCmd_NumericValue(vtc_instance, sensor_left, getLastLeft());
 	IsoVtcCmd_NumericValue(vtc_instance, sensor_right, getLastRight());
+	IsoVtcCmd_NumericValue(vtc_instance, work_h, getWorkHeight());
+	ESP_LOGI("lemca", "updateVTC");
 }
 
 void VTC_handleNumericValues(const struct InputNumber_S * pInputNumberData) {
