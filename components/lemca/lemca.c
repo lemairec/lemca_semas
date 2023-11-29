@@ -32,14 +32,19 @@ enum State m_state = 0; //0 off, 1 time, 2 up, 3 time
 int64_t m_last_millis_time = 0;
 int m_electrovanne = 0;
 
+int m_last_machine_a = 0;
+int m_last_machine_h = 0;
 int m_last_machine_l = 0;
 int m_last_machine_r = 0;
 
+
+double m_last_machine_a_100 = 0;
+double m_last_machine_h_100 = 0;
 double m_last_machine_l_100 = 0;
 double m_last_machine_r_100 = 0;
 
 int m_work_h = 0;
-int64_t m_last_millis_workstate = 0;
+int64_t m_last_millis_up = 0;
 
 int desired_h = 50; //0-100 //todo remove?
 int desired_a = 0; //-50 50 //todo remove?
@@ -65,7 +70,8 @@ void lemca_init(){
     m_work_h = getS32("LEMCA", "WORK_H", 50);
     verify_config();
 
-    hw_DebugPrint("*** AGRESS_HYD %d\n",m_agress_hydr);
+    hw_DebugPrint("***- AGRESS_HYD %d\n",m_agress_hydr);
+    hw_DebugPrint("***- WORK_H %d\n",m_work_h);
 }
 
 void save_config(){
@@ -76,7 +82,8 @@ void save_config(){
     setS32("LEMCA", "AGRESS_HYD", m_agress_hydr);
     setS32("LEMCA", "WORK_H", m_work_h);
 
-    hw_DebugPrint("*** AGRESS_HYD %d\n",m_agress_hydr);
+    hw_DebugPrint("***+ AGRESS_HYD %d\n",m_agress_hydr);
+    hw_DebugPrint("***+ WORK_H %d\n",m_work_h);
 }
 
 enum State getState(){
@@ -124,8 +131,8 @@ double getSpeedKmH(){
 }
 
 void changeWorkState(){
-    m_last_millis_workstate = m_last_millis;
     if(m_state == State_work){
+        m_last_millis_up = m_last_millis;
         m_state = State_up;
     } else {
         m_state = State_work;
@@ -173,12 +180,57 @@ void updateTranslator(int left_right, int up_down){
     setElectrovanne(left, right, up, down);
 }
 
-void updateUp(){
+void setTranslateur(double corr_ang, double corr_h){
+    int corr_ang2 = corr_ang;
+    int corr_h2 = corr_h;
+    int left = 0;
+    int right = 0;
+    int up = 0;
+    int down = 0;
+    if(corr_ang2 > 0){
+        if(corr_ang2 > 8191){
+            corr_ang2 = 8191;
+        }
+        left = corr_ang2;
+    } else {
+        corr_ang2 = -corr_ang2;
+        if(corr_ang2 > 8191){
+            corr_ang2 = 8191;
+        }
+        right = corr_ang2;
+    }
+    if(corr_h2 > 0){
+        if(corr_h2 > 8191){
+            corr_h2 = 8191;
+        }
+        up = corr_ang2;
+    } else {
+        corr_h2 = -corr_h2;
+        if(corr_h2 > 8191){
+            corr_h2 = 8191;
+        }
+        down = corr_ang2;
+    }
+    setElectrovanne(left, right, up, down);
+}
 
+void updateUp(){
+    if((m_last_millis - m_last_millis_up) < 3000){
+        hw_DebugPrint("*** update up %i %i\n", m_last_millis_up, m_last_millis);
+        double a = (double)m_last_machine_a_100 - 50.0;
+        double res = a*m_agress_hydr;
+        setTranslateur(res, 8191);
+    } else {
+        m_state = State_off;
+        setElectrovanne(0, 0, 0, 0);
+    }
 }
 
 void updateWorkstate(){
+    double corr_ang = (m_last_machine_l_100-m_last_machine_r_100)*m_agress_hydr;
 
+    double corr_h = (m_work_h-(m_last_machine_l_100+m_last_machine_r_100)*0.5)*m_agress_hydr;
+    setTranslateur(corr_ang, corr_h);
 }
 
 void updateTime(){
@@ -204,7 +256,9 @@ void updateTime(){
 void update20Hz(int millis){
     int capteur_angle = 0;
     int capteur_h = 0;
-    readAll2(&capteur_angle, &capteur_h, &m_last_machine_l, &m_last_machine_r);
+    readAll2(&m_last_machine_a, &m_last_machine_h, &m_last_machine_l, &m_last_machine_r);
+    m_last_machine_a_100 = (double)m_last_machine_a*100.0/max_value;
+    m_last_machine_h_100 = (double)m_last_machine_h*100.0/max_value;
     m_last_machine_l_100 = (double)m_last_machine_l*100.0/max_value;
     m_last_machine_r_100 = (double)m_last_machine_r*100.0/max_value;
 
@@ -227,6 +281,8 @@ void update20Hz(int millis){
         updateWorkstate();
     } else if(m_state == State_up){
         updateUp();
+    } else {
+        setElectrovanne(0, 0, 0, 0);
     }
 }
 
