@@ -2,7 +2,7 @@
     "idf.adapterTargetName": "esp32s3",
     "idf.portWin": "COM6",
     "idf.flashType": "UART",
-    "idf.port": "/dev/cu.usbserial-02A9380E",
+    "idf.port": "/dev/cu.usbserial-02B5A7F0",
     "C_Cpp.dimInactiveRegions": false,
     "files.associations": {
         "isovtcapi.h": "c",
