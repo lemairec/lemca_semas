@@ -35,6 +35,7 @@
 #define OutputString_11006                11006
 #define OutputString_11007                11007
 #define OutputString_11008                11008
+#define OutputString_11009                11009
 #define OutputNumber_12000                12000
 #define semas_logo_20000                  20000
 #define section_on_off                    20001
@@ -51,6 +52,7 @@
 #define sensor_left                       21001
 #define sensor_right                      21002
 #define work_h                            21003
+#define StringVariable_State              22000
 #define StringVariable_Vitesse            22002
 #define FontAttributes_23000              23000
 #define FontAttributes_23001              23001
@@ -58,5 +60,6 @@
 #define FontAttributes_23003              23003
 #define FontAttributes_23004              23004
 #define FontAttributes_23005              23005
+#define FontAttributes_23006              23006
 #define Generated_Pointer_To_Null         27000
 #define AuxFunctionSectionOnOff           29004

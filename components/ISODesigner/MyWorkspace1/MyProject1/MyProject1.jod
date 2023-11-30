@@ -19,6 +19,7 @@
 		</Object>
 		<Object Class="COutputText">
 			<Objects>
+				<Object Class="CStringVariable" JVS-ID="22000" ObjectName="StringVariable_State"/>
 				<Object Class="CFontStyle" JVS-ID="23000" ObjectName="FontAttributes_23000"/>
 			</Objects>
 		</Object>

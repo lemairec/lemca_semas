@@ -156,9 +156,9 @@ void updateVTC(){
 		sprintf(data2,"work");
 	}
 	last_state = state;
-	//IsoVtcCmd_String(vtc_instance, StringVariable_State, (iso_u8 *)data2);
+	IsoVtcCmd_String(vtc_instance, StringVariable_State, (iso_u8 *)data2);
 
-    //IsoVtcCmd_String(vtc_instance, StringVariable_Vitesse, (iso_u8 *)data);
+    IsoVtcCmd_String(vtc_instance, StringVariable_Vitesse, (iso_u8 *)data);
 	IsoVtcCmd_NumericValue(vtc_instance, aggress_hyd_21000, getAgressHyd());
 	IsoVtcCmd_NumericValue(vtc_instance, sensor_left, getLastLeft());
 	IsoVtcCmd_NumericValue(vtc_instance, sensor_right, getLastRight());
