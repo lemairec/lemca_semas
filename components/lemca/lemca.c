@@ -259,7 +259,7 @@ void update20Hz(int millis){
     readAll2(&m_last_machine_a, &m_last_machine_h, &m_last_machine_l, &m_last_machine_r);
     m_last_machine_a_100 = (double)m_last_machine_a*100.0/max_value;
     m_last_machine_h_100 = (double)m_last_machine_h*100.0/max_value;
-    m_last_machine_l_100 = (double)m_last_machine_l*100.0/max_value;
+    m_last_machine_l_100 = 100.0-(double)m_last_machine_l*100.0/max_value;
     m_last_machine_r_100 = (double)m_last_machine_r*100.0/max_value;
 
     if(!isAlive()){
