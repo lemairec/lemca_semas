@@ -37,10 +37,10 @@ int64_t m_last_millis_alive = 0;
 //time fonction
 enum State m_state = 0; //0 off, 1 time, 2 up, 3 time
 int64_t m_last_millis_time = 0;
-TimeAction m_time_action = TimeAction_Left;
+TimeAction m_time_action = TimeAction_Off;
 
-double m_last_corr_angl = 0;
-double m_last_corr_h = 0;
+double m_last_corr_angl_100 = 0;
+double m_last_corr_h_100 = 0;
 
 int m_last_machine_a = 0;
 int m_last_machine_h = 0;
@@ -141,12 +141,12 @@ double getSpeedKmH(){
 }
 
 double getCorrAng(){
-    return m_last_corr_angl;
+    return m_last_corr_angl_100;
 }
 
 
 double getCorrH(){
-    return m_last_corr_h;
+    return m_last_corr_h_100;
 }
 
 
@@ -163,46 +163,21 @@ int getWorkState(){
     return m_state == State_work;
 }
 
-void updateTranslator(int left_right, int up_down){
-    int left_right2 = left_right;
-    int up_down2 = up_down;
-
-    int left = 0;
-    int right = 0;
-    int up = 0;
-    int down = 0;
-
-    if(left_right2 < 0){
-        left_right2 = -left_right2;
-        if(left_right2 > 8191){
-            left_right2 = 8191;
-        }
-        left = left_right2;
-    } else {
-        if(left_right2 > 8191){
-            left_right2 = 8191;
-        }
-        right = left_right2;
-    }
-
-    if(up_down2 < 0){
-        up_down2 = -up_down2;
-        if(up_down2 > 8191){
-            up_down2 = 8191;
-        }
-        up = up_down2;
-    } else {
-        if(up_down2 > 8191){
-            up_down2 = 8191;
-        }
-        down = up_down2;
-    }
-    setElectrovanne(left, right, up, down);
-}
-
 void setTranslateur(double corr_ang, double corr_h){
-    m_last_corr_angl = corr_ang;
-    m_last_corr_h = corr_h;
+    m_last_corr_angl_100 = corr_ang/8191.0*100.0;
+    m_last_corr_h_100 = corr_h/8191.0*100.0;
+    if(m_last_corr_angl_100 >100){
+        m_last_corr_angl_100 = 100.0;
+    }
+    if(m_last_corr_angl_100 < -100){
+        m_last_corr_angl_100 = -100.0;
+    }
+    if(m_last_corr_h_100 >100){
+        m_last_corr_h_100 = 100.0;
+    }
+    if(m_last_corr_h_100 < -100){
+        m_last_corr_h_100 = -100.0;
+    }
     int corr_ang2 = corr_ang;
     int corr_h2 = corr_h;
     int left = 0;
@@ -225,13 +200,13 @@ void setTranslateur(double corr_ang, double corr_h){
         if(corr_h2 > 8191){
             corr_h2 = 8191;
         }
-        up = corr_ang2;
+        up = corr_h2;
     } else {
         corr_h2 = -corr_h2;
         if(corr_h2 > 8191){
             corr_h2 = 8191;
         }
-        down = corr_ang2;
+        down = corr_h2;
     }
     setElectrovanne(left, right, up, down);
 }
@@ -239,9 +214,9 @@ void setTranslateur(double corr_ang, double corr_h){
 void updateUp(){
     if((m_last_millis - m_last_millis_up) < 3000){
         hw_DebugPrint("*** update up %i %i\n", m_last_millis_up, m_last_millis);
-        double a = (double)m_last_machine_a_100 - 50.0;
-        double res = a*m_agress_hydr;
-        setTranslateur(res, 8191);
+       // double a = (double)m_last_machine_a_100 - 50.0;
+       // double res = a*m_agress_hydr;
+        setTranslateur(0, 8191);
     } else {
         m_state = State_off;
         setElectrovanne(0, 0, 0, 0);
@@ -261,18 +236,18 @@ void updateTime(){
         //hw_DebugPrint("*** update time %i %i\n", m_last_millis, m_last_millis_time);
         if(m_time_action == TimeAction_Left){
             //left
-            updateTranslator(-8191, 0);
+            setTranslateur(-8191, 0);
         } else if(m_time_action == TimeAction_Right){
-            updateTranslator(8191, 0);
+            setTranslateur(8191, 0);
             //right
         } else if(m_time_action == TimeAction_Up){
             //up
-            updateTranslator(0, 8191);
+            setTranslateur(0, 8191);
         } else if(m_time_action == TimeAction_Down){
             //down
-            updateTranslator(0, -8191);
+            setTranslateur(0, -8191);
         } else {
-            updateTranslator(0, 0);
+            setTranslateur(0, 0);
         }
     } else {
         m_state = State_off;
@@ -339,8 +314,8 @@ void onButtonUp(){
     hw_DebugPrint("*** onButtonUp\n");
 };
 void onButtonDown(){
-    m_state = TimeAction_Down;
-    m_time_action = 4;
+    m_state = State_time;
+    m_time_action = TimeAction_Down;
     setAlive();
     m_last_millis_time = m_last_millis;
     hw_DebugPrint("*** onButtonDown\n");
