@@ -16,6 +16,13 @@
 #include "Settings/settings.h"
 #include "AppCommon/AppHW.h"
 
+typedef enum  {
+    TimeAction_Off = 0,
+    TimeAction_Left = 1,
+    TimeAction_Right = 2,
+    TimeAction_Up = 3,
+    TimeAction_Down = 4,
+} TimeAction;
 
 
 const double max_value = 3200.0;
@@ -30,7 +37,10 @@ int64_t m_last_millis_alive = 0;
 //time fonction
 enum State m_state = 0; //0 off, 1 time, 2 up, 3 time
 int64_t m_last_millis_time = 0;
-int m_electrovanne = 0;
+TimeAction m_time_action = TimeAction_Left;
+
+double m_last_corr_angl = 0;
+double m_last_corr_h = 0;
 
 int m_last_machine_a = 0;
 int m_last_machine_h = 0;
@@ -130,6 +140,16 @@ double getSpeedKmH(){
     return m_km_h;
 }
 
+double getCorrAng(){
+    return m_last_corr_angl;
+}
+
+
+double getCorrH(){
+    return m_last_corr_h;
+}
+
+
 void changeWorkState(){
     if(m_state == State_work){
         m_last_millis_up = m_last_millis;
@@ -181,6 +201,8 @@ void updateTranslator(int left_right, int up_down){
 }
 
 void setTranslateur(double corr_ang, double corr_h){
+    m_last_corr_angl = corr_ang;
+    m_last_corr_h = corr_h;
     int corr_ang2 = corr_ang;
     int corr_h2 = corr_h;
     int left = 0;
@@ -230,32 +252,39 @@ void updateWorkstate(){
     double corr_ang = (m_last_machine_l_100-m_last_machine_r_100)*m_agress_hydr;
 
     double corr_h = (m_work_h-(m_last_machine_l_100+m_last_machine_r_100)*0.5)*m_agress_hydr;
+    
     setTranslateur(corr_ang, corr_h);
 }
 
 void updateTime(){
     if((m_last_millis - m_last_millis_time) < 500){
         //hw_DebugPrint("*** update time %i %i\n", m_last_millis, m_last_millis_time);
-        if(m_electrovanne == 1){
-            setElectrovanne(8191, 0, 0, 0);
-        } else if(m_electrovanne == 2){
-            setElectrovanne(0, 8191, 0, 0);
-        } else if(m_electrovanne == 3){
-            setElectrovanne(0, 0, 8191, 0);
-        } else if(m_electrovanne == 4){
-            setElectrovanne(0, 0, 0, 8191);
+        if(m_time_action == TimeAction_Left){
+            //left
+            updateTranslator(-8191, 0);
+        } else if(m_time_action == TimeAction_Right){
+            updateTranslator(8191, 0);
+            //right
+        } else if(m_time_action == TimeAction_Up){
+            //up
+            updateTranslator(0, 8191);
+        } else if(m_time_action == TimeAction_Down){
+            //down
+            updateTranslator(0, -8191);
+        } else {
+            updateTranslator(0, 0);
         }
     } else {
         m_state = State_off;
         m_last_millis_time = 0;
-        m_electrovanne = 0;
+        m_time_action = TimeAction_Off;
         setElectrovanne(0, 0, 0, 0);
     }
 }
 
 void update20Hz(int millis){
-    int capteur_angle = 0;
-    int capteur_h = 0;
+    //int capteur_angle = 0;
+    //int capteur_h = 0;
     readAll2(&m_last_machine_a, &m_last_machine_h, &m_last_machine_l, &m_last_machine_r);
     m_last_machine_a_100 = (double)m_last_machine_a*100.0/max_value;
     m_last_machine_h_100 = (double)m_last_machine_h*100.0/max_value;
@@ -267,12 +296,12 @@ void update20Hz(int millis){
     }
     //hw_DebugPrint("*** update20Hz %d %d %d %d\n",capteur_angle, capteur_h, m_last_machine_l, m_last_machine_r);
     
-    double h = (double)capteur_h/max_value - 0.5;
-    double a = (double)capteur_angle/max_value - 0.5;
+    //double h = (double)capteur_h/max_value - 0.5;
+    //double a = (double)capteur_angle/max_value - 0.5;
 
     //hw_DebugPrint("*** update20Hz %.1f %.1f %d %d\n",a, h, 0, 0);
 
-    int left_right = a*500;
+   // int left_right = a*500;
 
     
     if(m_state == State_time){
@@ -304,28 +333,28 @@ void lemca_loop(){
 
 void onButtonUp(){
     m_state = State_time;
-    m_electrovanne = 3;
+    m_time_action = TimeAction_Up;
     setAlive();
     m_last_millis_time = m_last_millis;
     hw_DebugPrint("*** onButtonUp\n");
 };
 void onButtonDown(){
-    m_state = State_time;
-    m_electrovanne = 4;
+    m_state = TimeAction_Down;
+    m_time_action = 4;
     setAlive();
     m_last_millis_time = m_last_millis;
     hw_DebugPrint("*** onButtonDown\n");
 };
 void onButtonUpLeft(){
     m_state = State_time;
-    m_electrovanne = 1;
+    m_time_action = TimeAction_Left;
     setAlive();
     m_last_millis_time = m_last_millis;
     hw_DebugPrint("*** onButtonLeft\n");
 };
 void onButtonUpRight(){
     m_state = State_time;
-    m_electrovanne = 2;
+    m_time_action = TimeAction_Right;
     setAlive();
     m_last_millis_time = m_last_millis;
     hw_DebugPrint("*** onButtonRight\n");

@@ -24,6 +24,9 @@ extern int getWorkState();
 extern void setSpeedKmH(double kmh);
 extern double getSpeedKmH();
 
+extern double getCorrAng();
+extern double getCorrH();
+
 extern void lemca_loop();
 
 extern void onButtonUp();

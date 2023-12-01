@@ -146,14 +146,16 @@ void updateVTC(){
 
 	enum State state = getState();
 	char data2[30];
+	double coor_a = getCorrAng();
+	double coor_h = getCorrH();
 	if(state == State_off){
 		sprintf(data2,"off");
 	} else if(state == State_time){
-		sprintf(data2,"time");
+		sprintf(data2,"time a %.1f h %.1f", coor_a, coor_h);
 	} else if(state == State_up){
-		sprintf(data2,"up");
+		sprintf(data2,"up a %.1f h %.1f", coor_a, coor_h);
 	} else if(state == State_work){
-		sprintf(data2,"work");
+		sprintf(data2,"work a %.1f h %.1f", coor_a, coor_h);
 	}
 	last_state = state;
 	IsoVtcCmd_String(vtc_instance, StringVariable_State, (iso_u8 *)data2);
