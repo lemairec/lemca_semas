@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <JetViewSoft-DefaultObjects Version="3.0" ProductVersion="5.6.1.5243" RelatedObjectPool=".\MyProject1.jop">
 	<Objects>
-		<Object Class="CCheckBox">
+		<Object Class="CButton">
 			<Objects>
-				<Object Class="CFontStyle" JVS-ID="23002" ObjectName="FontAttributes_23002"/>
+				<Object Class="CFontStyle" JVS-ID="23009" ObjectName="FontAttributes_23009"/>
 			</Objects>
 		</Object>
 		<Object Class="CInputNumber">
 			<Objects>
+				<Object Class="CNumberVariable" JVS-ID="21001" ObjectName="NumberVariable_Left"/>
 				<Object Class="CFontStyle" JVS-ID="23001" ObjectName="FontAttributes_23001"/>
 			</Objects>
 		</Object>

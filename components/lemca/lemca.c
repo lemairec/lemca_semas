@@ -150,6 +150,14 @@ double getCorrH(){
     return m_last_corr_h_100;
 }
 
+void setWorkStateWork(){
+    m_state = State_work;
+}
+
+void setWorkStateUp(){
+    m_last_millis_up = m_last_millis;
+    m_state = State_up;
+}
 
 void changeWorkState(){
     if(m_state == State_work){
@@ -179,7 +187,6 @@ void setTranslateur(double corr_ang, double corr_h){
     if(m_last_corr_h_100 < -m_vitesse_max_h){
         m_last_corr_h_100 = -m_vitesse_max_h;
     }
-    int corr_h2 = corr_h;
     int left = 0;
     int right = 0;
     int up = 0;
@@ -209,10 +216,17 @@ void updateUp(){
     }
 }
 
-void updateWorkstate(){
-    double corr_ang = (m_last_machine_l_100-m_last_machine_r_100)*m_agress_hydr;
 
-    double corr_h = (m_work_h-(m_last_machine_l_100+m_last_machine_r_100)*0.5)*m_agress_hydr;
+double sum_error_ang = 0;
+double sum_error_h = 0;
+void updateWorkstate(){
+    double error_ang = (m_last_machine_l_100-m_last_machine_r_100);
+    sum_error_ang += error_ang;
+    double corr_ang = m_agress_hydr*error_ang + 0.01*m_agress_hydr*sum_error_ang;
+
+    double error_h = (m_work_h-(m_last_machine_l_100+m_last_machine_r_100)*0.5);
+    sum_error_h += error_h;
+    double corr_h =  m_agress_hydr*error_h + 0.01*m_agress_hydr*sum_error_h;
     
     setTranslateur(corr_ang, corr_h);
 }

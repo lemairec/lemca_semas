@@ -19,6 +19,9 @@ enum State getState();
 void setAgressHyd(int agress_hydr);
 int getAgressHyd();
 
+
+extern void setWorkStateWork();
+extern void setWorkStateUp();
 extern void changeWorkState();
 extern int getWorkState();
 extern void setSpeedKmH(double kmh);

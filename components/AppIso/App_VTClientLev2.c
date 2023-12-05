@@ -119,11 +119,19 @@ void VTC_handleSoftkeysAndButtons_RELEASED(const struct ButtonActivation_S *pBut
 		case SoftKey_upright:
 			onButtonUpRight();
 			break;
+		case Button_work_h_down:
 		case SoftKey_down2:
 			onButtonDownWork();
 			break;
+		case Button_work_h_up:
 		case SoftKey_up2:
 			onButtonUpWork();
+			break;
+		case Button_uppp:
+			setWorkStateUp();
+			break;
+		case Button_work:
+			setWorkStateWork();
 			break;
 		default:
 			break;
@@ -162,8 +170,8 @@ void updateVTC(){
 
     IsoVtcCmd_String(vtc_instance, StringVariable_Vitesse, (iso_u8 *)data);
 	IsoVtcCmd_NumericValue(vtc_instance, aggress_hyd_21000, getAgressHyd());
-	IsoVtcCmd_NumericValue(vtc_instance, sensor_left, getLastLeft());
-	IsoVtcCmd_NumericValue(vtc_instance, sensor_right, getLastRight());
+	IsoVtcCmd_NumericValue(vtc_instance, NumberVariable_Left, getLastLeft());
+	IsoVtcCmd_NumericValue(vtc_instance, NumberVariable_Right, getLastRight());
 	IsoVtcCmd_NumericValue(vtc_instance, work_h, getWorkHeight());
 	//ESP_LOGI("lemca", "updateVTC");
 }
