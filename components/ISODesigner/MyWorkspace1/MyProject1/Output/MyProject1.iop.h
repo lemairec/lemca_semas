@@ -32,13 +32,10 @@
 #define InputNumber_right                  9002
 #define InputNumber_9004                   9004
 #define InputNumber_9005                   9005
-#define OutputString_11000                11000
 #define OutputString_11001                11001
 #define OutputString_11002                11002
-#define OutputString_11003                11003
 #define OutputString_11004                11004
 #define OutputString_11005                11005
-#define OutputString_11007                11007
 #define OutputString_11008                11008
 #define OutputString_11009                11009
 #define OutputString_11010                11010
