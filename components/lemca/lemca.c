@@ -39,6 +39,9 @@ enum State m_state = 0; //0 off, 1 time, 2 up, 3 time
 int64_t m_last_millis_time = 0;
 TimeAction m_time_action = TimeAction_Off;
 
+double m_vitesse_max_ang = 100.0;
+double m_vitesse_max_h = 100.0;
+
 double m_last_corr_angl_100 = 0;
 double m_last_corr_h_100 = 0;
 
@@ -56,8 +59,6 @@ double m_last_machine_r_100 = 0;
 int m_work_h = 0;
 int64_t m_last_millis_up = 0;
 
-int desired_h = 50; //0-100 //todo remove?
-int desired_a = 0; //-50 50 //todo remove?
 
 double m_vitesse_simu = 0;
 double m_km_h = -1;
@@ -164,51 +165,36 @@ int getWorkState(){
 }
 
 void setTranslateur(double corr_ang, double corr_h){
-    m_last_corr_angl_100 = corr_ang/8191.0*100.0;
-    m_last_corr_h_100 = corr_h/8191.0*100.0;
-    if(m_last_corr_angl_100 >100){
-        m_last_corr_angl_100 = 100.0;
+    m_last_corr_angl_100 = corr_ang;
+    m_last_corr_h_100 = corr_h;
+    if(m_last_corr_angl_100 > m_vitesse_max_ang){
+        m_last_corr_angl_100 = m_vitesse_max_ang;
     }
-    if(m_last_corr_angl_100 < -100){
-        m_last_corr_angl_100 = -100.0;
+    if(m_last_corr_angl_100 < -m_vitesse_max_ang){
+        m_last_corr_angl_100 = -m_vitesse_max_ang;
     }
-    if(m_last_corr_h_100 >100){
-        m_last_corr_h_100 = 100.0;
+    if(m_last_corr_h_100 > m_vitesse_max_h){
+        m_last_corr_h_100 = m_vitesse_max_h;
     }
-    if(m_last_corr_h_100 < -100){
-        m_last_corr_h_100 = -100.0;
+    if(m_last_corr_h_100 < -m_vitesse_max_h){
+        m_last_corr_h_100 = -m_vitesse_max_h;
     }
-    int corr_ang2 = corr_ang;
     int corr_h2 = corr_h;
     int left = 0;
     int right = 0;
     int up = 0;
     int down = 0;
-    if(corr_ang2 > 0){
-        if(corr_ang2 > 8191){
-            corr_ang2 = 8191;
-        }
-        left = corr_ang2;
+    if(m_last_corr_angl_100 > 0){
+        left = m_last_corr_angl_100;
     } else {
-        corr_ang2 = -corr_ang2;
-        if(corr_ang2 > 8191){
-            corr_ang2 = 8191;
-        }
-        right = corr_ang2;
+        right = m_last_corr_angl_100;
     }
-    if(corr_h2 > 0){
-        if(corr_h2 > 8191){
-            corr_h2 = 8191;
-        }
-        up = corr_h2;
+    if(m_last_corr_h_100 > 0){
+        up = m_last_corr_h_100;
     } else {
-        corr_h2 = -corr_h2;
-        if(corr_h2 > 8191){
-            corr_h2 = 8191;
-        }
-        down = corr_h2;
+        down = m_last_corr_h_100;
     }
-    setElectrovanne(left, right, up, down);
+    setElectrovanne(left*81.91, right*81.91, up*81.91, down*81.91);
 }
 
 void updateUp(){
@@ -236,16 +222,16 @@ void updateTime(){
         //hw_DebugPrint("*** update time %i %i\n", m_last_millis, m_last_millis_time);
         if(m_time_action == TimeAction_Left){
             //left
-            setTranslateur(-8191, 0);
+            setTranslateur(-100, 0);
         } else if(m_time_action == TimeAction_Right){
-            setTranslateur(8191, 0);
+            setTranslateur(100, 0);
             //right
         } else if(m_time_action == TimeAction_Up){
             //up
-            setTranslateur(0, 8191);
+            setTranslateur(0, 100);
         } else if(m_time_action == TimeAction_Down){
             //down
-            setTranslateur(0, -8191);
+            setTranslateur(0, -100);
         } else {
             setTranslateur(0, 0);
         }
@@ -269,15 +255,6 @@ void update20Hz(int millis){
     if(!isAlive()){
         return;
     }
-    //hw_DebugPrint("*** update20Hz %d %d %d %d\n",capteur_angle, capteur_h, m_last_machine_l, m_last_machine_r);
-    
-    //double h = (double)capteur_h/max_value - 0.5;
-    //double a = (double)capteur_angle/max_value - 0.5;
-
-    //hw_DebugPrint("*** update20Hz %.1f %.1f %d %d\n",a, h, 0, 0);
-
-   // int left_right = a*500;
-
     
     if(m_state == State_time){
         updateTime();
