@@ -202,7 +202,7 @@ void updateUp(){
         hw_DebugPrint("*** update up %i %i\n", m_last_millis_up, m_last_millis);
        // double a = (double)m_last_machine_a_100 - 50.0;
        // double res = a*m_agress_hydr;
-        setTranslateur(0, 8191);
+        setTranslateur(0, 100);
     } else {
         m_state = State_off;
         setElectrovanne(0, 0, 0, 0);
