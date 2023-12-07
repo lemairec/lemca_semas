@@ -1884,10 +1884,10 @@ ADkAAAA=]]>
 					<Value>0</Value>
 				</Property>
 				<Property Name="Width">
-					<Value>61</Value>
+					<Value>100</Value>
 				</Property>
 				<Property Name="Height">
-					<Value>33</Value>
+					<Value>43</Value>
 				</Property>
 				<Property Name="Visible">
 					<Value>1</Value>
@@ -1953,10 +1953,10 @@ ADkAAAA=]]>
 					<Value>0</Value>
 				</Property>
 				<Property Name="Width">
-					<Value>61</Value>
+					<Value>101</Value>
 				</Property>
 				<Property Name="Height">
-					<Value>33</Value>
+					<Value>43</Value>
 				</Property>
 				<Property Name="Visible">
 					<Value>1</Value>
@@ -2414,10 +2414,10 @@ ADkAAAA=]]>
 					<Value>2</Value>
 				</Property>
 				<Property Name="AlignH">
-					<Value>2</Value>
+					<Value>1</Value>
 				</Property>
 				<Property Name="AlignV">
-					<Value>0</Value>
+					<Value>4</Value>
 				</Property>
 				<Property Name="Multiline">
 					<Value>1</Value>
@@ -2498,7 +2498,7 @@ ADkAAAA=]]>
 					<Value>111</Value>
 				</Property>
 				<Property Name="Height">
-					<Value>20</Value>
+					<Value>31</Value>
 				</Property>
 				<Property Name="Visible">
 					<Value>1</Value>
@@ -2543,10 +2543,10 @@ ADkAAAA=]]>
 					<Value>2</Value>
 				</Property>
 				<Property Name="AlignH">
-					<Value>2</Value>
+					<Value>1</Value>
 				</Property>
 				<Property Name="AlignV">
-					<Value>0</Value>
+					<Value>4</Value>
 				</Property>
 				<Property Name="Multiline">
 					<Value>1</Value>
@@ -2627,7 +2627,7 @@ ADkAAAA=]]>
 					<Value>111</Value>
 				</Property>
 				<Property Name="Height">
-					<Value>20</Value>
+					<Value>31</Value>
 				</Property>
 				<Property Name="Visible">
 					<Value>1</Value>
@@ -2672,10 +2672,10 @@ ADkAAAA=]]>
 					<Value>2</Value>
 				</Property>
 				<Property Name="AlignH">
-					<Value>2</Value>
+					<Value>1</Value>
 				</Property>
 				<Property Name="AlignV">
-					<Value>0</Value>
+					<Value>4</Value>
 				</Property>
 				<Property Name="Multiline">
 					<Value>1</Value>
@@ -2756,7 +2756,7 @@ ADkAAAA=]]>
 					<Value>111</Value>
 				</Property>
 				<Property Name="Height">
-					<Value>20</Value>
+					<Value>31</Value>
 				</Property>
 				<Property Name="Visible">
 					<Value>1</Value>
@@ -3063,10 +3063,10 @@ ADkAAAA=]]>
 					<Value>0</Value>
 				</Property>
 				<Property Name="Width">
-					<Value>172</Value>
+					<Value>179</Value>
 				</Property>
 				<Property Name="Height">
-					<Value>21</Value>
+					<Value>22</Value>
 				</Property>
 				<Property Name="Visible">
 					<Value>1</Value>
@@ -3894,7 +3894,7 @@ ADkAAAA=]]>
 					<Value>179</Value>
 				</Property>
 				<Property Name="Height">
-					<Value>26</Value>
+					<Value>22</Value>
 				</Property>
 				<Property Name="Visible">
 					<Value>1</Value>
@@ -4231,7 +4231,7 @@ ADkAAAA=]]>
 			<PropertySheet Name="Text">
 				<Property Name="Text">
 					<Value>
-						<![CDATA[VQBQAAAA]]>
+						<![CDATA[SABhAHUAdAAgAE0AYQB4AAAA]]>
 					</Value>
 				</Property>
 				<Property Name="ResourceID">
@@ -4278,7 +4278,7 @@ ADkAAAA=]]>
 				</Property>
 				<Property Name="Value">
 					<Value>
-						<![CDATA[VQBQAAAA]]>
+						<![CDATA[SABhAHUAdAAgAE0AYQB4AAAA]]>
 					</Value>
 				</Property>
 				<Property Name="StringLength">
@@ -4303,10 +4303,10 @@ ADkAAAA=]]>
 					<Value>0</Value>
 				</Property>
 				<Property Name="Width">
-					<Value>61</Value>
+					<Value>97</Value>
 				</Property>
 				<Property Name="Height">
-					<Value>16</Value>
+					<Value>44.5</Value>
 				</Property>
 				<Property Name="Visible">
 					<Value>1</Value>
@@ -4334,7 +4334,7 @@ ADkAAAA=]]>
 			<PropertySheet Name="Text">
 				<Property Name="Text">
 					<Value>
-						<![CDATA[VwBPAFIASwAAAA==]]>
+						<![CDATA[VAByAGEAdgBhAGkAbAAAAA==]]>
 					</Value>
 				</Property>
 				<Property Name="ResourceID">
@@ -4381,7 +4381,7 @@ ADkAAAA=]]>
 				</Property>
 				<Property Name="Value">
 					<Value>
-						<![CDATA[VwBPAFIASwAAAA==]]>
+						<![CDATA[VAByAGEAdgBhAGkAbAAAAA==]]>
 					</Value>
 				</Property>
 				<Property Name="StringLength">
@@ -4406,10 +4406,10 @@ ADkAAAA=]]>
 					<Value>0</Value>
 				</Property>
 				<Property Name="Width">
-					<Value>61</Value>
+					<Value>100</Value>
 				</Property>
 				<Property Name="Height">
-					<Value>16</Value>
+					<Value>40.5</Value>
 				</Property>
 				<Property Name="Visible">
 					<Value>1</Value>
@@ -5720,7 +5720,7 @@ ADkAAAA=]]>
 		<Object Class="CProxy" Name="Text" ObjectName="" Pinned="FALSE" JVS-ID="4194312">
 			<PropertySheet Name="Proxy">
 				<Property Name="Top">
-					<Value>8.5</Value>
+					<Value>-2.5</Value>
 				</Property>
 				<Property Name="Left">
 					<Value>0</Value>
@@ -5732,7 +5732,7 @@ ADkAAAA=]]>
 					<Value>-1</Value>
 				</Property>
 				<Property Name="Transform">
-					<Value>(1.0000000000000000)(0.0000000000000000)(0.0000000000000000)(0.0000000000000000)(1.0000000000000000)(8.5000000000000000)</Value>
+					<Value>(1.0000000000000000)(0.0000000000000000)(0.0000000000000000)(0.0000000000000000)(1.0000000000000000)(-2.5000000000000000)</Value>
 				</Property>
 			</PropertySheet>
 			<Objects>
@@ -5742,10 +5742,10 @@ ADkAAAA=]]>
 		<Object Class="CProxy" Name="Text" ObjectName="" Pinned="FALSE" JVS-ID="4194313">
 			<PropertySheet Name="Proxy">
 				<Property Name="Top">
-					<Value>8.5</Value>
+					<Value>-0.5</Value>
 				</Property>
 				<Property Name="Left">
-					<Value>0</Value>
+					<Value>-1</Value>
 				</Property>
 				<Property Name="Name">
 					<Value>Text</Value>
@@ -5754,7 +5754,7 @@ ADkAAAA=]]>
 					<Value>-1</Value>
 				</Property>
 				<Property Name="Transform">
-					<Value>(1.0000000000000000)(0.0000000000000000)(0.0000000000000000)(0.0000000000000000)(1.0000000000000000)(8.5000000000000000)</Value>
+					<Value>(1.0000000000000000)(0.0000000000000000)(-1.0000000000000000)(0.0000000000000000)(1.0000000000000000)(-0.5000000000000000)</Value>
 				</Property>
 			</PropertySheet>
 			<Objects>
