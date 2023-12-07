@@ -39,11 +39,14 @@ extern void onButtonUpRight();
 
 extern void onButtonUpWork();
 extern void onButtonDownWork();
-void setWorkHeight(int work_height);
-int getWorkHeight();
 
 extern int getLastRight();
 extern int getLastLeft();
+
+//setter accesseur
+void setWorkHeight(int work_height);
+int getWorkHeight();
+
 
 #ifdef __cplusplus
 }

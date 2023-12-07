@@ -1,4 +1,4 @@
-// ISO-Designer ISO 11783   Version 5.6.1.5243 Jetter AG
+// ISO-Designer ISO 11783   Version 5.6.2.5533 Jetter AG
 // Do not change!
 #define ISO_DESIGNATOR_WIDTH                 80
 #define ISO_DESIGNATOR_HEIGHT                80
@@ -27,15 +27,21 @@
 #define Button_work                        6003
 #define Button_left                        6004
 #define Button_right                       6005
+#define Button_up                          6006
+#define Button_6007                        6007
+#define Button_6008                        6008
+#define Button_down                        6009
 #define InputNumber_9000                   9000
-#define InputNumber_Left                   9001
-#define InputNumber_right                  9002
 #define InputNumber_9004                   9004
 #define InputNumber_9005                   9005
+#define OutputString_11000                11000
 #define OutputString_11001                11001
 #define OutputString_11002                11002
+#define OutputString_11003                11003
 #define OutputString_11004                11004
 #define OutputString_11005                11005
+#define OutputString_11006                11006
+#define OutputString_11007                11007
 #define OutputString_11008                11008
 #define OutputString_11009                11009
 #define OutputString_11010                11010
@@ -46,6 +52,8 @@
 #define OutputString_11015                11015
 #define OutputString_11016                11016
 #define OutputNumber_12000                12000
+#define OutputNumber_left                 12001
+#define OutputNumber_right                12002
 #define semas_logo_20000                  20000
 #define section_on_off                    20001
 #define home_20002                        20002
@@ -68,7 +76,6 @@
 #define FontAttributes_23001              23001
 #define FontAttributes_23002              23002
 #define FontAttributes_23003              23003
-#define FontAttributes_23004              23004
 #define FontAttributes_23005              23005
 #define FontAttributes_23006              23006
 #define FontAttributes_23007              23007
@@ -76,9 +83,13 @@
 #define FontAttributes_23009              23009
 #define FontAttributes_23010              23010
 #define FontAttributes_23011              23011
+#define FontAttributes_23012              23012
 #define FontAttributes_23013              23013
 #define FontAttributes_23014              23014
 #define FontAttributes_23015              23015
 #define FontAttributes_23016              23016
+#define FontAttributes_23017              23017
+#define FontAttributes_23018              23018
+#define FontAttributes_23019              23019
 #define Generated_Pointer_To_Null         27000
 #define AuxFunctionSectionOnOff           29004
