@@ -29,10 +29,10 @@ const double max_value = 3200.0;
 
 int m_agress_hydr = 0;
 
-int64_t m_last_millis = 0;
+int m_last_millis = 0;
 
 //alive
-int64_t m_last_millis_alive = 0;
+int m_last_millis_alive = 0;
 
 //time fonction
 enum State m_state = 0; //0 off, 1 time, 2 up, 3 time
@@ -57,7 +57,7 @@ double m_last_machine_l_100 = 0;
 double m_last_machine_r_100 = 0;
 
 int m_work_h = 0;
-int64_t m_last_millis_up = 0;
+int m_last_millis_up = 0;
 
 
 double m_vitesse_simu = 0;
@@ -224,13 +224,14 @@ void updateUp(){
 double sum_error_ang = 0;
 double sum_error_h = 0;
 void updateWorkstate(){
+    double time = 0.02;
     double error_ang = (m_last_machine_l_100-m_last_machine_r_100);
     sum_error_ang += error_ang;
-    double corr_ang = m_agress_hydr*error_ang + 0.01*m_agress_hydr*sum_error_ang;
+    double corr_ang = m_agress_hydr*error_ang + 0.1*time*m_agress_hydr*sum_error_ang;
 
     double error_h = (m_work_h-(m_last_machine_l_100+m_last_machine_r_100)*0.5);
     sum_error_h += error_h;
-    double corr_h =  m_agress_hydr*error_h + 0.01*m_agress_hydr*sum_error_h;
+    double corr_h =  m_agress_hydr*error_h + 0.1*time*m_agress_hydr*sum_error_h;
     
     setTranslateur(corr_ang, corr_h);
 }
@@ -261,7 +262,7 @@ void updateTime(){
     }
 }
 
-void update20Hz(int millis){
+void update50Hz(int millis){
     //int capteur_angle = 0;
     //int capteur_h = 0;
     readAll2(&m_last_machine_a, &m_last_machine_h, &m_last_machine_l, &m_last_machine_r);
@@ -285,19 +286,24 @@ void update20Hz(int millis){
     }
 }
 
-int64_t old_millis = 0;
+int old_millis_50HZ = 0;
+int old_millis_5HZ = 0;
 void lemca_loop(){
-    int64_t millis = esp_timer_get_time()/1000;
+    int millis = esp_timer_get_time()/1000;
     m_last_millis = millis;
-    int64_t i = millis/50;
-    if(i != old_millis){
-        update20Hz(m_last_millis);
-        if(i%5 == 0){
-            updateVTC();
-        }
-        //jd_loop(millis); 
+    int i_50HZ = millis/20;
+    if(i_50HZ != old_millis_50HZ){
+        update50Hz(m_last_millis);
+        old_millis_50HZ = i_50HZ;
     }
-    old_millis = i;
+
+    int i_5HZ = millis/500;
+    if(i_5HZ != old_millis_5HZ){
+        //hw_DebugPrint("*** update time %i\n", m_last_millis);
+        updateVTC();
+        old_millis_5HZ = i_5HZ;
+    }
+    
 }
 
 

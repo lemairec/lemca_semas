@@ -110,9 +110,14 @@ int isobus_main(int_t argc, char_t* argv[])
       lemca_loop();
       /* run cyclic application function */
       AppIso_Cyclic();
+      lemca_loop();
+
       uart_loop();
+      lemca_loop();
 
       hw_SimDoSleep(ISO_NM_LOOPTIME);  // Simulate loop time "5ms"
+      lemca_loop();
+      
       DoKeyBoard();
    }
 

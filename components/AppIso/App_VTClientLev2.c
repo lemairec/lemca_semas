@@ -142,7 +142,7 @@ void VTC_handleSoftkeysAndButtons_RELEASED(const struct ButtonActivation_S *pBut
 	}
 
 	vtc_instance = pButtonData->u8Instance;
-	updateVTC();
+	//updateVTC();
 }
 
 enum State last_state = State_off;
@@ -214,7 +214,7 @@ void VTC_setNewVT(const ISOVT_EVENT_DATA_T* psEvData)
 void VTC_setPoolReady(const ISOVT_EVENT_DATA_T* psEvData)
 {
 	vtc_instance = psEvData->u8Instance;
-	updateVTC();
+	//updateVTC();
 }
 
 
