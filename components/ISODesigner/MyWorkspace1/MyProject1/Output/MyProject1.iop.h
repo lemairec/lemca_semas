@@ -68,8 +68,8 @@
 #define NumberVariable_Left               21001
 #define NumberVariable_Right              21002
 #define work_h                            21003
-#define vitesse_max_h                     21004
-#define vitesse_max_ang                   21005
+#define NumberVariable_v_max_h            21004
+#define NumberVariable_v_max_ang          21005
 #define StringVariable_State              22000
 #define StringVariable_Vitesse            22002
 #define FontAttributes_23000              23000

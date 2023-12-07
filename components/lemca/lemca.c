@@ -72,6 +72,12 @@ void verify_config(){
     }
 }
 
+void print_config(){
+    hw_DebugPrint("***- AGRESS_HYD %d\n",m_agress_hydr);
+    hw_DebugPrint("***- WORK_H %d\n",m_work_h);
+    hw_DebugPrint("***- V_MAX_H %d\n",m_vitesse_max_h);
+    hw_DebugPrint("***- V_MAX_ANG %d\n",m_vitesse_max_ang);
+}
 
 void lemca_init(){
     hw_DebugPrint("*** lemca_init\n");
@@ -79,10 +85,9 @@ void lemca_init(){
 
     m_agress_hydr = getS32("LEMCA", "AGRESS_HYD", 100);
     m_work_h = getS32("LEMCA", "WORK_H", 50);
+    m_vitesse_max_h = getS32("LEMCA", "V_MAX_H", 100);
+    m_vitesse_max_ang = getS32("LEMCA", "V_MAX_ANG", 100);
     verify_config();
-
-    hw_DebugPrint("***- AGRESS_HYD %d\n",m_agress_hydr);
-    hw_DebugPrint("***- WORK_H %d\n",m_work_h);
 }
 
 void save_config(){
@@ -92,9 +97,8 @@ void save_config(){
     verify_config();
     setS32("LEMCA", "AGRESS_HYD", m_agress_hydr);
     setS32("LEMCA", "WORK_H", m_work_h);
-
-    hw_DebugPrint("***+ AGRESS_HYD %d\n",m_agress_hydr);
-    hw_DebugPrint("***+ WORK_H %d\n",m_work_h);
+    setS32("LEMCA", "V_MAX_H", m_vitesse_max_h);
+    setS32("LEMCA", "V_MAX_ANG", m_vitesse_max_ang);
 }
 
 enum State getState(){
@@ -253,7 +257,7 @@ void updateTime(){
         m_state = State_off;
         m_last_millis_time = 0;
         m_time_action = TimeAction_Off;
-        setElectrovanne(0, 0, 0, 0);
+        setTranslateur(0, 0);
     }
 }
 
@@ -338,6 +342,9 @@ void onButtonDownWork(){
     verify_config();
     save_config();
 };
+
+
+//setter accesseur
 void setWorkHeight(int work_height){
     m_work_h = work_height;
     setAlive();
@@ -346,4 +353,25 @@ void setWorkHeight(int work_height){
 };
 int getWorkHeight(){
     return m_work_h;
+};
+
+
+void setVitesseMaxH(int vitesse_max_h){
+    m_vitesse_max_h = vitesse_max_h;
+    setAlive();
+    verify_config();
+    save_config();
+}
+int getVitesseMaxH(){
+    return m_vitesse_max_h;
+};
+
+void setVitesseMaxAng(int vitesse_max_ang){
+    m_vitesse_max_ang = vitesse_max_ang;
+    setAlive();
+    verify_config();
+    save_config();
+}
+int getVitesseMaxAng(){
+    return m_vitesse_max_ang;
 };

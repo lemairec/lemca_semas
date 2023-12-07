@@ -177,6 +177,8 @@ void updateVTC(){
 	IsoVtcCmd_NumericValue(vtc_instance, NumberVariable_Left, getLastLeft());
 	IsoVtcCmd_NumericValue(vtc_instance, NumberVariable_Right, getLastRight());
 	IsoVtcCmd_NumericValue(vtc_instance, work_h, getWorkHeight());
+	IsoVtcCmd_NumericValue(vtc_instance, NumberVariable_v_max_ang, getVitesseMaxAng());
+	IsoVtcCmd_NumericValue(vtc_instance, NumberVariable_v_max_h, getVitesseMaxH());
 	//ESP_LOGI("lemca", "updateVTC");
 }
 
@@ -186,6 +188,12 @@ void VTC_handleNumericValues(const struct InputNumber_S * pInputNumberData) {
 	switch (pInputNumberData->objectIdOfInputNumber) {
 		case aggress_hyd_21000:
 			setAgressHyd(pInputNumberData->newValue);
+			break;
+		case NumberVariable_v_max_ang:
+			setVitesseMaxAng(pInputNumberData->newValue);
+			break;
+		case NumberVariable_v_max_h:
+			setVitesseMaxH(pInputNumberData->newValue);
 			break;
 		default:
 			break;

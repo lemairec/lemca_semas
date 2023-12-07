@@ -63,8 +63,8 @@
 #define NumberVariable_Left_Offset                          12566
 #define NumberVariable_Right_Offset                         12573
 #define work_h_Offset                                       12580
-#define vitesse_max_h_Offset                                12587
-#define vitesse_max_ang_Offset                              12594
+#define NumberVariable_v_max_h_Offset                       12587
+#define NumberVariable_v_max_ang_Offset                     12594
 #define StringVariable_State_Offset                         12601
 #define StringVariable_Vitesse_Offset                       12636
 #define FontAttributes_23000_Offset                         12671

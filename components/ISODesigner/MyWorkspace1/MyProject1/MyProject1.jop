@@ -61,7 +61,7 @@
 				</Property>
 			</PropertySheet>
 		</Object>
-		<Object Class="CNumberVariable" JVS-ID="21004" ObjectName="vitesse_max_h" Pinned="FALSE">
+		<Object Class="CNumberVariable" JVS-ID="21004" ObjectName="NumberVariable_v_max_h" Pinned="FALSE">
 			<Property Name="Group">
 				<Value/>
 			</Property>
@@ -76,7 +76,7 @@
 				</Property>
 			</PropertySheet>
 		</Object>
-		<Object Class="CNumberVariable" JVS-ID="21005" ObjectName="vitesse_max_ang" Pinned="FALSE">
+		<Object Class="CNumberVariable" JVS-ID="21005" ObjectName="NumberVariable_v_max_ang" Pinned="FALSE">
 			<Property Name="Group">
 				<Value/>
 			</Property>

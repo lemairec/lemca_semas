@@ -47,6 +47,11 @@ extern int getLastLeft();
 void setWorkHeight(int work_height);
 int getWorkHeight();
 
+void setVitesseMaxH(int vitesse_max_h);
+int getVitesseMaxH();
+
+void setVitesseMaxAng(int vitesse_max_ang);
+int getVitesseMaxAng();
 
 #ifdef __cplusplus
 }

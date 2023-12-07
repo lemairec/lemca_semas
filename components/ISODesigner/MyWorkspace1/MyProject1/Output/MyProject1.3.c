@@ -66,8 +66,8 @@ const unsigned long ISO_OP_MEMORY_CLASS isoOP_MyProject1_Offset_Id[] = {
 	 12566,  // NumberVariable_Left_Offset
 	 12573,  // NumberVariable_Right_Offset
 	 12580,  // work_h_Offset
-	 12587,  // vitesse_max_h_Offset
-	 12594,  // vitesse_max_ang_Offset
+	 12587,  // NumberVariable_v_max_h_Offset
+	 12594,  // NumberVariable_v_max_ang_Offset
 	 12601,  // StringVariable_State_Offset
 	 12636,  // StringVariable_Vitesse_Offset
 	 12671,  // FontAttributes_23000_Offset
