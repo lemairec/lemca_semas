@@ -198,12 +198,12 @@ void setTranslateur(double corr_ang, double corr_h){
     if(m_last_corr_angl_100 > 0){
         left = m_last_corr_angl_100;
     } else {
-        right = m_last_corr_angl_100;
+        right = -m_last_corr_angl_100;
     }
     if(m_last_corr_h_100 > 0){
         up = m_last_corr_h_100;
     } else {
-        down = m_last_corr_h_100;
+        down = -m_last_corr_h_100;
     }
     setElectrovanne(left*81.91, right*81.91, up*81.91, down*81.91);
 }
@@ -220,18 +220,18 @@ void updateUp(){
     }
 }
 
-
+const double sum_erreur_max = 30;
 double sum_error_ang = 0;
 double sum_error_h = 0;
 void updateWorkstate(){
     double time = 0.02;
     double error_ang = (m_last_machine_l_100-m_last_machine_r_100);
-    sum_error_ang += error_ang;
-    double corr_ang = m_agress_hydr*error_ang + 0.1*time*m_agress_hydr*sum_error_ang;
+   
+    double corr_ang = m_agress_hydr*error_ang;
+
 
     double error_h = (m_work_h-(m_last_machine_l_100+m_last_machine_r_100)*0.5);
-    sum_error_h += error_h;
-    double corr_h =  m_agress_hydr*error_h + 0.1*time*m_agress_hydr*sum_error_h;
+    double corr_h =  m_agress_hydr*error_h;
     
     setTranslateur(corr_ang, corr_h);
 }

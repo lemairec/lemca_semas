@@ -10,7 +10,6 @@ extern "C" {
 typedef char char_t;
 extern void lc_DebugPrint(const char_t format[], ...); 
 
-
 #ifdef __cplusplus
 }
 #endif
