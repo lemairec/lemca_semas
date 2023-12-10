@@ -63,6 +63,10 @@ int m_last_millis_up = 0;
 double m_vitesse_simu = 0;
 double m_km_h = -1;
 
+const double sum_erreur_max = 10;
+double sum_error_ang = 0;
+double sum_error_h = 0;
+
 void verify_config(){
     if(m_work_h > 100){
         m_work_h = 100;
@@ -154,21 +158,26 @@ double getCorrH(){
     return m_last_corr_h_100;
 }
 
+void setState(enum State state){
+    m_state = state;
+    m_last_millis_up = m_last_millis;
+    sum_error_ang = 0;
+    sum_error_h = 0;
+}
+
 void setWorkStateWork(){
-    m_state = State_work;
+    setState(State_work);
 }
 
 void setWorkStateUp(){
-    m_last_millis_up = m_last_millis;
-    m_state = State_up;
+    setState(State_up);
 }
 
 void changeWorkState(){
     if(m_state == State_work){
-        m_last_millis_up = m_last_millis;
-        m_state = State_up;
+        setState(State_up);
     } else {
-        m_state = State_work;
+        setState(State_work);
     }
 }
 
@@ -220,18 +229,33 @@ void updateUp(){
     }
 }
 
-const double sum_erreur_max = 30;
-double sum_error_ang = 0;
-double sum_error_h = 0;
 void updateWorkstate(){
+    double agress_hyd = m_agress_hydr/20.0;
     double time = 0.02;
+    
+    
     double error_ang = (m_last_machine_l_100-m_last_machine_r_100);
+
+    sum_error_ang+=error_ang*time;
+    if(sum_error_ang > sum_erreur_max){
+        sum_error_ang = sum_erreur_max;
+    }
+    if(sum_error_ang < -sum_erreur_max){
+        sum_error_ang = -sum_erreur_max;
+    }
    
-    double corr_ang = m_agress_hydr*error_ang;
+    double corr_ang = agress_hyd*error_ang + agress_hyd*0.2*sum_error_ang;
 
 
     double error_h = (m_work_h-(m_last_machine_l_100+m_last_machine_r_100)*0.5);
-    double corr_h =  m_agress_hydr*error_h;
+    sum_error_h+=error_h*time;
+    if(sum_error_h > sum_erreur_max){
+        sum_error_h = sum_erreur_max;
+    }
+    if(sum_error_h < -sum_erreur_max){
+        sum_error_h = -sum_erreur_max;
+    }
+    double corr_h =  agress_hyd*error_h+ agress_hyd*0.2*sum_error_h;
     
     setTranslateur(corr_ang, corr_h);
 }
